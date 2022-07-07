@@ -1,0 +1,15 @@
+/Closer-backend/node_modules
+/Closer-backend/public/build
+/Closer-backend/public/hot
+/Closer-backend/public/storage
+/Closer-backend/storage/*.key
+/Closer-backend/vendor
+/Closer-backend/.env
+/Closer-backend/.env.backup
+/Closer-backend/.phpunit.result.cache
+/Closer-backend/Homestead.json
+/Closer-backend/Homestead.yaml
+/Closer-backend/npm-debug.log
+/Closer-backend/yarn-error.log
+/Closer-backend/.idea
+/Closer-backend/.vscode
