@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants\EventConstants;
+use App\Models\Category;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ class EventController extends Controller
         ]);
     }
 
-    public function getById($id)
+    public function getEventById($id)
     {
         $event = $this->model::join('users', 'user_id', '=', 'users.id')->findOrFail($id);
 
@@ -49,5 +50,37 @@ class EventController extends Controller
             "status" => "success",
             "event" => compact('event')
         ]);
+    }
+
+    public function createCategory(Request $request)
+    {
+        $cat = new Category();
+        $data = $this->validate($request, [
+            'name' => 'required',
+            'cover_photo' => 'required',
+
+        ]);
+
+        $category = $cat->create($data);
+
+        return response()->json([
+            "status" => "success",
+            "data" => compact('category')
+        ]);
+    }
+
+    public function getAllCategories()
+    {
+        $category = Category::all();
+        return response()->json([
+            "status" => "success",
+            "data" => compact('category')
+        ]);
+    }
+
+    public function getEventByCat($id)
+    {
+        $event = $this->model::where('category_id', $id);
+        dd($event);
     }
 }
