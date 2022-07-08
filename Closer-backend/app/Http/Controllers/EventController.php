@@ -32,22 +32,22 @@ class EventController extends Controller
             'status' => 'required',
         ]);
         $data['user_id'] = Auth::id();
-        
-        $event=$this->model->create($data);
+
+        $event = $this->model->create($data);
 
         return response()->json([
-            "status"=>"success",
-            "data"=>compact('event')
+            "status" => "success",
+            "data" => compact('event')
         ]);
     }
 
     public function getById($id)
     {
-        $event=$this->model->findOrFail($id);
+        $event = $this->model::join('users', 'user_id', '=', 'users.id')->findOrFail($id);
 
         return response()->json([
-            "status"=>"success",
-            "event"=>compact('event')
+            "status" => "success",
+            "event" => compact('event')
         ]);
     }
 }
