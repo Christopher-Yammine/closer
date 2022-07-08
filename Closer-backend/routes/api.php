@@ -21,5 +21,5 @@ Route::post('login', [UserController::class, 'login']);
 Route::post('logout', [UserController::class, 'logout']);
 Route::post('host', [UserController::class, 'makeHost']);
 
-Route::get('event/{id}',[EventController::class,'get']);
-Route::post('event',[EventController::class,'create']);
+Route::get('event/{id}', [EventController::class, 'getById']);
+Route::post('event', [EventController::class, 'create']);

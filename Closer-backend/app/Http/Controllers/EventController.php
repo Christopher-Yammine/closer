@@ -27,6 +27,7 @@ class EventController extends Controller
             'city' => 'required',
             'category_id' => 'required',
             'video_url' => 'required',
+            'cover_photo' => 'required',
             'capacity' => 'required',
             'status' => 'required',
         ]);
@@ -40,7 +41,7 @@ class EventController extends Controller
         ]);
     }
 
-    public function get($id)
+    public function getById($id)
     {
         $event=$this->model->findOrFail($id);
 

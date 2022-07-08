@@ -16,6 +16,7 @@ class Event extends Model
         'city',
         'category_id',
         'video_url',
+        'cover_photo',
         'capacity',
         'user_id',
         'status',
