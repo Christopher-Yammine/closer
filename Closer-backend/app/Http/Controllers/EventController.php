@@ -39,7 +39,7 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "data" => compact('event')
-        ]);
+        ], 200);
     }
 
     public function getEventById($id)
@@ -49,7 +49,7 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "event" => compact('event')
-        ]);
+        ], 200);
     }
 
     public function createCategory(Request $request)
@@ -75,12 +75,17 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "data" => compact('category')
-        ]);
+        ], 200);
     }
 
     public function getEventByCat($id)
     {
-        $event = $this->model::where('category_id', $id);
-        dd($event);
+        $event = $this->model->where('category_id', '=', $id)->get();
+        return response()->json([
+            "status" => "success",
+            "data" => compact('event')
+        ], 200);
     }
+
+    
 }

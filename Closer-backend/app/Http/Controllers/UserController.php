@@ -72,7 +72,7 @@ class UserController extends Controller
                 'token' => $token,
                 'type' => 'bearer',
             ]
-        ]);
+        ], 200);
     }
 
     public function logout()
@@ -93,7 +93,7 @@ class UserController extends Controller
                 'token' => Auth::refresh(),
                 'type' => 'bearer',
             ]
-        ]);
+        ], 200);
     }
 
     public function makeHost()
@@ -104,7 +104,5 @@ class UserController extends Controller
         $user->save();
 
         return response()->json(['status' => 'success', 'message' => true]);
-
-        
     }
 }
