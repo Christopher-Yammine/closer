@@ -92,14 +92,14 @@ class EventController extends Controller
         // $all_capacities = $this->model
         // ->join('attendees','attendees.event_id','=','events.id')
         // ->get(['count(attendees.event_id)','events.*']);
-        $all_capacities = $this->model
+        $trending = $this->model
             ->select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
             events.name,events.description,events.city,events.status,
-            events.cover_photo'))
+            events.cover_photo,date'))
             ->join('attendees', 'attendees.event_id', '=', 'events.id')
             ->groupBy([
                 'attendees.event_id', 'events.name', 'events.description', 'events.city', 'events.status',
-                'events.cover_photo', 'events.id'
+                'events.cover_photo', 'events.id', 'date'
             ])
 
             ->get();
@@ -107,7 +107,7 @@ class EventController extends Controller
 
         return response()->json([
             "status" => "success",
-            "data" => $all_capacities
+            "data" => compact("trending")
         ], 200);
     }
 }

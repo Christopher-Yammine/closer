@@ -31,3 +31,4 @@ Route::post('createCategory', [EventController::class, 'createCategory']);
 Route::get('getAllCategories', [EventController::class, 'getAllCategories']);
 
 Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);
+Route::post('attendeesByEvent/{event_id}', [AttendeeController::class, 'attendeesByEvent']);

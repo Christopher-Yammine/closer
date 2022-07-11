@@ -21,14 +21,14 @@ class AttendeeController extends Controller
     {
         $event = new Event();
         $capacity = Event::where('id', '=', $event_id)
-        ->get("capacity")[0]["capacity"];
+            ->get("capacity")[0]["capacity"];
         $userExist = $this->model
-        ->where('event_id', '=', $event_id)
-        ->where('user_id', '=', Auth::id())->count();
+            ->where('event_id', '=', $event_id)
+            ->where('user_id', '=', Auth::id())->count();
         $count = $this->model
-        ->where('event_id', '=', $event_id)->count();
+            ->where('event_id', '=', $event_id)->count();
 
-        if ($userExist>=1){
+        if ($userExist >= 1) {
             return response()->json([
                 "status" => "failed",
                 "data" => "user exists"
@@ -49,7 +49,20 @@ class AttendeeController extends Controller
                 ], 200);
             }
         }
+    }
 
-       
+
+    public function attendeesByEvent($event_id)
+    {
+        $all_attendees = $this->model
+            ->join('users', 'users.id', '=', 'attendees.user_id')
+            ->where('attendees.event_id', '=', $event_id)
+            ->get(['users.first_name', 'users.profile_picture']);
+        $attendees_count = $all_attendees->count();
+        return response()->json([
+            "status" => "success",
+            "data" => compact('all_attendees'),
+            "count" => compact('attendees_count')
+        ], 200);
     }
 }
