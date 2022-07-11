@@ -89,9 +89,6 @@ class EventController extends Controller
 
     public function trendingEvents()
     {
-        // $all_capacities = $this->model
-        // ->join('attendees','attendees.event_id','=','events.id')
-        // ->get(['count(attendees.event_id)','events.*']);
         $trending = $this->model
             ->select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
             events.name,events.description,events.city,events.status,

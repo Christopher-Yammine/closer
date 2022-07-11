@@ -13,7 +13,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'makeHost', 'topHosts']]);
     }
 
     public function login(Request $request)
@@ -96,13 +96,55 @@ class UserController extends Controller
         ], 200);
     }
 
-    public function makeHost()
+    public function makeHost(Request $request)
     {
-        $user = Auth::user();
+        $data = $request->validate([
+            'username' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:6',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'profile_picture' => 'required',
+        ]);
 
-        $user->type = UserConstants::HOST;
-        $user->save();
 
-        return response()->json(['status' => 'success', 'message' => true]);
+        $user = User::create([
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'gender' => $request->gender,
+            'profile_picture' => $request->profile_picture,
+            'type' => UserConstants::HOST
+        ]);
+
+        $token = Auth::login($user);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'host created successfully',
+            'user' => $user,
+            'authorisation' => [
+                'token' => $token,
+                'type' => 'bearer',
+            ]
+        ], 200);
+    }
+
+    public function topHosts()
+    {
+        $top_host = User::select(\DB::raw('count(events.id) as nbrEvents,user_id,
+             users.first_name, users.last_name'))
+            ->join('events', 'events.user_id', '=', 'users.id')
+            ->where('type', '=', 'host')
+            ->orderBy('nbrEvents', 'DESC')
+            ->groupBy(['user_id', 'users.first_name', 'users.last_name'])
+
+            ->get();
+
+
+        return response()->json([
+            "status" => "success",
+            "data" => compact("top_host")
+        ]);
     }
 }

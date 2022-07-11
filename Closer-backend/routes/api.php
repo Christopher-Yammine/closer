@@ -21,6 +21,7 @@ Route::post('register', [UserController::class, 'register']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('logout', [UserController::class, 'logout']);
 Route::post('host', [UserController::class, 'makeHost']);
+Route::get('topHosts', [UserController::class, 'topHosts']);
 
 Route::get('event/{id}', [EventController::class, 'getEventById']);
 Route::get('events/{id}', [EventController::class, 'getEventByCat']);
