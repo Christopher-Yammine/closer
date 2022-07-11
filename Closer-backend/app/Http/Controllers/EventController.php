@@ -66,7 +66,7 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "data" => compact('category')
-        ],200);
+        ], 200);
     }
 
     public function getAllCategories()
@@ -84,6 +84,30 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "data" => compact('events')
+        ], 200);
+    }
+
+    public function trendingEvents()
+    {
+        // $all_capacities = $this->model
+        // ->join('attendees','attendees.event_id','=','events.id')
+        // ->get(['count(attendees.event_id)','events.*']);
+        $all_capacities = $this->model
+            ->select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
+            events.name,events.description,events.city,events.status,
+            events.cover_photo'))
+            ->join('attendees', 'attendees.event_id', '=', 'events.id')
+            ->groupBy([
+                'attendees.event_id', 'events.name', 'events.description', 'events.city', 'events.status',
+                'events.cover_photo', 'events.id'
+            ])
+
+            ->get();
+
+
+        return response()->json([
+            "status" => "success",
+            "data" => $all_capacities
         ], 200);
     }
 }

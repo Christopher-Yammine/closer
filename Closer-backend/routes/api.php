@@ -25,6 +25,7 @@ Route::post('host', [UserController::class, 'makeHost']);
 Route::get('event/{id}', [EventController::class, 'getEventById']);
 Route::get('events/{id}', [EventController::class, 'getEventByCat']);
 Route::post('event', [EventController::class, 'create']);
+Route::get('trendingEvents', [EventController::class, 'trendingEvents']);
 
 Route::post('createCategory', [EventController::class, 'createCategory']);
 Route::get('getAllCategories', [EventController::class, 'getAllCategories']);

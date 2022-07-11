@@ -20,6 +20,10 @@ class Event extends Model
         'capacity',
         'user_id',
         'status',
-
     ];
+
+    public function attendees()
+    {
+        $this->hasMany(Attendee::class);
+    }
 }

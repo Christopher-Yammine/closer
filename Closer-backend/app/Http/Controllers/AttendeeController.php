@@ -20,7 +20,8 @@ class AttendeeController extends Controller
     public function addAttendee(Request $request, $event_id)
     {
         $event = new Event();
-        $capacity = Event::where('id', '=', $event_id)->get("capacity")[0]["capacity"];
+        $capacity = Event::where('id', '=', $event_id)
+        ->get("capacity")[0]["capacity"];
         $userExist = $this->model
         ->where('event_id', '=', $event_id)
         ->where('user_id', '=', Auth::id())->count();
