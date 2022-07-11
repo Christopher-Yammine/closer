@@ -66,7 +66,7 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "data" => compact('category')
-        ]);
+        ],200);
     }
 
     public function getAllCategories()
@@ -80,12 +80,10 @@ class EventController extends Controller
 
     public function getEventByCat($id)
     {
-        $event = $this->model->where('category_id', '=', $id)->get();
+        $events = $this->model->where('category_id', '=', $id)->get();
         return response()->json([
             "status" => "success",
-            "data" => compact('event')
+            "data" => compact('events')
         ], 200);
     }
-
-    
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendeeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -27,3 +28,5 @@ Route::post('event', [EventController::class, 'create']);
 
 Route::post('createCategory', [EventController::class, 'createCategory']);
 Route::get('getAllCategories', [EventController::class, 'getAllCategories']);
+
+Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);
