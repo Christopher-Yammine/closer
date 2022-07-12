@@ -13,3 +13,24 @@
 /closer-backend/yarn-error.log
 /closer-backend/.idea
 /closer-backend/.vscode
+
+/closer-frontend/node_modules
+/closer-frontend/.pnp
+/closer-frontend/.pnp.js
+
+# testing
+/closer-frontend/coverage
+
+# production
+/closer-frontend/build
+
+# misc
+/closer-frontend/.DS_Store
+/closer-frontend/.env.local
+/closer-frontend/.env.development.local
+/closer-frontend/.env.test.local
+/closer-frontend/.env.production.local
+
+/closer-frontend/npm-debug.log*
+/closer-frontend/yarn-debug.log*
+/closer-frontend/yarn-error.log*
