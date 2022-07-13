@@ -1,11 +1,15 @@
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Splash from './pages/Splash';
 
 function App() {
   return (
-    <div className="closer-splash">
-     
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Splash />}></Route>
+      </Routes >
+    </BrowserRouter >
   );
 }
 
