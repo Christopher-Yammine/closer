@@ -40,6 +40,7 @@ code {
 
 .button-signup {
   font-family: 'orbitron';
+  cursor: pointer;
   color: white;
   box-sizing: border-box;
   background-color: transparent;
@@ -51,6 +52,7 @@ code {
 }
 
 .button-login {
+  cursor: pointer;
   font-family: 'orbitron';
   color: white;
   width: 118px;
@@ -82,14 +84,14 @@ code {
 
 .explore {
 
-  width: 265px;
-  height: 105px;
+  width: 170px;
+  height: 75px;
   color: white;
   background: #000000;
   border-radius: 50px;
   font-family: 'Orbitron';
   margin: 50px;
-  font-size: 36px;
+  font-size: 24px;
 
 }
 
@@ -126,7 +128,7 @@ video {
 
 
 .content {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   top: 0;
@@ -140,4 +142,142 @@ video {
   height: 100%;
   background-color: rgba(0, 0, 0, .4);
   /* background-color: #000000cc; */
+}
+
+.splash-host {
+  display: flex;
+  margin: 50px 0 0 0;
+  align-items: center;
+}
+
+.splash-host-text {
+  font-family: 'orbitron';
+  margin: 50px;
+  width: 50%;
+}
+
+.heading1 {
+
+  text-shadow: 0px 0px 60.3px #FFFFFF;
+  color: white;
+  font-size: 24pt;
+}
+
+.splash-host-description {
+
+  color: white;
+  font-size: 24pt;
+  width: 100%;
+}
+
+.splash-host-artboard {
+  width: 50%;
+  margin: 50px;
+  justify-items: center;
+  text-align: center;
+}
+
+
+
+.host-button {
+
+  cursor: pointer;
+  width: 200px;
+  height: 77px;
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  background: #FFFFFF;
+  border-radius: 50px;
+}
+
+.login-modal {
+  padding: 0 30px 0 30px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 2px solid #000;
+  box-shadow: 24;
+  z-index: 4;
+  border-radius: 15px;
+  box-shadow: 0px 0px 18.36px #DF8C26;
+
+}
+
+.login-logo>img {
+  margin: 30px 0 40px 0;
+  width: 100%;
+}
+
+.login-heading {
+
+  font-family: 'Orbitron';
+  text-align: center;
+  color: white;
+  font-size: 28pt;
+  margin: 40px 0 0 0;
+  font-weight: bold;
+}
+
+.login-subheading {
+
+  font-family: 'Orbitron';
+  text-align: center;
+  color: white;
+  font-size: 14pt;
+
+  margin: 15px 0 30px 0;
+}
+
+.login-form {
+
+
+  display: flex;
+  justify-content: space-around;
+
+}
+
+input {
+
+  height: 68.25px;
+  width: 270px;
+  padding-left: 10px;
+  margin: 10px 20px 10px 0;
+  color: white;
+  font-family: 'Orbitron';
+  background: rgba(18, 14, 19, 0.3);
+  border: 1px solid #4E4651;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+input::placeholder {
+  font-family: 'Orbitron';
+  color: #4E4651;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0 10px 0 0;
+
+}
+
+.login-btn {
+
+  background: rgba(18, 14, 19, 0.7);
+  border-radius: 15px;
+  color: white;
+  font-family: "Orbitron";
+  height: 69px;
+  width: 285px;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
 }

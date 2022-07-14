@@ -1,5 +1,6 @@
 import React from 'react'
 import videoBg from "../assets/bgvideo.mp4";
+import GetHosted from './GetHosted';
 import Header from './Header';
 import Hero from './Hero';
 const VideoBg = () => {
@@ -8,10 +9,7 @@ const VideoBg = () => {
             <div className="overlay"></div>
             <video src={videoBg} autoPlay loop muted />
             <div className="content">
-                <div className='splash'>
-                    <div><Header /></div>
-                    <div><Hero /></div>
-                </div>
+                <GetHosted/>
 
             </div>
         </div>

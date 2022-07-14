@@ -1,7 +1,7 @@
 import React from 'react'
+import GetHosted from '../components/GetHosted'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
-import VideoBg from '../components/VideoBg'
 
 const Splash = () => {
     return (
@@ -10,7 +10,9 @@ const Splash = () => {
                 <div><Header /></div>
                 <div><Hero /></div>
             </div>
-          
+            <div>
+                <div><GetHosted /></div>
+            </div>
         </div>
 
     )
