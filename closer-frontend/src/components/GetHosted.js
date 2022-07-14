@@ -2,7 +2,16 @@ import React from 'react'
 
 const GetHosted = () => {
   return (
-    <div>GetHosted</div>
+    <div>
+      <div className='splash-host'>
+        <div className='description'>
+     
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </div>
   )
 }
 
