@@ -146,8 +146,26 @@ video {
 
 .splash-host {
   display: flex;
-  margin: 50px 0 0 0;
+  margin: 0 0 0 0;
   align-items: center;
+  background: linear-gradient(-45deg, #000000, #0c0717, #150050, #3f0071, #610094, #2c00cc);
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .splash-host-text {
@@ -177,6 +195,10 @@ video {
   text-align: center;
 }
 
+.splash-host-artboard>img {
+  height: 450px;
+}
+
 
 
 .host-button {
@@ -190,6 +212,7 @@ video {
   font-size: 18px;
   background: #FFFFFF;
   border-radius: 50px;
+  border: none;
 }
 
 .login-modal {
@@ -245,7 +268,7 @@ video {
 input {
 
   height: 68.25px;
-  width: 270px;
+  width: 100%;
   padding-left: 10px;
   margin: 10px 20px 10px 0;
   color: white;
@@ -254,6 +277,7 @@ input {
   border: 1px solid #4E4651;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+
 }
 
 input::placeholder {
@@ -262,11 +286,11 @@ input::placeholder {
 }
 
 .login-input {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin: 0 10px 0 0;
 
 }
 
@@ -278,6 +302,15 @@ input::placeholder {
   font-family: "Orbitron";
   height: 69px;
   width: 285px;
-  margin: 10px 0 10px 0;
   cursor: pointer;
+
+}
+
+@media (max-width:800px) {
+
+  .splash-host,
+  .login-form {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
 }
