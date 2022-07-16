@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from './Logo'
 import { NavLink } from 'react-router-dom';
+import Profile from './Profile';
 
 const Navbar = ({ id_usertype }) => {
 
@@ -41,21 +42,21 @@ const Navbar = ({ id_usertype }) => {
                         }
                         else if (id_usertype == 1) {
                             return (
-                                <div>
-                                    <div className='navbar-pages navbar-host'>
-                                        <div>
-                                            <NavLink to="/top-hosts">
-                                                Top Hosts
-                                            </NavLink>
-                                        </div>
-                                        <div className='vl' />
-                                        <div>
-                                            <NavLink to="/your-event">
-                                                Your Event
-                                            </NavLink>
-                                        </div>
+                                <>
+
+                                    <div>
+                                        <NavLink to="/top-hosts">
+                                            Top Hosts
+                                        </NavLink>
                                     </div>
-                                </div>
+                                    <div className='vl' />
+                                    <div>
+                                        <NavLink to="/your-event">
+                                            Your Event
+                                        </NavLink>
+
+                                    </div>
+                                </>
                             )
 
                         } else {
@@ -70,12 +71,9 @@ const Navbar = ({ id_usertype }) => {
                     })()}
 
                 </div>
-                <div className='profile'>
-                    <h1>
-                        profile
-                    </h1>
-
-                </div>
+          
+                    <Profile />
+            
             </div>
 
         </div>

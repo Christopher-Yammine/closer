@@ -127,12 +127,7 @@ video {
 }
 
 
-.content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
+
 
 .overlay {
   position: absolute;
@@ -316,7 +311,8 @@ input::placeholder {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  column-gap: 30%
+  column-gap: 30%;
+
 }
 
 .vl {
@@ -335,18 +331,13 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   color: white;
   font-family: "Orbitron";
   font-size: 8pt;
   z-index: 9999;
 }
 
-.navbar-host {
-  font-size: 8pt;
-  width: 140%;
-  justify-content: space-between;
-}
+
 
 a:visited {
   color: white;
@@ -355,6 +346,55 @@ a:visited {
 a {
   text-decoration: none;
   color: white;
+}
+
+.profile {
+  display: flex;
+  border: white solid 2px;
+  height: fit-content;
+  align-self: center;
+  align-items: center;
+  border-radius: 30px;
+  margin: 0 10px 0 0;
+}
+
+.profile>img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.container {
+  z-index: 10;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -7px);
+  transform: rotate(45deg) translate(-6px, -7px);
 }
 
 @media (max-width:800px) {
