@@ -117,7 +117,7 @@ code {
 
 .videobg {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 }
 
 video {
@@ -260,7 +260,7 @@ video {
 
 }
 
-input {
+.login-input>input {
 
   height: 68.25px;
   width: 100%;
@@ -275,7 +275,7 @@ input {
 
 }
 
-input::placeholder {
+.login-input>input::placeholder {
   font-family: 'Orbitron';
   color: #4E4651;
 }
@@ -396,6 +396,76 @@ a {
   -webkit-transform: rotate(45deg) translate(-6px, -7px);
   transform: rotate(45deg) translate(-6px, -7px);
 }
+
+.searchbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 85px 0 0 0;
+
+}
+
+.searchbar-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  font-size: 24pt;
+  color: white;
+  font-family: "orbitron";
+  font-weight: bold;
+
+}
+
+.searchbar {
+  display: flex;
+  font-size: 14pt;
+  font-weight: normal;
+  width: 70%;
+  height: 64px;
+  background: #000000;
+  border: 1px solid #FFFFFF;
+  border-radius: 50px;
+  margin: 20px 15% 0 15%;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 5;
+}
+
+.searchbar input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 14pt;
+  font-family: "orbitron";
+  width: 100%;
+  padding: 0 0 0 15px;
+}
+
+.border {
+  border: solid white;
+}
+
+.magnifier {
+  margin: 4px 5px 0 0;
+  cursor: pointer;
+}
+
+.searchbar input::placeholder {
+  font-family: "orbitron";
+  font-size: 14pt;
+}
+
+.searchbar input:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+.searchbar input:active {
+  border: none;
+}
+
 
 @media (max-width:800px) {
 
