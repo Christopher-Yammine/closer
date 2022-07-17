@@ -7,7 +7,7 @@ const Profile = () => {
     }
     return (
         <div className='profile'>
-            <img src={require("../assets/blankprofile.png")}></img>
+            <img src={require("../assets/blankprofile.png")} alt=""></img>
             <div className="container" onClick={(e) => { change(e.currentTarget) }}>
                 <div className="bar1"></div>
                 <div className="bar2"></div>

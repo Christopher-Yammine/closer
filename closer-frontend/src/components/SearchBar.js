@@ -14,7 +14,7 @@ const SearchBar = () => {
                         <input type="text" placeholder='Date | Location' />
                     </div>
                     <div className='magnifier'>
-                        <img src={require('../assets/magnifier.png')} width={56} />
+                        <img src={require('../assets/magnifier.png')} width={56} alt="" />
                     </div>
 
 

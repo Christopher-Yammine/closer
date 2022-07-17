@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Horizontal from './components/Horizontal';
-import VideoBg from './components/VideoBg';
+import Events from './pages/Events';
 import Landingpage from './pages/Landingpage';
 import Splash from './pages/Splash';
 
@@ -13,6 +13,7 @@ function App() {
         <Route path='/' element={<Splash />}></Route>
         <Route path='/video' element={<Horizontal />}></Route>
         <Route path='/landingpage' element={<Landingpage />}></Route>
+        <Route path='/events' element={<Events />}></Route>
       </Routes >
     </BrowserRouter >
   );

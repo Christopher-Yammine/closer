@@ -1,5 +1,5 @@
 import React from 'react'
-import Horizontal from '../components/Horizontal'
+import HorizontalTrending from '../components/Horizontal'
 import VideoBg from '../components/VideoBg'
 
 const Landingpage = () => {
@@ -14,9 +14,14 @@ const Landingpage = () => {
                     Trending events
                 </div>
                 <div>
-                    <Horizontal />
+                    <HorizontalTrending />
                 </div>
-
+                <div className='trending-title'>
+                    Categories
+                </div>
+                <div>
+                    <HorizontalTrending />
+                </div>
             </div>
 
         </div>

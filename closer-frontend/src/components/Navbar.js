@@ -29,7 +29,7 @@ const Navbar = ({ id_usertype }) => {
                     <div className='vl' />
 
                     {(() => {
-                        if (id_usertype == 0) {
+                        if (id_usertype === 0 || id_usertype === undefined) {
                             return (
                                 <div>
 
@@ -40,7 +40,7 @@ const Navbar = ({ id_usertype }) => {
 
                                 </div>)
                         }
-                        else if (id_usertype == 1) {
+                        else if (id_usertype === 1) {
                             return (
                                 <>
 
@@ -71,9 +71,9 @@ const Navbar = ({ id_usertype }) => {
                     })()}
 
                 </div>
-          
-                    <Profile />
-            
+
+                <Profile />
+
             </div>
 
         </div>

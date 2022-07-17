@@ -20,7 +20,7 @@ const GetHosted = () => {
 
 
         <div className='splash-host-artboard'>
-          <img src={require("../assets/host-artboard.png")} />
+          <img src={require("../assets/host-artboard.png")} alt="" />
         </div>
       </div>
     </div >

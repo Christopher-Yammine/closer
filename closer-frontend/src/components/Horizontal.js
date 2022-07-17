@@ -1,33 +1,22 @@
 
 import React from 'react'
 import HorizontalScroll from 'react-scroll-horizontal';
-const Horizontal = () => {
-    const child = { width: `30em`, height: `100%` };
+import { useState } from 'react';
+import EventCard from './EventCard';
+const HorizontalTrending = () => {
+
     return (
         <div className="events-container">
             <HorizontalScroll>
-                <div className='eventcard'>
-                    <h1>Hello 1</h1>
-                </div>
-                <div style={child}>
-                    <h1>Hello 2</h1>
-                </div>
-
-                <div style={child}>
-                    <h1>Hello 3</h1>
-                </div>
-                <div style={child}>
-                    <h1>Hello 3</h1>
-                </div>
-                <div style={child}>
-                    <h1>Hello 3</h1>
-                </div> <div style={child}>
-                    <h1>Hello 3</h1>
-                </div>
+                <EventCard data='url' title='test' />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
             </HorizontalScroll>
         </div>
     )
 
 }
 
-export default Horizontal
+export default HorizontalTrending
