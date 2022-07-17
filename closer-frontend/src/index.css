@@ -519,7 +519,16 @@ h1 {
   background: linear-gradient(-45deg, #000000, #0c0717, #150050, #3f0071, #610094, #2c00cc);
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
-  height: 100vh;
+  height: 100%;
+}
+
+.events-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event-container {
+  width: 25%;
 }
 
 @keyframes gradient {
@@ -536,11 +545,35 @@ h1 {
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:1050px) {
+
+  .event-container {
+    width: 33%;
+
+  }
+}
+
+@media (max-width:810px) {
 
   .splash-host,
   .login-form {
     flex-direction: column-reverse;
     height: fit-content;
   }
+
+  .event-container {
+    width: 50%;
+
+  }
+
+  @media (max-width:550px) {
+
+    .event-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+    }
+  }
+
 }
