@@ -92,8 +92,11 @@ code {
   font-family: 'Orbitron';
   margin: 50px;
   font-size: 24px;
+  cursor: pointer;
 
 }
+
+
 
 .getstarted {
 
@@ -134,8 +137,8 @@ video {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .4);
+  height: 80%;
+  background-color: rgba(0, 0, 0, .5);
   /* background-color: #000000cc; */
 }
 
@@ -145,11 +148,11 @@ video {
   align-items: center;
   background: linear-gradient(-45deg, #000000, #0c0717, #150050, #3f0071, #610094, #2c00cc);
   background-size: 400% 400%;
-  animation: gradient 12s ease infinite;
+  animation: cubic 10s cubic-bezier(0.60, 1, 0.70, 0) infinite;
   height: 100vh;
 }
 
-@keyframes gradient {
+@keyframes cubic {
   0% {
     background-position: 0% 50%;
   }
@@ -443,9 +446,7 @@ a {
   padding: 0 0 0 15px;
 }
 
-.border {
-  border: solid white;
-}
+
 
 .magnifier {
   margin: 4px 5px 0 0;
@@ -466,6 +467,56 @@ a {
   border: none;
 }
 
+.border {
+  border: solid white;
+
+}
+
+.events-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.trending-title {
+  margin: 30px 0 0 30px;
+  font-family: "orbitron";
+  font-size: 36pt;
+  color: white;
+
+}
+
+h1 {
+  color: white
+}
+
+.eventcard {
+  width: 10%;
+  height: 30%;
+}
+
+.trending-section {
+  display: flex;
+  margin: 0 0 0 0;
+  align-items: center;
+  background: linear-gradient(-45deg, #000000, #0c0717, #150050, #3f0071, #610094, #2c00cc);
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @media (max-width:800px) {
 

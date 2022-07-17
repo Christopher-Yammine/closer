@@ -1,6 +1,12 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+
+    const navigate = useNavigate();
+    function land() {
+        navigate("/landingpage");
+    }
     return (
         <div> <div className='main-header'>
             <h1>Closer</h1>
@@ -13,7 +19,7 @@ const Hero = () => {
 
             </div>
             <div className='getstarted'>
-                <button type='button' className='explore'>Explore</button>
+                <button type='button' className='explore' onClick={land}>Explore</button>
             </div>
 
 
