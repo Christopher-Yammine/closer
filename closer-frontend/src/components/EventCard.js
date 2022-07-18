@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+
 
 const EventCard = ({ data, title }) => {
 

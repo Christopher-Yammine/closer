@@ -29,7 +29,7 @@ const TopHosts = () => {
                             <div className='stats'>
 
                                 <div>
-                                    <img src={require("../assets/blankprofile.png")}></img>
+                                    <img src={require("../assets/blankprofile.png")} alt=""></img>
                                 </div>
                             </div>
                             <div className='stats'>
@@ -46,7 +46,7 @@ const TopHosts = () => {
 
             </div>
 
-        </div>
+        </div >
     )
 }
 

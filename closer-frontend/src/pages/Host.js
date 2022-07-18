@@ -1,12 +1,14 @@
 
 import axios from 'axios'
-import React, { useCallback } from 'react'
+import { useState } from 'react'
 import Dropzone from 'react-dropzone'
+import Navbar from '../components/Navbar'
 const Host = () => {
 
-
+    const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
     function handlefiles(acceptedFiles) {
         console.log(acceptedFiles[0]);
+
         let data = new FormData();
         let headers = {
             'Content-Type': 'multipart/form-data'
@@ -20,26 +22,43 @@ const Host = () => {
 
         }).then(function (response) {
             console.log(response);
+            setTextDesc(acceptedFiles[0].name);
         }).catch(function (err) {
             console.log(err);
+            setTextDesc("Error, file too big");
         })
     }
     return (
-        <div className='border'>
-            <Dropzone onDrop={(acceptedFiles) => {
-                handlefiles(acceptedFiles);
-            }
+        <div>
+            <Navbar />
+            <div className='dropzone'>
+                <Dropzone multiple={false} onDrop={(acceptedFiles) => {
+                    handlefiles(acceptedFiles);
+                }
 
-            }>
-                {({ getRootProps, getInputProps }) => (
-                    <section>
-                        <div {...getRootProps()}>
-                            <input {...getInputProps()} name="video" encType="multipart/form-data" />
-                            <p>Drag 'n' drop some files here, or click to select files</p>
-                        </div>
-                    </section>
-                )}
-            </Dropzone>
+
+                }>
+                    {({ getRootProps, getInputProps }) => (
+                        <section>
+                            <div {...getRootProps()}>
+
+                                <input {...getInputProps()} name="video" encType="multipart/form-data" />
+                                <div className='dropzone-input'>
+                                    <img src={require("../assets/upload.png")} alt="" />
+                                </div>
+
+                                <p id="file">{textDesc}</p>
+                            </div>
+                        </section>
+                    )}
+                </Dropzone>
+            </div>
+            <div className='event-info-title'>
+                Event info
+            </div>
+            <div className='event-info-container'>
+
+            </div>
         </div>
 
     )

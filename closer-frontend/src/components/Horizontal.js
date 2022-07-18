@@ -1,7 +1,7 @@
 
 import React from 'react'
 import HorizontalScroll from 'react-scroll-horizontal';
-import { useState } from 'react';
+
 import EventCard from './EventCard';
 const HorizontalTrending = () => {
 

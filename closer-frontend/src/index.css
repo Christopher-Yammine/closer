@@ -608,6 +608,42 @@ h1 {
   color: lightgray;
 }
 
+.dropzone {
+  display: flex;
+  justify-content: center;
+  border: solid white 1px;
+  border-radius: 15px;
+  margin: 100px 200px 100px 200px;
+  padding: 20px 0 20px 0;
+}
+
+.dropzone-input {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.dropzone p {
+  color: white;
+  font-family: "orbitron";
+  text-align: center;
+}
+
+.event-info-title {
+  color: white;
+  font-family: "orbitron";
+  font-size: 32pt;
+  text-align: center;
+}
+
+.event-info-container {
+  border: solid white 1px;
+  border-radius: 15px;
+  margin: 10px 200px 100px 200px;
+  padding: 20px 0 20px 0;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
