@@ -133,13 +133,15 @@ class UserController extends Controller
     public function topHosts()
     {
         $top_host = User::select(\DB::raw('count(events.id) as nbrEvents,user_id,
-             users.first_name, users.last_name'))
+             users.first_name, users.last_name,users.profile_picture'))
             ->join('events', 'events.user_id', '=', 'users.id')
             ->where('type', '=', 'host')
             ->orderBy('nbrEvents', 'DESC')
-            ->groupBy(['user_id', 'users.first_name', 'users.last_name'])
+            ->groupBy(['user_id', 'users.first_name', 'users.last_name', 'users.profile_picture'])
 
             ->get();
+
+
 
 
         return response()->json([

@@ -5,6 +5,7 @@ import Horizontal from './components/Horizontal';
 import Events from './pages/Events';
 import Landingpage from './pages/Landingpage';
 import Splash from './pages/Splash';
+import TopHosts from './pages/TopHosts';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/video' element={<Horizontal />}></Route>
         <Route path='/landingpage' element={<Landingpage />}></Route>
         <Route path='/events' element={<Events />}></Route>
+        <Route path='/top-hosts' element={<TopHosts />}></Route>
       </Routes >
     </BrowserRouter >
   );

@@ -16,8 +16,11 @@ const Events = () => {
                 <SearchBar />
             </div>
             <div className='events-display'>
-                <div className='event-container' onClick={redirect}>
-                    <EventCard title="event 1" />
+                <div className='event-container' >
+                    <div className='event' onClick={redirect}>
+                        <EventCard title="event 1" />
+                    </div>
+
                 </div>
                 <div className='event-container'>
                     <EventCard title="event 2" />

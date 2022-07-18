@@ -529,7 +529,82 @@ h1 {
 
 .event-container {
   width: 25%;
+
+
+}
+
+.event {
+  transition: all 1s ease;
+}
+
+.event:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.4s;
   cursor: pointer;
+
+}
+
+.host-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 0 0;
+  font-family: "orbitron";
+
+}
+
+.host-info {
+  border: solid white;
+  border-radius: 15px;
+  margin: 30px 0 0 0;
+  height: 300px;
+  width: 90%;
+  color: white;
+
+}
+
+.host-info-title {
+  display: flex;
+  margin: 15px;
+  font-size: 18pt;
+  justify-content: space-between;
+
+}
+
+.stats-container {
+  margin: 40px 0 0 0;
+}
+
+.stats {
+
+  display: flex;
+  justify-content: center;
+
+
+
+}
+
+.stats-subcontainer {
+  border: white 1px solid;
+  border-radius: 15px;
+  margin: 0 0 0 15px;
+  width: 60%;
+}
+
+.stats>div>img {
+  width: 80px;
+  border-radius: 50%;
+
+  margin: -40px 0 0 0;
+}
+
+.upcoming {
+  margin: 70px 0 0 0;
+}
+
+.family {
+  font-size: 16pt;
+  color: lightgray;
 }
 
 @keyframes gradient {
@@ -566,6 +641,7 @@ h1 {
     width: 50%;
 
   }
+
 
   @media (max-width:550px) {
 
