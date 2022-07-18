@@ -8,6 +8,7 @@ use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -105,6 +106,18 @@ class EventController extends Controller
         return response()->json([
             "status" => "success",
             "data" => compact("trending")
+        ], 200);
+    }
+
+    public function videoTransfer(Request $request)
+    {
+        $vid = $request->file('video');
+        $fileLink = url(Storage::url(Storage::put('public/files', $vid)));
+
+        return response()->json([
+            "status" => "success",
+            "data" => compact("vid"),
+            "link" => compact("fileLink")
         ], 200);
     }
 }
