@@ -1,9 +1,13 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-
+import { motion } from 'framer-motion'
 const TopHosts = () => {
     return (
-        <div className='tophosts-main-container'>
+        <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
+            className='tophosts-main-container'>
             <div>
                 <Navbar />
             </div>
@@ -46,7 +50,7 @@ const TopHosts = () => {
 
             </div>
 
-        </div >
+        </motion.div >
     )
 }
 

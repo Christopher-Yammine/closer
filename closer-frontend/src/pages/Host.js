@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import Navbar from '../components/Navbar'
+import { motion } from 'framer-motion'
 const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
@@ -29,7 +30,10 @@ const Host = () => {
         })
     }
     return (
-        <div>
+        <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
             <Navbar />
             <div className='dropzone'>
                 <Dropzone multiple={false} onDrop={(acceptedFiles) => {
@@ -59,7 +63,7 @@ const Host = () => {
             <div className='event-info-container'>
 
             </div>
-        </div>
+        </motion.div>
 
     )
 }

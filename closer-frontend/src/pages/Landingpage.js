@@ -1,10 +1,13 @@
 import React from 'react'
 import HorizontalTrending from '../components/Horizontal'
 import VideoBg from '../components/VideoBg'
-
+import { motion } from 'framer-motion'
 const Landingpage = () => {
     return (
-        <div>
+        <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.3 } }} >
             <div>
                 <VideoBg />
 
@@ -24,7 +27,7 @@ const Landingpage = () => {
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 

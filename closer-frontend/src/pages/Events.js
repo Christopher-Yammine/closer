@@ -3,14 +3,18 @@ import EventCard from '../components/EventCard'
 import Navbar from '../components/Navbar'
 import SearchBar from '../components/SearchBar'
 import { useNavigate } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 const Events = () => {
     const navigate = useNavigate();
     function redirect() {
         navigate("/event");
     }
     return (
-        <div className='events-section'>
+        <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
+            className='events-section'>
             <div>
                 <Navbar />
                 <SearchBar />
@@ -73,7 +77,7 @@ const Events = () => {
             </div>
 
 
-        </div>
+        </motion.div>
     )
 }
 
