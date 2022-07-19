@@ -7,9 +7,9 @@ import { motion } from 'framer-motion'
 const Splash = () => {
     return (
         <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: "100%", opacity: 1 }}
-            exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
+            initial={{ width: 0 }}
+            animate={{ width: "100%"}}
+            exit={{ x: window.innerWidth, transition: { duration: 0.3 }, opacity: 0 }}>
             <div className='splash'>
                 <div><Header /></div>
                 <div><Hero /></div>

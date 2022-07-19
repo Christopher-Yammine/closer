@@ -10,7 +10,7 @@ const Navbar = ({ id_usertype }) => {
         <div>
 
             <div className='navbar'>
-                <div>
+                <div className='clickable'>
                     <Logo />
                 </div>
                 <div className='navbar-pages'>

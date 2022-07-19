@@ -7,6 +7,20 @@ import { motion } from 'framer-motion'
 const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
+    const [base64String, setbase64String] = useState("");
+
+    function imageUploaded(files) {
+        var file = files[0];
+        var reader = new FileReader();
+
+
+        reader.onload = function () {
+            setbase64String(reader.result);
+
+        }
+        reader.readAsDataURL(file);
+
+    }
     function handlefiles(acceptedFiles) {
         console.log(acceptedFiles[0]);
 
@@ -62,8 +76,18 @@ const Host = () => {
             </div>
             <div className='event-info-container'>
 
+                <div className='upload-photo'>
+                    <input type="file" name="photo" id="fileId"
+                        onChange={(e) => { imageUploaded(e.target.files) }} />
+                    <div className="upload">
+                        <div className='cover-photo'>
+                            <img src={base64String} alt='' />
+                        </div>
+                    </div>
+                    <label className='cover-photo-desc' htmlFor="fileId">Upload your cover photo here</label>
+                </div>
             </div>
-        </motion.div>
+        </motion.div >
 
     )
 }
