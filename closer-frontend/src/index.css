@@ -713,7 +713,7 @@ h1 {
 .video-container {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 30px 0 70px 0;
   width: 100%;
   border-radius: 15px;
 }
@@ -726,7 +726,7 @@ h1 {
 
 
 .event-info-input {
-  margin: 0 0 0 0;
+
   width: 50%;
 }
 
@@ -813,6 +813,48 @@ select {
   z-index: 100;
 
 }
+
+.event-cat-title,
+.datetime-location-container {
+  font-family: "orbitron";
+  margin: 30px 0 30px 150px;
+}
+
+.white-icons {
+  color: white;
+  font-size: 46pt;
+}
+
+.datetime-container,
+.location-container {
+  margin: 10px 0 10px 0;
+  display: flex;
+  color: white;
+  width: 30%;
+  font-size: 18pt;
+}
+
+.category-name {
+  background: linear-gradient(94.81deg, #8247FF 0%, #FF47F8 94.6%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 18pt;
+}
+
+.event-title {
+  font-size: 32pt;
+  color: white;
+  font-weight: bold;
+  width: 30%;
+}
+
+.host-name {
+  font-size: 24pt;
+  color: white;
+}
+
+
 
 a:hover {
   text-decoration: underline;
