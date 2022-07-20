@@ -9,8 +9,10 @@ const Event = () => {
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
             <Navbar />
+            <div className='video-container'>
+                <video src={videoBg} controls />
+            </div>
 
-            <video src={videoBg} loop muted controls />
 
         </motion.div>
     )

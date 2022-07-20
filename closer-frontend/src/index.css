@@ -710,6 +710,20 @@ h1 {
   z-index: -1;
 }
 
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.video-container video {
+  width: 50%;
+  border-radius: 15px;
+
+}
+
 
 .event-info-input {
   margin: 0 0 0 0;
