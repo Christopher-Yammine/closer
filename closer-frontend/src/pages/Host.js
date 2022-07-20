@@ -10,8 +10,10 @@ const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
     const [base64String, setbase64String] = useState("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC");
+    const [cardbase64String, setcardbase64String] = useState("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC");
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
+
     const getName = async (e) => {
         try {
             const res = await fetch(
@@ -37,8 +39,21 @@ const Host = () => {
             setbase64String(reader.result);
 
         }
+        console.log("that")
         reader.readAsDataURL(file);
 
+    }
+    function cardimageUploaded(files) {
+        var file = files[0];
+        var reader = new FileReader();
+
+
+        reader.onload = function () {
+            setcardbase64String(reader.result);
+
+        }
+        console.log("this")
+        reader.readAsDataURL(file);
     }
     function handlefiles(acceptedFiles) {
         console.log(acceptedFiles[0]);
@@ -114,6 +129,16 @@ const Host = () => {
 
                 </div>
                 <div className='upload-photo'>
+                    <input type="file" name="photo" id="fileId2"
+                        onChange={(e) => { cardimageUploaded(e.target.files) }} />
+                    <div className="upload border">
+                        <div className='cover-photo'>
+                            <img src={cardbase64String} alt='' />
+                        </div>
+                    </div>
+                    <label className='cover-photo-desc' htmlFor="fileId2">click here to upload your event card photo </label>
+                </div>
+                <div className='upload-photo'>
                     <input type="file" name="photo" id="fileId"
                         onChange={(e) => { imageUploaded(e.target.files) }} />
                     <div className="upload border">
@@ -123,6 +148,7 @@ const Host = () => {
                     </div>
                     <label className='cover-photo-desc' htmlFor="fileId">click here to upload your cover photo (1365x512)</label>
                 </div>
+
 
             </div>
             <div className='event-info-title'>
