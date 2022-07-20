@@ -3,11 +3,14 @@ import Logo from './Logo'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
-
 const Header = () => {
+
+
     const [loginIsOpen, setloginOpen] = useState(false);
     const [signupIsOpen, setSignupOpen] = useState(false);
-    const handleLoginOpen = () => setloginOpen(!loginIsOpen);
+    const handleLoginOpen = () => {
+        setloginOpen(!loginIsOpen);
+    };
     const handleSignupOpen = () => setSignupOpen(!signupIsOpen);
 
 
