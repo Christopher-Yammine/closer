@@ -775,6 +775,11 @@ select {
 }
 
 @media (max-width:1050px) {
+  .leaflet-container {
+
+    width: 100%;
+  }
+
   .event-info-container {
     flex-direction: column;
     justify-content: center;
