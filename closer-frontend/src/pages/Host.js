@@ -3,12 +3,30 @@ import axios from 'axios'
 import { useState } from 'react'
 import Dropzone from 'react-dropzone'
 import Navbar from '../components/Navbar'
+import Map from '../components/Map'
 import { motion } from 'framer-motion'
 const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
     const [base64String, setbase64String] = useState("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC");
-
+    const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
+    const [location, setLocation] = useState('')
+    const getName = async (e) => {
+        try {
+            const res = await fetch(
+                "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" +
+                selectedPosition[0] +
+                "&longitude=" +
+                selectedPosition[1] +
+                "&localityLanguage=en"
+            );
+            const data = await res.json();
+            console.log(data);
+            setLocation("" + data.locality + ", " + data.countryName);
+        } catch (err) {
+            console.log(err);
+        }
+    };
     function imageUploaded(files) {
         var file = files[0];
         var reader = new FileReader();
@@ -97,6 +115,15 @@ const Host = () => {
                     </div>
                     <label className='cover-photo-desc' htmlFor="fileId">click here to upload your cover photo</label>
                 </div>
+
+            </div>
+            <div className='leaflet-container'>
+                <Map
+                    selectedPosition={selectedPosition}
+                    setSelectedPosition={setSelectedPosition}
+                    getName={getName}
+                    setLocation={setLocation}
+                />
             </div>
         </motion.div >
 
