@@ -635,6 +635,10 @@ h1 {
 
 }
 
+.dropzone-input img {
+  width: 60%;
+}
+
 
 .dropzone p {
   color: white;
@@ -656,7 +660,7 @@ h1 {
   padding: 20px 0 20px 0;
 }
 
-label {
+.cover-photo-desc {
   border: solid white;
   margin: 10px;
   padding: 10px;
@@ -664,14 +668,82 @@ label {
   color: black;
   background-color: white;
   border-radius: 10px;
-  font-size: 16pt;
+  font-size: 12pt;
   font-family: "orbitron";
+  width: 76%;
+  text-align: center;
+}
+
+.event-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload-photo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload {
+  margin: 10px 0 20px 0;
+  width: 80%;
+  height: 300px;
+  border-radius: 15px;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
 }
 
 #fileId {
   opacity: 0;
   position: absolute;
   z-index: -1;
+}
+
+.event-info-input {
+  margin: 65px 0 0 0;
+  width: 50%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.event-info-input>input {
+
+  height: 68.25px;
+  width: 80%;
+  padding-left: 10px;
+  margin: 10px 50px 10px 50px;
+  color: white;
+  font-family: 'Orbitron';
+  background: rgba(18, 14, 19, 0.3);
+  border: 1px solid #4E4651;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+}
+
+select {
+  height: 68.25px;
+  width: 83%;
+  padding-left: 10px;
+  margin: 10px 50px 10px 50px;
+  color: white;
+  font-family: 'Orbitron';
+  background: rgba(18, 14, 19, 0.3);
+  border: 1px solid #4E4651;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
 @keyframes gradient {
@@ -689,10 +761,43 @@ label {
 }
 
 @media (max-width:1050px) {
+  .event-info-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .event-container {
     width: 33%;
 
+  }
+
+  .upload-photo {
+    width: 100%;
+  }
+
+  .event-info-input>input {
+
+    width: 100%;
+    margin: 20px 0 0 0;
+    padding: 0;
+
+  }
+
+  .event-info-input>input::placeholder {
+
+    text-align: center;
+
+  }
+
+
+  select {
+    width: 100%;
+    margin: 20px 0 20px 0;
+  }
+
+  .event-info-input {
+    margin: 0;
   }
 }
 

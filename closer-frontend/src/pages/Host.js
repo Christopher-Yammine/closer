@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
-    const [base64String, setbase64String] = useState("");
+    const [base64String, setbase64String] = useState("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC");
 
     function imageUploaded(files) {
         var file = files[0];
@@ -75,16 +75,27 @@ const Host = () => {
                 Event info
             </div>
             <div className='event-info-container'>
+                <div className='event-info-input'>
 
+                    <input type="text" placeholder='Event title'  ></input>
+                    <input type="number" placeholder='Maximum capacity'></input>
+                    <select>
+                        <option>event</option>
+                        <option>event</option>
+                        <option>event</option>
+                    </select>
+
+
+                </div>
                 <div className='upload-photo'>
                     <input type="file" name="photo" id="fileId"
                         onChange={(e) => { imageUploaded(e.target.files) }} />
-                    <div className="upload">
+                    <div className="upload border">
                         <div className='cover-photo'>
                             <img src={base64String} alt='' />
                         </div>
                     </div>
-                    <label className='cover-photo-desc' htmlFor="fileId">Upload your cover photo here</label>
+                    <label className='cover-photo-desc' htmlFor="fileId">click here to upload your cover photo</label>
                 </div>
             </div>
         </motion.div >
