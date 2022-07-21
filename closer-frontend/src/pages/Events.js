@@ -4,7 +4,9 @@ import Navbar from '../components/Navbar'
 import SearchBar from '../components/SearchBar'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useUserStore } from '../store/UserStore'
 const Events = () => {
+    const usertype = useUserStore((state) => state.usertype);
     const navigate = useNavigate();
     function redirect() {
         navigate("/event");
@@ -16,7 +18,7 @@ const Events = () => {
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
             className='events-section'>
             <div>
-                <Navbar />
+                <Navbar usertype={usertype} />
                 <SearchBar />
             </div>
             <div className='events-display'>

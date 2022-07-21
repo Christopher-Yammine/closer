@@ -2,17 +2,18 @@ import React from 'react'
 import { useUserStore } from '../store/UserStore';
 
 const Profile = () => {
-    const usr = useUserStore(state => state.user_id);
+    const profile_pic = useUserStore((state) => state.profile_picture);
+
     function change(x) {
-        let tst = '';
+        let btn_logout = '';
         x.classList.toggle("change");
-        tst = document.getElementsByClassName('button-logout')[0];
-        tst.classList.toggle("button-logout-shown")
+        btn_logout = document.getElementsByClassName('button-logout')[0];
+        btn_logout.classList.toggle("button-logout-shown")
     }
     return (
         <div className='profile-logout'>
             <div className='profile'>
-                <img src={require("../assets/blankprofile.png")} alt=""></img>
+                <img src={profile_pic} alt=""></img>
                 <div className="container" onClick={(e) => { change(e.currentTarget) }}>
                     <div className="bar1"></div>
                     <div className="bar2"></div>

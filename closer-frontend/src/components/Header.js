@@ -13,9 +13,11 @@ const Header = () => {
     const [passwordValue, setpasswordValue] = useState('');
     const [loginIsOpen, setloginOpen] = useState(false);
     const [signupIsOpen, setSignupOpen] = useState(false);
-    const [userid, setuserid] = useState(0);
-    const saveuser = useUserStore((state) => state.setUser);
-    const usr = useUserStore((state) => state.user_id);
+    const saveUserId = useUserStore((state) => state.setUser);
+    const saveProfile = useUserStore((state) => state.setProfile);
+    const saveToken = useUserStore((state) => state.setToken);
+    const saveType = useUserStore((state) => state.setUsertype);
+
     const handleLoginOpen = () => {
         setloginOpen(!loginIsOpen);
     };
@@ -30,12 +32,15 @@ const Header = () => {
             url: "http://127.0.0.1:8000/api/login",
             data: data
         }).then(function (response) {
+            console.log(response);
             if (response.data.status === "success") {
                 toast(response.data.status)
                 setloginOpen(!loginIsOpen);
-                console.log(response.data.user.id);
-                saveuser(response.data.user.id);
-                console.log(usr);
+                saveUserId(response.data.user.id);
+                saveToken(response.data.authorisation.token);
+                saveProfile(response.data.user.profile_picture);
+                saveType(response.data.user.type);
+
             }
 
         }).catch(function (err) {

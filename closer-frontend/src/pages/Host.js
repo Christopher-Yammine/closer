@@ -5,6 +5,7 @@ import Dropzone from 'react-dropzone'
 import Navbar from '../components/Navbar'
 import Map from '../components/Map'
 import { motion } from 'framer-motion'
+import { useUserStore } from '../store/UserStore'
 
 const Host = () => {
 
@@ -13,7 +14,7 @@ const Host = () => {
     const [cardbase64String, setcardbase64String] = useState("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC3AcUIAAFkqh/QAAAAAElFTkSuQmCC");
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
-
+    const usertype = useUserStore((state) => state.usertype);
     const getName = async (e) => {
         try {
             const res = await fetch(
@@ -24,7 +25,7 @@ const Host = () => {
                 "&localityLanguage=en"
             );
             const data = await res.json();
-            console.log(data);
+
             setLocation("" + data.locality + ", " + data.countryName);
         } catch (err) {
             console.log(err);
@@ -39,7 +40,7 @@ const Host = () => {
             setbase64String(reader.result);
 
         }
-        console.log("that")
+
         reader.readAsDataURL(file);
 
     }
@@ -52,11 +53,11 @@ const Host = () => {
             setcardbase64String(reader.result);
 
         }
-        console.log("this")
+
         reader.readAsDataURL(file);
     }
     function handlefiles(acceptedFiles) {
-        console.log(acceptedFiles[0]);
+
 
         let data = new FormData();
         let headers = {
@@ -70,7 +71,7 @@ const Host = () => {
             headers: headers
 
         }).then(function (response) {
-            console.log(response);
+
             setTextDesc(acceptedFiles[0].name);
         }).catch(function (err) {
             console.log(err);
@@ -82,7 +83,7 @@ const Host = () => {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
-            <Navbar />
+            <Navbar usertype={usertype} />
             <div className='dropzone'>
                 <Dropzone multiple={false} onDrop={(acceptedFiles) => {
                     handlefiles(acceptedFiles);
@@ -114,10 +115,10 @@ const Host = () => {
                     <input type="text" placeholder='Event title'  ></input>
                     <input type="number" placeholder='Maximum capacity'></input>
                     <input type="date" placeholder='date' onChange={(e) => {
-                        console.log(e.currentTarget.value)
+
                     }} />
                     <input type='time' placeholder='time' onChange={(e) => {
-                        console.log(e.currentTarget.value)
+
                     }} />
                     <select>
                         <option>event</option>

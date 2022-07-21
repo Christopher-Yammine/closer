@@ -3,7 +3,7 @@ import Logo from './Logo'
 import { NavLink } from 'react-router-dom';
 import Profile from './Profile';
 
-const Navbar = ({ id_usertype }) => {
+const Navbar = ({ usertype }) => {
 
 
     return (
@@ -16,7 +16,7 @@ const Navbar = ({ id_usertype }) => {
                 <div className='navbar-pages'>
 
                     <div>
-                        <NavLink to="/">
+                        <NavLink to="/landingpage">
                             Home
                         </NavLink>
                     </div>
@@ -29,7 +29,7 @@ const Navbar = ({ id_usertype }) => {
                     <div className='vl' />
 
                     {(() => {
-                        if (id_usertype === 0 || id_usertype === undefined) {
+                        if (usertype === "user" || usertype === undefined) {
                             return (
                                 <div>
 
@@ -40,7 +40,7 @@ const Navbar = ({ id_usertype }) => {
 
                                 </div>)
                         }
-                        else if (id_usertype === 1) {
+                        else if (usertype === "host") {
                             return (
                                 <>
 
