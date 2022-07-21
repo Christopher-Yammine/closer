@@ -3,18 +3,49 @@ import Logo from './Logo'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useUserStore } from '../store/UserStore';
 const Header = () => {
 
-
+    const [userNameValue, setuserNameValue] = useState('');
+    const [passwordValue, setpasswordValue] = useState('');
     const [loginIsOpen, setloginOpen] = useState(false);
     const [signupIsOpen, setSignupOpen] = useState(false);
+    const [userid, setuserid] = useState(0);
+    const saveuser = useUserStore((state) => state.setUser);
+    const usr = useUserStore((state) => state.user_id);
     const handleLoginOpen = () => {
         setloginOpen(!loginIsOpen);
     };
     const handleSignupOpen = () => setSignupOpen(!signupIsOpen);
 
+    function login() {
+        let data = new FormData();
+        data.append('username', userNameValue);
+        data.append('password', passwordValue);
+        axios({
+            method: "post",
+            url: "http://127.0.0.1:8000/api/login",
+            data: data
+        }).then(function (response) {
+            if (response.data.status === "success") {
+                toast(response.data.status)
+                setloginOpen(!loginIsOpen);
+                console.log(response.data.user.id);
+                saveuser(response.data.user.id);
+                console.log(usr);
+            }
+
+        }).catch(function (err) {
+            toast("Wrong or missing username or/and password")
+        })
+    }
+
 
     return (
+
         <div>
 
             <div className='main-container'>
@@ -37,9 +68,9 @@ const Header = () => {
                                 <img src={require("../assets/regular-logo.png")} width={300} alt=" " />
                             </div>
                             <div className='login-input'>
-                                <input type="text" placeholder='Enter your username'  ></input>
-                                <input type="password" placeholder='Enter your password'  ></input>
-                                <button type="button" className='login-btn'>SIGN IN</button>
+                                <input type="text" placeholder='Enter your username' onChange={(e) => { setuserNameValue(e.currentTarget.value) }} ></input>
+                                <input type="password" placeholder='Enter your password' onChange={(e) => { setpasswordValue(e.currentTarget.value) }}  ></input>
+                                <button type="button" className='login-btn' onClick={login}>SIGN IN</button>
                             </div>
                         </div>
                     </Box>
@@ -67,7 +98,7 @@ const Header = () => {
                     </div>
 
                 </div>
-
+                <ToastContainer />
 
             </div>
 

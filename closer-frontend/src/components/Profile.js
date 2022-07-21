@@ -1,9 +1,10 @@
 import React from 'react'
+import { useUserStore } from '../store/UserStore';
 
 const Profile = () => {
+    const usr = useUserStore(state => state.user_id);
     function change(x) {
         let tst = '';
-        console.log(x);
         x.classList.toggle("change");
         tst = document.getElementsByClassName('button-logout')[0];
         tst.classList.toggle("button-logout-shown")
