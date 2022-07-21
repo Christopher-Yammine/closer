@@ -585,9 +585,7 @@ h1 {
 
 }
 
-.stats-container {
-  margin: 40px 0 0 0;
-}
+.stats-container {}
 
 .stats {
 
@@ -601,8 +599,8 @@ h1 {
 .stats-subcontainer {
   border: white 1px solid;
   border-radius: 15px;
-  margin: 0 0 0 15px;
-  width: 60%;
+  margin: 0 10% 0 10%;
+  width: 80%;
 }
 
 .stats>div>img {
@@ -894,6 +892,12 @@ select {
 .attendees-count {
   display: flex;
 
+}
+
+.Toastify__toast-body {
+  font-family: "orbitron";
+  display: flex;
+  justify-content: center;
 }
 
 .count-coming {

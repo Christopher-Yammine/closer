@@ -1,6 +1,9 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GetHosted = () => {
+  const notify = () => toast("Wow so easy!");
   return (
     <div>
       <div className='splash-host'>
@@ -15,7 +18,7 @@ const GetHosted = () => {
               Closer offers a hosting service where you can invite your community members with the ease of a QR code
             </p>
           </div>
-          <button type="button" className='host-button'>Host your event</button>
+          <button type="button" className='host-button' onClick={notify}>Host your event</button>
         </div>
 
 
@@ -23,6 +26,10 @@ const GetHosted = () => {
           <img src={require("../assets/host-artboard.png")} alt="" />
         </div>
       </div>
+      <div className='toast'>
+        <ToastContainer />
+      </div>
+
     </div >
   )
 }

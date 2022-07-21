@@ -32,7 +32,7 @@ const Event = () => {
             <div className='datetime-location-container'>
                 <div className='datetime-container'>
                     <div>
-                        <span class="material-symbols-outlined white-icons">
+                        <span className="material-symbols-outlined white-icons">
                             calendar_today
                         </span>
                     </div>
@@ -43,7 +43,7 @@ const Event = () => {
                 </div>
                 <div className='location-container'>
                     <div>
-                        <span class="material-symbols-outlined white-icons">
+                        <span className="material-symbols-outlined white-icons">
                             location_on
                         </span>
                     </div>
@@ -63,7 +63,7 @@ const Event = () => {
             <div className='attendees-container'>
                 <div className='attendees-count'>
 
-                    <span class="material-symbols-outlined grey-icons">
+                    <span className="material-symbols-outlined grey-icons">
                         person
                     </span>
                     <div className='count-coming'>
