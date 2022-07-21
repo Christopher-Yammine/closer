@@ -2,7 +2,9 @@ import React from 'react'
 import HorizontalTrending from '../components/Horizontal'
 import VideoBg from '../components/VideoBg'
 import { motion } from 'framer-motion'
+import { useUserStore } from '../store/UserStore'
 const Landingpage = () => {
+    const usertype = useUserStore((state) => state.usertype);
     return (
         <motion.div
             initial={{ width: 0 }}

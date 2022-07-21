@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { motion } from 'framer-motion'
+import { useUserStore } from '../store/UserStore'
 const TopHosts = () => {
+    const usertype = useUserStore((state) => state.usertype);
     return (
         <motion.div
             initial={{ width: 0 }}
@@ -9,7 +11,7 @@ const TopHosts = () => {
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
             className='tophosts-main-container'>
             <div>
-                <Navbar />
+                <Navbar usertype={usertype} />
             </div>
             <div className='host-info-container'>
                 <div className='host-info'>

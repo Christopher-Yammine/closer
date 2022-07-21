@@ -1,8 +1,22 @@
 import React from 'react'
 import { useUserStore } from '../store/UserStore';
-
+import { useNavigate } from 'react-router-dom';
 const Profile = () => {
+    const navigate = useNavigate();
     const profile_pic = useUserStore((state) => state.profile_picture);
+    const removeUserId = useUserStore((state) => state.removeUserId);
+    const removeProfile = useUserStore((state) => state.removeProfile);
+    const removeToken = useUserStore((state) => state.removeToken);
+    const removeUsertype = useUserStore((state) => state.removeUsertype);
+
+    function logout() {
+        removeUserId();
+        removeProfile();
+        removeToken();
+        removeUsertype();
+        navigate("/");
+
+    }
 
     function change(x) {
         let btn_logout = '';
@@ -21,7 +35,7 @@ const Profile = () => {
                 </div>
             </div >
             <div>
-                <button type='button' className='button-logout'>Log out</button>
+                <button type='button' className='button-logout' onClick={logout}>Log out</button>
             </div>
         </div>
 

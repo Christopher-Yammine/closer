@@ -7,8 +7,9 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useUserStore } from '../store/UserStore';
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
-
+    const navigate = useNavigate();
     const [userNameValue, setuserNameValue] = useState('');
     const [passwordValue, setpasswordValue] = useState('');
     const [loginIsOpen, setloginOpen] = useState(false);
@@ -17,6 +18,8 @@ const Header = () => {
     const saveProfile = useUserStore((state) => state.setProfile);
     const saveToken = useUserStore((state) => state.setToken);
     const saveType = useUserStore((state) => state.setUsertype);
+    const loggedin = useUserStore((state) => state.user_id);
+    const prof = useUserStore((state) => state.profile_picture)
 
     const handleLoginOpen = () => {
         setloginOpen(!loginIsOpen);
@@ -24,30 +27,40 @@ const Header = () => {
     const handleSignupOpen = () => setSignupOpen(!signupIsOpen);
 
     function login() {
-        let data = new FormData();
-        data.append('username', userNameValue);
-        data.append('password', passwordValue);
-        axios({
-            method: "post",
-            url: "http://127.0.0.1:8000/api/login",
-            data: data
-        }).then(function (response) {
-            console.log(response);
-            if (response.data.status === "success") {
-                toast(response.data.status)
-                setloginOpen(!loginIsOpen);
-                saveUserId(response.data.user.id);
-                saveToken(response.data.authorisation.token);
-                saveProfile(response.data.user.profile_picture);
-                saveType(response.data.user.type);
+        if (!loggedin) {
+            console.log(loggedin, prof);
+            let data = new FormData();
+            data.append('username', userNameValue);
+            data.append('password', passwordValue);
+            axios({
+                method: "post",
+                url: "http://127.0.0.1:8000/api/login",
+                data: data
+            }).then(function (response) {
 
-            }
+                if (response.data.status === "success") {
 
-        }).catch(function (err) {
-            toast("Wrong or missing username or/and password")
-        })
+                    setloginOpen(!loginIsOpen);
+                    saveUserId(response.data.user.id);
+                    saveToken(response.data.authorisation.token);
+                    saveProfile(response.data.user.profile_picture);
+                    saveType(response.data.user.type);
+                    navigate("/landingpage");
+
+
+                }
+
+            }).catch(function (err) {
+                toast("Wrong or missing username or/and password")
+            })
+        } else {
+            toast("You already logged in")
+            setTimeout(() => {
+                navigate("/landingpage")
+            }, 6000);
+
+        }
     }
-
 
     return (
 
