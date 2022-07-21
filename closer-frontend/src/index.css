@@ -296,12 +296,11 @@ video {
 }
 
 .login-input {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-
+  width: 40%;
 }
 
 .login-btn {
@@ -311,9 +310,9 @@ video {
   color: white;
   font-family: "Orbitron";
   height: 69px;
-  width: 285px;
+  width: 107%;
   cursor: pointer;
-
+  margin: 10px 20px 10px 0;
 }
 
 .test {
@@ -585,7 +584,6 @@ h1 {
 
 }
 
-.stats-container {}
 
 .stats {
 
@@ -594,6 +592,27 @@ h1 {
 
 
 
+}
+
+.stats-number {
+
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+
+}
+
+.total-attendees,
+.total-events {
+  text-align: center;
+  font-size: 16pt;
+  width: 30%;
+  margin: 30px 0 0 0;
+}
+
+.stats-number>.vl {
+  transform: rotate(90deg);
+  height: 150px;
 }
 
 .stats-subcontainer {
@@ -931,6 +950,16 @@ a:hover {
 }
 
 @media (max-width:1050px) {
+  .login-input {
+    width: 100%;
+  }
+
+  .login-btn {
+
+    margin: 0;
+    width: 100%;
+  }
+
   .navbar-pages {
 
     flex-direction: column;

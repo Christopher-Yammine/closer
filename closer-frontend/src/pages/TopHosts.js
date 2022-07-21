@@ -36,9 +36,24 @@ const TopHosts = () => {
                                     <img src={require("../assets/blankprofile.png")} alt=""></img>
                                 </div>
                             </div>
-                            <div className='stats'>
-                                <div className='upcoming'>
-                                    chris
+                            <div className='stats-number'>
+                                <div className='total-attendees'>
+                                    <div className='total-attendees-title'>
+                                        Total attendees
+                                    </div>
+                                    <div>
+                                        8573
+                                    </div>
+
+                                </div>
+                                <div className='vl' />
+                                <div className='total-events'>
+                                    <div className='total-events-title'>
+                                        Total events
+                                    </div>
+                                    <div>
+                                        1245
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -114,9 +129,7 @@ const TopHosts = () => {
                                 </div>
                             </div>
                             <div className='stats'>
-                                <div className='upcoming'>
-                                    chris
-                                </div>
+
                             </div>
                         </div>
 

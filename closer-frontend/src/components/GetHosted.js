@@ -15,7 +15,7 @@ const GetHosted = () => {
           </div>
           <div className='splash-host-description'>
             <p>
-              Closer offers a hosting service where you can invite your community members with the ease of a QR code
+              Closer offers a hosting service where you can invite your community members with ease
             </p>
           </div>
           <button type="button" className='host-button' onClick={notify}>Host your event</button>
