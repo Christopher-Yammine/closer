@@ -791,8 +791,8 @@ select {
 .profile-logout {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  margin: 40px 0 0 0;
+
 }
 
 .button-logout {
