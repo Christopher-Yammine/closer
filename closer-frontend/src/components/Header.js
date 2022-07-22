@@ -19,7 +19,7 @@ const Header = () => {
     const saveToken = useUserStore((state) => state.setToken);
     const saveType = useUserStore((state) => state.setUsertype);
     const loggedin = useUserStore((state) => state.user_id);
-    const prof = useUserStore((state) => state.profile_picture)
+
 
     const handleLoginOpen = () => {
         setloginOpen(!loginIsOpen);
@@ -28,7 +28,6 @@ const Header = () => {
 
     function login() {
         if (!loggedin) {
-            console.log(loggedin, prof);
             let data = new FormData();
             data.append('username', userNameValue);
             data.append('password', passwordValue);

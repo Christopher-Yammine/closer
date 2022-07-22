@@ -3,8 +3,12 @@ import React from 'react'
 import HorizontalScroll from 'react-scroll-horizontal';
 
 import EventCard from './EventCard';
-const HorizontalTrending = () => {
 
+const HorizontalTrending = () => {
+    function getTrendingEvents(){
+        let data = new FormData();
+        ax
+    }
     return (
         <div className="events-container">
             <HorizontalScroll>
