@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import EventCard from '../components/EventCard'
 import Navbar from '../components/Navbar'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
 import axios from 'axios'
 const Events = () => {
     const usertype = useUserStore((state) => state.usertype);
-    const navigate = useNavigate();
     const currentlocation = useLocation();
     const [events, setEvents] = useState([]);
+    function filterEvents(locationstring) {
+        if (locationstring === "") {
+            getEvents();
+        }
+        setEvents(events.filter(event => event.city.includes(locationstring)));
+
+    }
     function getEvents() {
         let id_category = "";
         id_category = currentlocation.search.split("id=")[1];
@@ -39,7 +45,7 @@ const Events = () => {
 
     useEffect(() => {
         getEvents();
-    }, [])
+    }, []);
     return (
         <motion.div
             initial={{ width: 0 }}
@@ -57,7 +63,7 @@ const Events = () => {
                         <div className='searchbar'>
 
                             <div>
-                                <input type="text" placeholder='Location' />
+                                <input type="text" placeholder='Location' onChange={(e) => filterEvents(e.currentTarget.value)} />
                             </div>
                             <div className='magnifier'>
                                 <img src={require('../assets/magnifier.png')} width={56} alt="" />
