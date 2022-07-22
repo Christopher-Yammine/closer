@@ -45,7 +45,7 @@ class EventController extends Controller
 
         return response()->json([
             "status" => "success",
-            "event" => compact('event')
+            "data" => compact('event')
         ], 200);
     }
 
