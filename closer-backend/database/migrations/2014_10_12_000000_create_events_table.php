@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->string('video_url');
             $table->mediumText('cover_photo');
+            $table->mediumText('banner_photo');
             $table->integer('capacity');
             $table->integer('user_id');
             $table->string('status')->default(EventConstants::UPCOMING);

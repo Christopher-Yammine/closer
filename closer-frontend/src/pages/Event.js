@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom'
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
     const currentlocation = useLocation();
+    const [eventInfo, setEventInfo] = useState([]);
 
     const videoBg = 'http://127.0.0.1:8000/storage/files/zwwpvtuLTPIvWxGrnlUY9kYuzNZvk83TBlxw0Tav.mp4';
     function getEventInfo() {
