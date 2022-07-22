@@ -2,28 +2,27 @@
 
 import HorizontalScroll from 'react-scroll-horizontal';
 import axios from 'axios';
-import EventCard from './EventCard';
 import { useState, useEffect } from 'react';
+import CategoryCard from './CategoryCard';
 
 const HorizontalTrending = () => {
-    const [trendingEvents, setTrendingEvents] = useState([])
-    function getTrendingEvents() {
+    const [categories, setCategories] = useState([]);
+    function getCategories() {
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/trendingEvents",
+            url: "http://127.0.0.1:8000/api/getAllCategories",
         }).then(function (response) {
-            setTrendingEvents(response.data.data.trending);
+            setCategories(response.data.data.category);
+
         })
     }
-    useEffect(() => { getTrendingEvents() }, [])
+    useEffect(() => { getCategories() }, [])
     return (
         <div className="events-container">
             <HorizontalScroll>
-                <EventCard data='url' title='test' />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
+                {categories.map(category =>
+                (<CategoryCard data={category.cover_photo}
+                    title={category.name} key={category.id} id={category.id} />))}
             </HorizontalScroll>
         </div>
     )
