@@ -13,16 +13,22 @@ const Events = () => {
     function getEvents() {
         let id_category = "";
         id_category = currentlocation.search.split("id=")[1];
-        if (id_category ==="") {
+
+        if (id_category === undefined) {
+           
             axios({
-method:"get",
-url:""
+                method: "get",
+                url: "http://127.0.0.1:8000/api/events"
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (err) {
+                console.log(err)
             })
         } else {
 
         }
     }
-  
+
     useEffect(() => {
         getEvents();
     }, [])
@@ -46,7 +52,7 @@ url:""
                                 <input type="text" placeholder='Location' />
                             </div>
                             <div className='magnifier'>
-                                <img src={require('../assets/magnifier.png')} width={56} alt="" onClick={redirect} />
+                                <img src={require('../assets/magnifier.png')} width={56} alt="" />
                             </div>
 
 
@@ -56,7 +62,7 @@ url:""
             </div>
             <div className='events-display'>
                 <div className='event-container' >
-                    <div className='event' onClick={redirect}>
+                    <div className='event'>
                         <EventCard title="event 1" />
                     </div>
 

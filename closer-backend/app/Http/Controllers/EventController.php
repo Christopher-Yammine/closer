@@ -92,7 +92,7 @@ class EventController extends Controller
         $events = Event::all();
         return response()->json([
             "status" => "success",
-            "events" => compact("events")
+            "data" => compact("events")
         ], 200);
     }
 
