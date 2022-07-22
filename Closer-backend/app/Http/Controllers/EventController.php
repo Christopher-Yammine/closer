@@ -24,7 +24,7 @@ class EventController extends Controller
     {
         $data = $this->validate($request, [
             'name' => 'required',
-            'description' => 'required',
+            'category' => 'required',
             'date' => 'required',
             'city' => 'required',
             'category_id' => 'required',
@@ -92,12 +92,13 @@ class EventController extends Controller
     {
         $trending = $this->model
             ->select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
-            events.name,events.description,events.city,events.status,
+            events.name,categories.name,events.city,events.status,
             events.cover_photo,date,events.capacity,count(attendees.event_id)/capacity as ratio'))
             ->join('attendees', 'attendees.event_id', '=', 'events.id')
+            ->join('categories', 'categories.id', '=', 'events.category')
             ->groupBy([
-                'attendees.event_id', 'events.name', 'events.description', 'events.city', 'events.status',
-                'events.cover_photo', 'events.id', 'date', 'events.capacity'
+                'attendees.event_id', 'events.name', 'events.city', 'events.status',
+                'events.cover_photo', 'events.id', 'date', 'events.capacity', 'categories.name'
             ])
 
             ->get();

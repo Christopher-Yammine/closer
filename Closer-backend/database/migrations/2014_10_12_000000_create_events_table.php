@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->integer('category');
             $table->dateTime('date');
             $table->string('city');
             $table->integer('category_id');
@@ -27,7 +27,6 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('status')->default(EventConstants::UPCOMING);
             $table->timestamps();
-
         });
     }
 

@@ -1,14 +1,21 @@
 
-import React from 'react'
-import HorizontalScroll from 'react-scroll-horizontal';
 
+import HorizontalScroll from 'react-scroll-horizontal';
+import axios from 'axios';
 import EventCard from './EventCard';
+import { useState, useEffect } from 'react';
 
 const HorizontalTrending = () => {
-    function getTrendingEvents(){
-        let data = new FormData();
-        ax
+    const [trendingEvents, setTrendingEvents] = useState([])
+    function getTrendingEvents() {
+        axios({
+            method: "get",
+            url: "http://127.0.0.1:8000/api/trendingEvents",
+        }).then(function (response) {
+            setTrendingEvents(response.data.data.trending);
+        })
     }
+    useEffect(() => { getTrendingEvents() }, [])
     return (
         <div className="events-container">
             <HorizontalScroll>
