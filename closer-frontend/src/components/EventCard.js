@@ -8,12 +8,13 @@ const EventCard = ({ data, title, id }) => {
     return (
         <>
             <motion.div
-                key={id}
+
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className='eventcard'
+                key={id}
                 onClick={() => {
-                    navigate(`/event/${id}`);
+                    navigate(`/event?id=${id}`);
                 }}>
                 <img src={data} alt='' />
                 <div className='eventname'>

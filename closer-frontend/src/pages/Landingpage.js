@@ -11,9 +11,13 @@ import { motion } from "framer-motion";
 const Landingpage = () => {
     const usertype = useUserStore((state) => state.usertype);
     const [trendingEvents, setTrendingEvents] = useState([]);
-    function sayhello() {
-        console.log(trendingEvents.filter(event =>
-            event.ratio < 0.7).map(filteredEvent => filteredEvent.id));
+   
+    function filterEvents(locationstring) {
+        if (locationstring === "") {
+            getTrendingEvents();
+        }
+        setTrendingEvents(trendingEvents.filter(event => event.city.includes(locationstring)));
+
     }
     function getTrendingEvents() {
         axios({
@@ -40,10 +44,10 @@ const Landingpage = () => {
                         <div className='searchbar'>
 
                             <div>
-                                <input type="text" placeholder='Date | Location' />
+                                <input type="text" placeholder='Location' onChange={(e) => { filterEvents(e.currentTarget.value) }} />
                             </div>
                             <div className='magnifier'>
-                                <img src={require('../assets/magnifier.png')} width={56} alt="" onClick={sayhello} />
+                                <img src={require('../assets/magnifier.png')} width={56} alt=""/>
                             </div>
 
 

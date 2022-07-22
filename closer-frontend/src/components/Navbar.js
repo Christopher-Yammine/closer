@@ -29,7 +29,7 @@ const Navbar = ({ usertype }) => {
                     <div className='vl' />
 
                     {(() => {
-                        if (usertype === "user" || usertype === undefined) {
+                        if (usertype === "user" || usertype === undefined || usertype === "") {
                             return (
                                 <div>
 

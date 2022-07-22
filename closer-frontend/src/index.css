@@ -462,7 +462,7 @@ a {
 
 .magnifier {
   margin: 4px 5px 0 0;
-  cursor: pointer;
+
 }
 
 .searchbar input::placeholder {
@@ -881,7 +881,7 @@ select {
   flex-wrap: wrap;
 }
 
-.scroll-horizontal div {
+.scroll-horizontal>div {
   transform: none !important
 }
 

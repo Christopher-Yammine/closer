@@ -92,13 +92,13 @@ class EventController extends Controller
     {
         $trending = $this->model
             ->select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
-            events.name,categories.name as cat_name,events.city,events.status,
+            events.name,categories.name as cat_name,events.city,events.status,events.description,
             events.cover_photo,date,events.capacity,count(attendees.event_id)/capacity as ratio'))
             ->join('attendees', 'attendees.event_id', '=', 'events.id')
-            ->join('categories', 'categories.id', '=', 'events.category')
+            ->join('categories', 'categories.id', '=', 'events.category_id')
             ->groupBy([
                 'attendees.event_id', 'events.name', 'events.city', 'events.status',
-                'events.cover_photo', 'events.id', 'date', 'events.capacity', 'categories.name'
+                'events.cover_photo', 'events.id', 'date', 'events.capacity', 'categories.name', 'events.description'
             ])
 
             ->get();
