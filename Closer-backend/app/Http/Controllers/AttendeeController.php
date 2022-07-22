@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class AttendeeController extends Controller
 {
 
-    private $model;
-
-
     public function addAttendee(Request $request, $event_id)
     {
 
@@ -49,8 +46,7 @@ class AttendeeController extends Controller
 
     public function attendeesByEvent($event_id)
     {
-        $all_attendees = $this->model
-            ->join('users', 'users.id', '=', 'attendees.user_id')
+        $all_attendees = Attendee::join('users', 'users.id', '=', 'attendees.user_id')
             ->where('attendees.event_id', '=', $event_id)
             ->get(['users.first_name', 'users.profile_picture']);
         $attendees_count = $all_attendees->count();
