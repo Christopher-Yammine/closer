@@ -15,17 +15,25 @@ const Events = () => {
         id_category = currentlocation.search.split("id=")[1];
 
         if (id_category === undefined) {
-           
             axios({
                 method: "get",
                 url: "http://127.0.0.1:8000/api/events"
             }).then(function (response) {
-                console.log(response);
+                setEvents(response.data.data.events);
+
             }).catch(function (err) {
                 console.log(err)
             })
         } else {
+            axios({
+                method: "get",
+                url: "http://127.0.0.1:8000/api/events/" + id_category
+            }).then(function (response) {
+                setEvents(response.data.data.events);
 
+            }).catch(function (err) {
+                console.log(err)
+            })
         }
     }
 
@@ -61,12 +69,21 @@ const Events = () => {
                 </div>
             </div>
             <div className='events-display'>
-                <div className='event-container' >
-                    <div className='event'>
-                        <EventCard title="event 1" />
-                    </div>
 
-                </div>
+
+                {events.map(event => (
+                    <div className='event-container' >
+                        <div className='event'>
+                            <EventCard data={event.cover_photo}
+                                title={event.name}
+                                key={event.id} id={event.id} />
+                        </div>
+
+                    </div>
+                ))}
+
+
+
 
             </div>
 

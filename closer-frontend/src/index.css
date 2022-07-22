@@ -542,6 +542,9 @@ h1 {
 
 .event-container {
   width: 25%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
 
 }
@@ -1012,6 +1015,7 @@ a:hover {
   }
 
   .event-container {
+
     width: 33%;
 
   }
