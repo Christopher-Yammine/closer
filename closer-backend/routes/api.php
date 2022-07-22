@@ -24,7 +24,8 @@ Route::post('host', [UserController::class, 'makeHost']);
 Route::get('topHosts', [UserController::class, 'topHosts']);
 
 Route::get('event/{id}', [EventController::class, 'getEventById']);
-Route::get('events/{id}', [EventController::class, 'getEventByCat']);
+Route::get('events/{id}', [EventController::class, 'getEventsByCat']);
+Route::get('events', [EventController::class, 'getEvents']);
 Route::post('event', [EventController::class, 'create']);
 Route::get('trendingEvents', [EventController::class, 'trendingEvents']);
 Route::post('file', [EventController::class, 'videoTransfer']);

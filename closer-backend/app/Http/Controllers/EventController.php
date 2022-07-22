@@ -79,12 +79,20 @@ class EventController extends Controller
         ], 200);
     }
 
-    public function getEventByCat($id)
+    public function getEventsByCat($id)
     {
         $events = $this->model->where('category_id', '=', $id)->get();
         return response()->json([
             "status" => "success",
             "data" => compact('events')
+        ], 200);
+    }
+    public function getEvents()
+    {
+        $events = Event::all();
+        return response()->json([
+            "status" => "success",
+            "events" => compact("events")
         ], 200);
     }
 

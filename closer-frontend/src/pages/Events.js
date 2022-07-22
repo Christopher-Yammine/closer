@@ -15,16 +15,14 @@ const Events = () => {
         id_category = currentlocation.search.split("id=")[1];
         if (id_category ==="") {
             axios({
-
+method:"get",
+url:""
             })
         } else {
 
         }
     }
-    function redirect() {
-
-
-    }
+  
     useEffect(() => {
         getEvents();
     }, [])
