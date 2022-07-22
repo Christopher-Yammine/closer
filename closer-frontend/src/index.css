@@ -624,6 +624,7 @@ h1 {
 
 .stats>div>img {
   width: 80px;
+  height: 80px;
   border-radius: 50%;
 
   margin: -40px 0 0 0;
@@ -881,9 +882,7 @@ select {
   flex-wrap: wrap;
 }
 
-.scroll-horizontal>div {
-  transform: none !important
-}
+
 
 .attendee {
   width: 100px;
@@ -937,6 +936,30 @@ select {
 
 a:hover {
   text-decoration: underline;
+}
+
+.notfound {
+  display: flex;
+  width: 100%;
+  color: white;
+  font-family: "orbitron";
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 48pt;
+  margin: 15% 0 0 0;
+}
+
+.btn-back {
+  background-color: white;
+  color: black;
+  font-family: "orbitron";
+  height: max-content;
+  border-radius: 15px;
+  font-size: 14pt;
+  padding: 20px;
+  cursor: pointer;
+
 }
 
 @keyframes gradient {
@@ -1028,6 +1051,11 @@ a:hover {
   .login-form {
     flex-direction: column-reverse;
     height: fit-content;
+  }
+
+  .stats-number>.vl {
+    height: 100px;
+    transform: rotate(0);
   }
 
   .event-container {

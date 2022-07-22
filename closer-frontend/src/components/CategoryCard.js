@@ -13,7 +13,7 @@ const CategoryCard = ({ data, title, id }) => {
                 whileTap={{ scale: 0.9 }}
                 className='eventcard'
                 onClick={() => {
-                    navigate(`/events/${id}`);
+                    navigate(`/events?id=${id}`);
                 }}>
                 <img src={data} alt='' />
                 <div className='eventname'>

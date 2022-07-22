@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import CategoryCard from './CategoryCard';
 
-const HorizontalTrending = () => {
+const HorizontalCategory = () => {
     const [categories, setCategories] = useState([]);
     function getCategories() {
         axios({
@@ -29,4 +29,4 @@ const HorizontalTrending = () => {
 
 }
 
-export default HorizontalTrending
+export default HorizontalCategory

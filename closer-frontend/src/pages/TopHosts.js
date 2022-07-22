@@ -1,9 +1,25 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
+import axios from 'axios'
 const TopHosts = () => {
+    const [topHosts, setTopHosts] = useState([]);
     const usertype = useUserStore((state) => state.usertype);
+    function getTopHosts() {
+        axios({
+            method: "get",
+            url: "http://127.0.0.1:8000/api/topHosts"
+        }).then(function (response) {
+            setTopHosts(response.data.data.top_host);
+        }).catch(function (err) {
+            console.log(err);
+        })
+    }
+
+
+    useEffect(() => { getTopHosts() }, [])
+
     return (
         <motion.div
             initial={{ width: 0 }}
@@ -13,20 +29,22 @@ const TopHosts = () => {
             <div>
                 <Navbar usertype={usertype} />
             </div>
-            <div className='host-info-container'>
+
+            {topHosts.map(topHost =>
+            (<div className='host-info-container'>
                 <div className='host-info'>
                     <div className='host-info-title'>
                         <div className='left-title'>
                             <div>
-                                chris
+                                {topHost.first_name}
                             </div>
                             <div className='family'>
-                                yammine
+                                {topHost.last_name}
                             </div>
 
                         </div>
                         <div className='right-title'>
-                            Category
+                            {topHost.cat_name}
                         </div>
 
                     </div>
@@ -35,7 +53,7 @@ const TopHosts = () => {
                             <div className='stats'>
 
                                 <div>
-                                    <img src={require("../assets/blankprofile.png")} alt=""></img>
+                                    <img src={topHost.profile_picture} alt=""></img>
                                 </div>
                             </div>
                             <div className='stats-number'>
@@ -44,7 +62,7 @@ const TopHosts = () => {
                                         Total attendees
                                     </div>
                                     <div>
-                                        8573
+                                        {topHost.Total}
                                     </div>
 
                                 </div>
@@ -54,7 +72,7 @@ const TopHosts = () => {
                                         Total events
                                     </div>
                                     <div>
-                                        1245
+                                        {topHost.nbrEvents}
                                     </div>
                                 </div>
                             </div>
@@ -65,86 +83,13 @@ const TopHosts = () => {
 
                 </div>
 
-            </div>
-            <div className='host-info-container'>
-                <div className='host-info'>
-                    <div className='host-info-title'>
-                        <div className='left-title'>
-                            <div>
-                                chris
-                            </div>
-                            <div className='family'>
-                                yammine
-                            </div>
+            </div>))}
 
-                        </div>
-                        <div className='right-title'>
-                            Category
-                        </div>
-
-                    </div>
-                    <div className='stats-container'>
-                        <div className='stats-subcontainer'>
-                            <div className='stats'>
-
-                                <div>
-                                    <img src={require("../assets/blankprofile.png")} alt=""></img>
-                                </div>
-                            </div>
-                            <div className='stats'>
-                                <div className='upcoming'>
-                                    chris
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div className='host-info-container'>
-                <div className='host-info'>
-                    <div className='host-info-title'>
-                        <div className='left-title'>
-                            <div>
-                                chris
-                            </div>
-                            <div className='family'>
-                                yammine
-                            </div>
-
-                        </div>
-                        <div className='right-title'>
-                            Category
-                        </div>
-
-                    </div>
-                    <div className='stats-container'>
-                        <div className='stats-subcontainer'>
-                            <div className='stats'>
-
-                                <div>
-                                    <img src={require("../assets/blankprofile.png")} alt=""></img>
-                                </div>
-                            </div>
-                            <div className='stats'>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
 
 
         </motion.div >
     )
+
 }
 
 export default TopHosts

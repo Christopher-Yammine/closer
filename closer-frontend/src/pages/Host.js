@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Map from '../components/Map'
 import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
+import PageNotFound from './PageNotFound'
 
 const Host = () => {
 
@@ -78,97 +79,106 @@ const Host = () => {
             setTextDesc("Error, file too big");
         })
     }
-    return (
-        <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
-            <Navbar usertype={usertype} />
-            <div className='dropzone'>
-                <Dropzone multiple={false} onDrop={(acceptedFiles) => {
-                    handlefiles(acceptedFiles);
-                }
+    if (usertype === 'host') {
+        return (
+
+            <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
+                <Navbar usertype={usertype} />
+                <div className='dropzone'>
+                    <Dropzone multiple={false} onDrop={(acceptedFiles) => {
+                        handlefiles(acceptedFiles);
+                    }
 
 
-                }>
-                    {({ getRootProps, getInputProps }) => (
-                        <section>
-                            <div {...getRootProps()}>
+                    }>
+                        {({ getRootProps, getInputProps }) => (
+                            <section>
+                                <div {...getRootProps()}>
 
-                                <input {...getInputProps()} name="video" encType="multipart/form-data" />
-                                <div className='dropzone-input'>
-                                    <img src={require("../assets/upload.png")} alt="" />
+                                    <input {...getInputProps()} name="video" encType="multipart/form-data" />
+                                    <div className='dropzone-input'>
+                                        <img src={require("../assets/upload.png")} alt="" />
+                                    </div>
+
+                                    <p id="file">{textDesc}</p>
                                 </div>
+                            </section>
+                        )}
+                    </Dropzone>
+                </div>
+                <div className='event-info-title'>
+                    Event info
+                </div>
+                <div className='event-info-container'>
+                    <div className='event-info-input'>
 
-                                <p id="file">{textDesc}</p>
+                        <input type="text" placeholder='Event title'  ></input>
+                        <input type="number" placeholder='Maximum capacity'></input>
+                        <input type="date" placeholder='date' onChange={(e) => {
+
+                        }} />
+                        <input type='time' placeholder='time' onChange={(e) => {
+
+                        }} />
+                        <select>
+                            <option>event</option>
+                            <option>event</option>
+                            <option>event</option>
+                        </select>
+
+
+
+                    </div>
+                    <div className='upload-photo'>
+                        <input type="file" name="photo" id="fileId2"
+                            onChange={(e) => { cardimageUploaded(e.target.files) }} />
+                        <div className="upload border">
+                            <div className='cover-photo'>
+                                <img src={cardbase64String} alt='' />
                             </div>
-                        </section>
-                    )}
-                </Dropzone>
-            </div>
-            <div className='event-info-title'>
-                Event info
-            </div>
-            <div className='event-info-container'>
-                <div className='event-info-input'>
-
-                    <input type="text" placeholder='Event title'  ></input>
-                    <input type="number" placeholder='Maximum capacity'></input>
-                    <input type="date" placeholder='date' onChange={(e) => {
-
-                    }} />
-                    <input type='time' placeholder='time' onChange={(e) => {
-
-                    }} />
-                    <select>
-                        <option>event</option>
-                        <option>event</option>
-                        <option>event</option>
-                    </select>
-
-
-
-                </div>
-                <div className='upload-photo'>
-                    <input type="file" name="photo" id="fileId2"
-                        onChange={(e) => { cardimageUploaded(e.target.files) }} />
-                    <div className="upload border">
-                        <div className='cover-photo'>
-                            <img src={cardbase64String} alt='' />
                         </div>
+                        <label className='cover-photo-desc' htmlFor="fileId2">click here to upload your event card photo </label>
                     </div>
-                    <label className='cover-photo-desc' htmlFor="fileId2">click here to upload your event card photo </label>
-                </div>
-                <div className='upload-photo'>
-                    <input type="file" name="photo" id="fileId"
-                        onChange={(e) => { imageUploaded(e.target.files) }} />
-                    <div className="upload border">
-                        <div className='cover-photo'>
-                            <img src={base64String} alt='' />
+                    <div className='upload-photo'>
+                        <input type="file" name="photo" id="fileId"
+                            onChange={(e) => { imageUploaded(e.target.files) }} />
+                        <div className="upload border">
+                            <div className='cover-photo'>
+                                <img src={base64String} alt='' />
+                            </div>
                         </div>
+                        <label className='cover-photo-desc' htmlFor="fileId">click here to upload your cover photo (1365x512)</label>
                     </div>
-                    <label className='cover-photo-desc' htmlFor="fileId">click here to upload your cover photo (1365x512)</label>
+
+
+                </div>
+                <div className='event-info-title'>
+                    Choose a location
+                </div>
+                <div className='event-info-container'>
+                    <div className='leaflet-container'>
+                        <Map
+                            selectedPosition={selectedPosition}
+                            setSelectedPosition={setSelectedPosition}
+                            getName={getName}
+                            setLocation={setLocation}
+                        />
+                    </div>
                 </div>
 
+            </motion.div >
 
-            </div>
-            <div className='event-info-title'>
-                Choose a location
-            </div>
-            <div className='event-info-container'>
-                <div className='leaflet-container'>
-                    <Map
-                        selectedPosition={selectedPosition}
-                        setSelectedPosition={setSelectedPosition}
-                        getName={getName}
-                        setLocation={setLocation}
-                    />
-                </div>
-            </div>
-
-        </motion.div >
-
-    )
+        )
+    } else {
+        return (
+            <>
+                <PageNotFound />
+            </>
+        )
+    }
 }
 
 export default Host

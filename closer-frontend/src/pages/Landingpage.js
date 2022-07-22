@@ -2,7 +2,7 @@ import React from 'react'
 import videoBg from "../assets/bgvideo.mp4";
 import Navbar from '../components/Navbar';
 import { useUserStore } from '../store/UserStore';
-import HorizontalTrending from '../components/Horizontal';
+import HorizontalCategory from '../components/Horizontal';
 import HorizontalScroll from 'react-scroll-horizontal';
 import axios from 'axios';
 import EventCard from '../components/EventCard';
@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const Landingpage = () => {
     const usertype = useUserStore((state) => state.usertype);
     const [trendingEvents, setTrendingEvents] = useState([]);
-   
+
     function filterEvents(locationstring) {
         if (locationstring === "") {
             getTrendingEvents();
@@ -47,7 +47,7 @@ const Landingpage = () => {
                                 <input type="text" placeholder='Location' onChange={(e) => { filterEvents(e.currentTarget.value) }} />
                             </div>
                             <div className='magnifier'>
-                                <img src={require('../assets/magnifier.png')} width={56} alt=""/>
+                                <img src={require('../assets/magnifier.png')} width={56} alt="" />
                             </div>
 
 
@@ -76,7 +76,7 @@ const Landingpage = () => {
                     Categories
                 </div>
                 <div>
-                    <HorizontalTrending />
+                    <HorizontalCategory />
                 </div>
             </div>
 
