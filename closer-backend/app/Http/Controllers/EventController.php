@@ -30,6 +30,7 @@ class EventController extends Controller
             'category_id' => 'required',
             'video_url' => 'required',
             'cover_photo' => 'required',
+            'banner_photo' => 'required',
             'capacity' => 'required',
             'status' => 'required',
         ]);
@@ -81,7 +82,7 @@ class EventController extends Controller
 
     public function getEventsByCat($id)
     {
-        $events = $this->model->where('category_id', '=', $id)->get();
+        $events = Event::where('category_id', $id)->get();
         return response()->json([
             "status" => "success",
             "data" => compact('events')
