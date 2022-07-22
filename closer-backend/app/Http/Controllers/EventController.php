@@ -13,12 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class EventController extends Controller
 {
 
-    private $model;
 
-    public function __construct()
-    {
-        $this->model = new Event();
-    }
 
     public function create(Request $request)
     {
@@ -36,7 +31,7 @@ class EventController extends Controller
         ]);
         $data['user_id'] = Auth::id();
 
-        $event = $this->model->create($data);
+        $event = Event::create($data);
 
         return response()->json([
             "status" => "success",
@@ -46,7 +41,7 @@ class EventController extends Controller
 
     public function getEventById($id)
     {
-        $event = $this->model::join('users', 'user_id', '=', 'users.id')->findOrFail($id);
+        $event = Event::join('users', 'user_id', '=', 'users.id')->findOrFail($id);
 
         return response()->json([
             "status" => "success",
@@ -99,8 +94,7 @@ class EventController extends Controller
 
     public function trendingEvents()
     {
-        $trending = $this->model
-            ->select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
+        $trending = Event::select(\DB::raw('count(attendees.event_id) as nbrAttendees, events.id,
             events.name,categories.name as cat_name,events.city,events.status,events.description,
             events.cover_photo,date,events.capacity,count(attendees.event_id)/capacity as ratio'))
             ->join('attendees', 'attendees.event_id', '=', 'events.id')
