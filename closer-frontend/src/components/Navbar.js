@@ -22,7 +22,7 @@ const Navbar = ({ usertype }) => {
                     </div>
                     <div className='vl' />
                     <div>
-                        <NavLink to="/Events">
+                        <NavLink to="/events">
                             Events
                         </NavLink>
                     </div>

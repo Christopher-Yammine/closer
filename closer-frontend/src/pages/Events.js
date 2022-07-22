@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import EventCard from '../components/EventCard'
 import Navbar from '../components/Navbar'
-import SearchBar from '../components/SearchBar'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
+import axios from 'axios'
 const Events = () => {
     const usertype = useUserStore((state) => state.usertype);
     const navigate = useNavigate();
-    function redirect() {
-        navigate("/event");
+    const currentlocation = useLocation();
+    const [events, setEvents] = useState([]);
+    function getEvents() {
+        let id_category = "";
+        id_category = currentlocation.search.split("id=")[1];
+        if (id_category ==="") {
+            axios({
+
+            })
+        } else {
+
+        }
     }
+    function redirect() {
+
+
+    }
+    useEffect(() => {
+        getEvents();
+    }, [])
     return (
         <motion.div
             initial={{ width: 0 }}
@@ -19,7 +36,25 @@ const Events = () => {
             className='events-section'>
             <div>
                 <Navbar usertype={usertype} />
-                <SearchBar />
+                <div className='searchbar-container'>
+
+                    <div className='searchbar-content'>
+                        <div>
+                            Find your universe...
+                        </div>
+                        <div className='searchbar'>
+
+                            <div>
+                                <input type="text" placeholder='Location' />
+                            </div>
+                            <div className='magnifier'>
+                                <img src={require('../assets/magnifier.png')} width={56} alt="" onClick={redirect} />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className='events-display'>
                 <div className='event-container' >
@@ -28,53 +63,6 @@ const Events = () => {
                     </div>
 
                 </div>
-                <div className='event-container'>
-                    <EventCard title="event 2" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 3" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 4" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 1" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 2" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 3" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 4" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 1" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 2" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 3" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 4" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 1" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 2" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 3" />
-                </div>
-                <div className='event-container'>
-                    <EventCard title="event 4" />
-                </div>
-
-
 
             </div>
 
