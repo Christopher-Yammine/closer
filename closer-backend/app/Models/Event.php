@@ -17,6 +17,7 @@ class Event extends Model
         'category_id',
         'video_url',
         'cover_photo',
+        'banner_photo',
         'capacity',
         'user_id',
         'status',
