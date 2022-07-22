@@ -74,6 +74,7 @@ const Host = () => {
         }).then(function (response) {
 
             setTextDesc(acceptedFiles[0].name);
+            console.log(response.data.data.link.fileLink)
         }).catch(function (err) {
             console.log(err);
             setTextDesc("Error, file too big");

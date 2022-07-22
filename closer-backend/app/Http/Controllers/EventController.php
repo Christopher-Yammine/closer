@@ -41,7 +41,10 @@ class EventController extends Controller
 
     public function getEventById($id)
     {
-        $event = Event::join('users', 'user_id', '=', 'users.id')->findOrFail($id);
+        $event = Event::join('users', 'user_id', '=', 'users.id')
+            ->join('categories', 'categories.id', '=', 'events.category_id')
+            ->where('events.id', $id)
+            ->get(['events.*', 'categories.name as cat_name']);
 
         return response()->json([
             "status" => "success",

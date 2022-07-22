@@ -11,7 +11,9 @@ const Event = () => {
     const currentlocation = useLocation();
     const [eventInfo, setEventInfo] = useState([]);
 
-    const videoBg = 'http://127.0.0.1:8000/storage/files/zwwpvtuLTPIvWxGrnlUY9kYuzNZvk83TBlxw0Tav.mp4';
+    function show() {
+        console.log(eventInfo.name, eventInfo);
+    }
     function getEventInfo() {
         let id_event = "";
         id_event = currentlocation.search.split("id=")[1];
@@ -19,7 +21,9 @@ const Event = () => {
             method: "get",
             url: "http://127.0.0.1:8000/api/event/" + id_event
         }).then(function (response) {
-            console.log(response);
+            setEventInfo(response.data.data.event);
+        }).catch(function (err) {
+            console.log(err);
         })
 
 
@@ -33,12 +37,13 @@ const Event = () => {
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
             <Navbar usertype={usertype} />
+            { }
             <div className='video-container'>
-                <video src={videoBg} controls />
+                <video src={eventInfo.video_url} controls />
             </div>
             <hr />
             <div className='event-cat-title'>
-                <div className='category-name'>
+                <div className='category-name' onClick={show}>
                     Concerts
                 </div>
                 <div className='event-title'>
