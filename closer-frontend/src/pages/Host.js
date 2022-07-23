@@ -7,6 +7,7 @@ import Map from '../components/Map'
 import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
 import PageNotFound from './PageNotFound'
+import { useEffect } from 'react'
 
 const Host = () => {
 
@@ -136,8 +137,8 @@ const Host = () => {
                     <div className='upload-photo'>
                         <input type="file" name="photo" id="fileId2"
                             onChange={(e) => { cardimageUploaded(e.target.files) }} />
-                        <div className="upload border">
-                            <div className='cover-photo'>
+                        <div className="upload">
+                            <div className='cover-photo-host'>
                                 <img src={cardbase64String} alt='' />
                             </div>
                         </div>
@@ -146,8 +147,8 @@ const Host = () => {
                     <div className='upload-photo'>
                         <input type="file" name="photo" id="fileId"
                             onChange={(e) => { imageUploaded(e.target.files) }} />
-                        <div className="upload border">
-                            <div className='cover-photo'>
+                        <div className="upload">
+                            <div className='banner-photo-host'>
                                 <img src={base64String} alt='' />
                             </div>
                         </div>

@@ -44,6 +44,7 @@ const Event = () => {
             headers: headers
         }).then(function (response) {
             toast(response.data.data);
+            showAttendees();
         }).catch(function (err) {
             console.log(err);
             toast("Oops, seems like something went wrong refresh the page and try again")

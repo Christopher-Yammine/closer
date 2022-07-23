@@ -881,7 +881,6 @@ select {
 
 .cover-photo {
   margin: 0 0 30px 0;
-
   transition: all 1s ease;
   position: absolute;
 }

@@ -25,6 +25,7 @@ const Landingpage = () => {
             url: "http://127.0.0.1:8000/api/trendingEvents",
         }).then(function (response) {
             setTrendingEvents(response.data.data.trending);
+
         })
     }
     useEffect(() => { getTrendingEvents() }, [])
@@ -64,7 +65,7 @@ const Landingpage = () => {
                     <div className="events-container">
                         <HorizontalScroll>
                             {trendingEvents.filter(event =>
-                                event.ratio < 0.7).map(filteredEvent =>
+                                event.ratio > 0.7).filter(event => event.ratio < 1).map(filteredEvent =>
                                 (<EventCard data={filteredEvent.cover_photo}
                                     title={filteredEvent.name}
                                     key={filteredEvent.id} id={filteredEvent.id} />))}
