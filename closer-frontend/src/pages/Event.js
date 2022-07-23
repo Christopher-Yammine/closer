@@ -6,6 +6,7 @@ import { useUserStore } from '../store/UserStore'
 import Attendee from '../components/Attendee'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
@@ -28,7 +29,7 @@ const Event = () => {
             url: "http://127.0.0.1:8000/api/addAttendee/" + id_event,
             headers: headers
         }).then(function (response) {
-            console.log(response)
+            toast(response.data.data);
         }).catch(function (err) {
             console.log(err)
         })
@@ -149,9 +150,7 @@ const Event = () => {
             <div className='btn-reserve-container'>
                 <button type='button' className='btn-reserve' onClick={reserveSpot} >Reserve your spot</button>
             </div>
-
-
-
+            <ToastContainer />
         </motion.div>
     )
 }
