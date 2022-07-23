@@ -9,7 +9,7 @@ const EventCard = ({ data, title, id }) => {
         <>
             <motion.div
 
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.9 }}
                 className='eventcard'
                 key={id}

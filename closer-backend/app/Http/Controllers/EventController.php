@@ -88,7 +88,7 @@ class EventController extends Controller
     }
     public function getEvents()
     {
-        $events = Event::all();
+        $events = Event::select(\DB::raw('*,total_attendees/capacity as ratio'))->get();
         return response()->json([
             "status" => "success",
             "data" => compact("events")

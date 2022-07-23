@@ -26,7 +26,7 @@ const Events = () => {
                 url: "http://127.0.0.1:8000/api/events"
             }).then(function (response) {
                 setEvents(response.data.data.events);
-
+                console.log(response)
             }).catch(function (err) {
                 console.log(err)
             })

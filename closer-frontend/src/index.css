@@ -488,6 +488,7 @@ a {
 .events-container {
   height: 400px;
   width: 100%;
+
 }
 
 .trending-title {
@@ -540,13 +541,15 @@ h1 {
   flex-wrap: wrap;
 }
 
+
+
 .event-container {
   width: 25%;
   display: flex;
   justify-content: center;
   align-content: center;
 
-
+  margin: 0 0 10px 0;
 }
 
 .event {
