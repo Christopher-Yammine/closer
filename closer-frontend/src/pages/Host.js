@@ -15,7 +15,17 @@ const Host = () => {
     const [cardbase64String, setcardbase64String] = useState(require('../assets/white.jpg'));
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
+    const [formattedDate, setFormattedDate] = useState('');
     const usertype = useUserStore((state) => state.usertype);
+
+    function getCategoryNames() {
+        axios({
+            method: 'get',
+            url: 'http://127.0.0.1:8000/api/getAllCategories'
+        }).then(function (response) {
+            console.log(response)
+        })
+    }
     const getName = async (e) => {
         try {
             const res = await fetch(
@@ -119,13 +129,11 @@ const Host = () => {
                         <input type="text" placeholder='Event title'  ></input>
                         <input type="number" placeholder='Maximum capacity'></input>
                         <input type="datetime-local" placeholder='date' onChange={(e) => {
-                            console.log(e.currentTarget.value)
+                            setFormattedDate(e.currentTarget.value.replace('T', ' '));
                         }} />
-                        <input type='time' placeholder='time' onChange={(e) => {
-                            console.log(e.currentTarget.value)
-                        }} />
+
                         <select>
-                            <option>event</option>
+                            <option>{formattedDate}</option>
                             <option>event</option>
                             <option>event</option>
                         </select>
