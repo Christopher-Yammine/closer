@@ -864,14 +864,14 @@ select {
 }
 
 .event-title {
-  font-size: 32pt;
+  font-size: 28pt;
   color: white;
   font-weight: bold;
   width: 30%;
 }
 
 .host-name {
-  font-size: 24pt;
+  font-size: 20pt;
   color: white;
 }
 

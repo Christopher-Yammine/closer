@@ -14,15 +14,13 @@ const Event = () => {
     const [date, setdate] = useState([]);
     const [finaldatefr, setfinaldate] = useState('');
 
-    function show() {
-        console.log(eventInfo);
-        console.log(date);
+    function showDate() {
+
         let finaldate = '';
         let date1 = date.split(' ');
         let date2 = date1[0].split('-');
-        let time = date1[1].split(':')
-        let year = date2[0].split('20')
-        let newdate = new Date(date2[0], date2[1] - 1, date2[2], time[0], time[1], time[2], '0');
+        let time = date1[1].split(':');
+        let newdate = new Date(date2[0], date2[1] - 1, date2[2], time[0], time[1], '0', '0');
         finaldate = newdate.toString().split("GMT");
         setfinaldate(finaldate[0].toString())
 
@@ -45,8 +43,8 @@ const Event = () => {
 
     }
     setTimeout(() => {
-        show()
-    }, 50);
+        showDate()
+    }, 10);
     useEffect(() => {
         getEventInfo();
     }, [])
@@ -64,7 +62,7 @@ const Event = () => {
 
                     <hr />
                     <div className='event-cat-title'>
-                        <div className='category-name' onClick={show}>
+                        <div className='category-name'>
                             {eventinfo.cat_name}
                         </div>
                         <div className='event-title'>

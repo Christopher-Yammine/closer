@@ -59,7 +59,7 @@ const Host = () => {
     }
     function handlefiles(acceptedFiles) {
 
-
+        console.log(acceptedFiles)
         let data = new FormData();
         let headers = {
             'Content-Type': 'multipart/form-data'
@@ -74,7 +74,7 @@ const Host = () => {
         }).then(function (response) {
 
             setTextDesc(acceptedFiles[0].name);
-            console.log(response.data.data.link.fileLink)
+            console.log(response.data)
         }).catch(function (err) {
             console.log(err);
             setTextDesc("Error, file too big");
