@@ -44,7 +44,7 @@ class EventController extends Controller
         $event = Event::join('users', 'user_id', '=', 'users.id')
             ->join('categories', 'categories.id', '=', 'events.category_id')
             ->where('events.id', $id)
-            ->get(['events.*', 'categories.name as cat_name']);
+            ->get(['events.*', 'categories.name as cat_name', 'users.first_name', 'users.last_name']);
 
         return response()->json([
             "status" => "success",

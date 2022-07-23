@@ -6,13 +6,23 @@ import { useUserStore } from '../store/UserStore'
 import Attendee from '../components/Attendee'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom'
+import { format } from 'date-fns'
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
     const currentlocation = useLocation();
     const [eventInfo, setEventInfo] = useState([]);
-
+    const [date, setdate] = useState([]);
     function show() {
-        console.log(eventInfo.name, eventInfo);
+        console.log(eventInfo);
+        console.log(date);
+        let finaldate = '';
+        let date1 = date.split(' ');
+        let date2 = date1[0].split('-');
+        let time = date1[1].split(':')
+        let year = date2[0].split('20')
+        let newdate = new Date(date2[0], date2[1] - 1, date2[2], time[0], time[1], time[2], '0');
+        finaldate = newdate.toString().split("GMT");
+        setdate(finaldate[0].toString())
     }
     function getEventInfo() {
         let id_event = "";
@@ -22,6 +32,8 @@ const Event = () => {
             url: "http://127.0.0.1:8000/api/event/" + id_event
         }).then(function (response) {
             setEventInfo(response.data.data.event);
+            setdate(response.data.data.event[0].date);
+
         }).catch(function (err) {
             console.log(err);
         })
@@ -31,30 +43,35 @@ const Event = () => {
     useEffect(() => {
         getEventInfo();
     }, [])
+
     return (
         <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
             <Navbar usertype={usertype} />
-            { }
-            <div className='video-container'>
-                <video src={eventInfo.video_url} controls />
-            </div>
-            <hr />
-            <div className='event-cat-title'>
-                <div className='category-name' onClick={show}>
-                    Concerts
-                </div>
-                <div className='event-title'>
-                    Drake for the first time in Lebanon
-                </div>
-                <div className='host-name'>
-                    By OVO
+            {eventInfo.map(eventinfo => (
+                <div key={eventinfo.id}><div className='video-container'>
+                    <video src={eventinfo.video_url} controls />
                 </div>
 
-            </div>
-            <hr />
+                    <hr />
+                    <div className='event-cat-title'>
+                        <div className='category-name' onClick={show}>
+                            {eventinfo.cat_name}
+                        </div>
+                        <div className='event-title'>
+                            {eventinfo.description}
+                        </div>
+                        <div className='host-name'>
+                            By {eventinfo.first_name} {eventinfo.last_name}
+                        </div>
+
+                    </div>
+                    <hr /></div>))}
+
+
+
             <div className='datetime-location-container'>
                 <div className='datetime-container'>
                     <div>
@@ -63,7 +80,7 @@ const Event = () => {
                         </span>
                     </div>
                     <div className='datetime'>
-                        Wed, Apr 15, 2022 10:00 PM
+                        {date}
                     </div>
 
                 </div>

@@ -78,11 +78,11 @@ const Events = () => {
 
 
                 {events.map(event => (
-                    <div className='event-container' >
+                    <div className='event-container' key={event.id}>
                         <div className='event'>
                             <EventCard data={event.cover_photo}
                                 title={event.name}
-                                key={event.id} id={event.id} />
+                                id={event.id} />
                         </div>
 
                     </div>
