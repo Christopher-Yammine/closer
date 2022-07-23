@@ -16,6 +16,7 @@ const Host = () => {
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
     const [formattedDate, setFormattedDate] = useState('');
+    const [categoryNames, setCategoryNames] = useState([]);
     const usertype = useUserStore((state) => state.usertype);
 
     function getCategoryNames() {
@@ -23,7 +24,7 @@ const Host = () => {
             method: 'get',
             url: 'http://127.0.0.1:8000/api/getAllCategories'
         }).then(function (response) {
-            console.log(response)
+            setCategoryNames(response.data.data.category)
         })
     }
     const getName = async (e) => {
@@ -90,6 +91,9 @@ const Host = () => {
             setTextDesc("Error, file too big");
         })
     }
+    useEffect(() => {
+        getCategoryNames();
+    }, [])
     if (usertype === 'host') {
         return (
 
@@ -133,9 +137,10 @@ const Host = () => {
                         }} />
 
                         <select>
-                            <option>{formattedDate}</option>
-                            <option>event</option>
-                            <option>event</option>
+                            {categoryNames.map(category =>
+                            (<option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>))}
                         </select>
 
 
