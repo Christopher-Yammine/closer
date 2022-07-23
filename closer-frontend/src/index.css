@@ -540,7 +540,10 @@ h1 {
   display: flex;
   justify-content: center;
 
+
 }
+
+
 
 .upload-banner {
   height: 225px;
@@ -699,7 +702,8 @@ h1 {
   text-align: center;
 }
 
-.event-info-container {
+.event-info-container,
+.banner-main-container {
   border: solid white 1px;
   border-radius: 15px;
   margin: 10px 200px 100px 200px;
