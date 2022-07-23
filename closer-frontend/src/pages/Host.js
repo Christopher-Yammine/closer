@@ -144,18 +144,21 @@ const Host = () => {
                         </div>
                         <label className='cover-photo-desc' htmlFor="fileId2">click here to upload your event card photo </label>
                     </div>
+
+
+
+                </div>
+                <div className='upload-banner-container'>
                     <div className='upload-photo'>
                         <input type="file" name="photo" id="fileId"
                             onChange={(e) => { imageUploaded(e.target.files) }} />
-                        <div className="upload">
-                            <div className='banner-photo-host'>
-                                <img src={base64String} alt='' />
+                        <div className="upload-banner">
+                            <div className='banner-photo-host '>
+                                <img src={base64String} alt='' width="675px" height="225px" />
                             </div>
                         </div>
-                        <label className='cover-photo-desc' htmlFor="fileId">click here to upload your cover photo (1365x512)</label>
+                        <label className='cover-photo-desc' htmlFor="fileId">click here to upload your banner photo (1365x512)</label>
                     </div>
-
-
                 </div>
                 <div className='event-info-title'>
                     Choose a location
