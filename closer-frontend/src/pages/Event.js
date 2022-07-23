@@ -9,11 +9,31 @@ import { useLocation } from 'react-router-dom'
 
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
+    const user_id = useUserStore((state) => state.user_id);
+    const user_token = useUserStore((state) => state.token);
     const currentlocation = useLocation();
     const [eventInfo, setEventInfo] = useState([]);
     const [date, setdate] = useState([]);
     const [finaldatefr, setfinaldate] = useState('');
 
+    function reserveSpot() {
+        let id_event = '';
+        id_event = currentlocation.search.split("id=")[1];
+        let headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + user_token
+        }
+        axios({
+            method: "post",
+            url: "http://127.0.0.1:8000/api/addAttendee/" + id_event,
+            headers: headers
+        }).then(function (response) {
+            console.log(response)
+        }).catch(function (err) {
+            console.log(err)
+        })
+
+    }
     function showDate() {
 
         let finaldate = '';
@@ -127,7 +147,7 @@ const Event = () => {
                 <Attendee srcdata='' username='' />
             </div>
             <div className='btn-reserve-container'>
-                <button type='button' className='btn-reserve'>Reserve your spot</button>
+                <button type='button' className='btn-reserve' onClick={reserveSpot} >Reserve your spot</button>
             </div>
 
 

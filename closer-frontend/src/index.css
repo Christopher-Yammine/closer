@@ -915,6 +915,8 @@ select {
   border-radius: 30px;
   margin: 0 0 20px 0;
   cursor: pointer;
+  /* pointer-events: none;
+  background-color: rgba(0, 0, 0, .5); */
 }
 
 .attendee {

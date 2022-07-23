@@ -21,7 +21,7 @@ class AttendeeController extends Controller
         if ($userExist >= 1) {
             return response()->json([
                 "status" => "failed",
-                "data" => "user exists"
+                "data" => "You already reserved"
             ], 200);
         } else {
             if ($capacity > $countEvents) {
@@ -32,7 +32,7 @@ class AttendeeController extends Controller
                 $event->save();
                 return response()->json([
                     "status" => "success",
-                    "data" => compact('attendee')
+                    "data" => "Reserved successfully"
                 ], 200);
             } else {
                 return response()->json([
