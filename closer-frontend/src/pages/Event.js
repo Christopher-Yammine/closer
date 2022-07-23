@@ -10,16 +10,30 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
-    const user_id = useUserStore((state) => state.user_id);
     const user_token = useUserStore((state) => state.token);
     const currentlocation = useLocation();
     const [eventInfo, setEventInfo] = useState([]);
     const [date, setdate] = useState([]);
     const [finaldatefr, setfinaldate] = useState('');
+    const [attendees, setAttendees] = useState([]);
+    const [attendeesCount, setAttendeesCount] = useState('');
+
+    let id_event = '';
+    id_event = currentlocation.search.split("id=")[1];
+    function showAttendees() {
+        axios({
+            method: "get",
+            url: "http://127.0.0.1:8000/api/attendeesByEvent/" + id_event
+        }).then(function (response) {
+            setAttendees(response.data.data.all_attendees)
+            setAttendeesCount(response.data.count.attendees_count)
+        }).catch(function (err) {
+            console.log(err);
+        })
+    }
 
     function reserveSpot() {
-        let id_event = '';
-        id_event = currentlocation.search.split("id=")[1];
+
         let headers = {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + user_token
@@ -31,7 +45,8 @@ const Event = () => {
         }).then(function (response) {
             toast(response.data.data);
         }).catch(function (err) {
-            console.log(err)
+            console.log(err);
+            toast("Oops, seems like something went wrong refresh the page and try again")
         })
 
     }
@@ -47,8 +62,7 @@ const Event = () => {
 
     }
     function getEventInfo() {
-        let id_event = "";
-        id_event = currentlocation.search.split("id=")[1];
+
         axios({
             method: "get",
             url: "http://127.0.0.1:8000/api/event/" + id_event
@@ -68,6 +82,7 @@ const Event = () => {
     }, 10);
     useEffect(() => {
         getEventInfo();
+        showAttendees();
     }, [])
 
     return (
@@ -124,29 +139,31 @@ const Event = () => {
 
 
                     </div>
+                    <div className='attendees-container'>
+                        <div className='attendees-count'>
 
+                            <span className="material-symbols-outlined grey-icons">
+                                person
+                            </span>
+                            <div className='count-coming'>
+                                {attendeesCount} coming
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             ))}
-
-
-
-
-
-            <div className='attendees-container'>
-                <div className='attendees-count'>
-
-                    <span className="material-symbols-outlined grey-icons">
-                        person
-                    </span>
-                    <div className='count-coming'>
-                        58192 coming
-                    </div>
-                </div>
-            </div>
             <div className='attendees'>
-                <Attendee srcdata='' username='' />
+                {attendees.map(attendee => (
+
+                    <Attendee srcdata={attendee.profile_picture} username={attendee.username} />
+                ))}
             </div>
+
+
+
+
+
             <div className='btn-reserve-container'>
                 <button type='button' className='btn-reserve' onClick={reserveSpot} >Reserve your spot</button>
             </div>

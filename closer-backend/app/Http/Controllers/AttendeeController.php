@@ -47,8 +47,8 @@ class AttendeeController extends Controller
     public function attendeesByEvent($event_id)
     {
         $all_attendees = Attendee::join('users', 'users.id', '=', 'attendees.user_id')
-            ->where('attendees.event_id', '=', $event_id)
-            ->get(['users.first_name', 'users.profile_picture']);
+            ->where('attendees.event_id', $event_id)
+            ->get(['users.username', 'users.profile_picture', 'users.id']);
         $attendees_count = $all_attendees->count();
         return response()->json([
             "status" => "success",
