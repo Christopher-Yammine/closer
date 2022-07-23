@@ -6,12 +6,14 @@ import { useUserStore } from '../store/UserStore'
 import Attendee from '../components/Attendee'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom'
-import { format } from 'date-fns'
+
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
     const currentlocation = useLocation();
     const [eventInfo, setEventInfo] = useState([]);
     const [date, setdate] = useState([]);
+    const [finaldatefr, setfinaldate] = useState('');
+
     function show() {
         console.log(eventInfo);
         console.log(date);
@@ -22,7 +24,8 @@ const Event = () => {
         let year = date2[0].split('20')
         let newdate = new Date(date2[0], date2[1] - 1, date2[2], time[0], time[1], time[2], '0');
         finaldate = newdate.toString().split("GMT");
-        setdate(finaldate[0].toString())
+        setfinaldate(finaldate[0].toString())
+
     }
     function getEventInfo() {
         let id_event = "";
@@ -34,12 +37,16 @@ const Event = () => {
             setEventInfo(response.data.data.event);
             setdate(response.data.data.event[0].date);
 
+
         }).catch(function (err) {
             console.log(err);
         })
 
 
     }
+    setTimeout(() => {
+        show()
+    }, 50);
     useEffect(() => {
         getEventInfo();
     }, [])
@@ -80,7 +87,7 @@ const Event = () => {
                         </span>
                     </div>
                     <div className='datetime'>
-                        {date}
+                        {finaldatefr}
                     </div>
 
                 </div>
