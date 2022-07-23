@@ -73,41 +73,45 @@ const Event = () => {
                         </div>
 
                     </div>
-                    <hr /></div>))}
-
-
-
-            <div className='datetime-location-container'>
-                <div className='datetime-container'>
-                    <div>
-                        <span className="material-symbols-outlined white-icons">
-                            calendar_today
-                        </span>
+                    <hr />
+                    <div className='cover-photo'>
+                        <img src={eventinfo.banner_photo} alt='' width="1347px" height="550px"></img>
                     </div>
-                    <div className='datetime'>
-                        {finaldatefr}
+                    <div className='datetime-location-container'>
+                        <div className='datetime-container'>
+                            <div>
+                                <span className="material-symbols-outlined white-icons">
+                                    calendar_today
+                                </span>
+                            </div>
+                            <div className='datetime'>
+                                {finaldatefr}
+                            </div>
+
+                        </div>
+                        <div className='location-container'>
+                            <div>
+                                <span className="material-symbols-outlined white-icons">
+                                    location_on
+                                </span>
+                            </div>
+                            <div className='location'>
+                                {eventinfo.city}
+                            </div>
+
+                        </div>
+
+
                     </div>
+
 
                 </div>
-                <div className='location-container'>
-                    <div>
-                        <span className="material-symbols-outlined white-icons">
-                            location_on
-                        </span>
-                    </div>
-                    <div className='location'>
-                        Beirut Waterfront,
-                        Beirut
-                    </div>
-
-                </div>
+            ))}
 
 
-            </div>
-            <hr />
-            <div className='cover-photo'>
-                <img src={''} alt='' width="1347px" height="512px"></img>
-            </div>
+
+
+
             <div className='attendees-container'>
                 <div className='attendees-count'>
 
@@ -121,6 +125,9 @@ const Event = () => {
             </div>
             <div className='attendees'>
                 <Attendee srcdata='' username='' />
+            </div>
+            <div className='btn-reserve-container'>
+                <button type='button' className='btn-reserve'>Reserve your spot</button>
             </div>
 
 
