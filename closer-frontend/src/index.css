@@ -376,6 +376,10 @@ video {
 
 .right-signup {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-btn {
@@ -388,6 +392,18 @@ video {
   width: 107%;
   cursor: pointer;
   margin: 10px 20px 10px 0;
+}
+
+.signup-button {
+
+  background: rgba(18, 14, 19, 0.7);
+  border-radius: 15px;
+  color: white;
+  font-family: "Orbitron";
+  height: 69px;
+  margin: 15px 0 0 20px;
+  cursor: pointer;
+  width: 90%;
 }
 
 .navbar {
