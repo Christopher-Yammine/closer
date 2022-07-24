@@ -925,6 +925,7 @@ select {
 .btn-reserve-container {
   display: flex;
   justify-content: center;
+
 }
 
 .btn-reserve {
@@ -942,6 +943,7 @@ select {
   border-radius: 30px;
   margin: 0 0 20px 0;
   cursor: pointer;
+  z-index: 500;
   /* pointer-events: none;
   background-color: rgba(0, 0, 0, .5); */
 }

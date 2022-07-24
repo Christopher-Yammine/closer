@@ -196,6 +196,9 @@ const Host = () => {
                         />
                     </div>
                 </div>
+                <div className='btn-reserve-container'>
+                    <button type='button' className='btn-reserve'>Add your event</button>
+                </div>
 
             </motion.div >
 
