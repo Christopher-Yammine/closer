@@ -563,6 +563,8 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
   margin: 0px;
   margin-right: 20px !important;
+  cursor: pointer;
+  transform: scale(2, 2);
 }
 
 .upload-banner img:hover {
