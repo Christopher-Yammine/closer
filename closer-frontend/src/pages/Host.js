@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
 import PageNotFound from './PageNotFound'
 import { useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
 const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
@@ -16,9 +17,32 @@ const Host = () => {
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
     const [formattedDate, setFormattedDate] = useState('');
-    const [dateNow, setdateNow] = useState(new Date().toISOString().split('.')[0])
+    const [dateNow] = useState(new Date().toISOString().split('.')[0])
     const [categoryNames, setCategoryNames] = useState([]);
+    const [videoLink, setVideoLink] = useState('');
+    const [eventName, setEventName] = useState('');
+    const [eventDescription, setEventDescription] = useState('');
+    const [eventCategory, setEventCategory] = useState(1);
+    const [eventCapacity, setEventCapacity] = useState(0);
+
     const usertype = useUserStore((state) => state.usertype);
+    const user_token = useUserStore((state) => state.token);
+    function addEvent() {
+        if (base64String === require('../assets/white.jpg') || cardbase64String === require('../assets/white.jpg') ||
+            location === '' || formattedDate === '' || videoLink === '' || eventName === '' || eventDescription === ''
+            || eventCapacity === 0) {
+            toast("Please fill all the fields");
+        } else {
+            let data = new FormData();
+            let headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + user_token
+            }
+
+            data.append("video_url", videoLink)
+        }
+
+    }
 
     function getCategoryNames() {
         axios({
@@ -39,7 +63,8 @@ const Host = () => {
             );
             const data = await res.json();
 
-            setLocation("" + data.locality + ", " + data.countryName);
+            setLocation("" + data.city + ", " + data.locality);
+
         } catch (err) {
             console.log(err);
         }
@@ -86,7 +111,7 @@ const Host = () => {
         }).then(function (response) {
 
             setTextDesc(acceptedFiles[0].name);
-            console.log(response.data)
+            setVideoLink(response.data.link.fileLink);
         }).catch(function (err) {
             console.log(err);
             setTextDesc("Error, file too big");
@@ -131,17 +156,13 @@ const Host = () => {
                 <div className='event-info-container'>
                     <div className='event-info-input'>
 
-                        <input type="text" placeholder='Event title'  ></input>
-                        <input type="number" placeholder='Maximum capacity'></input>
+                        <input type="text" placeholder='Event title' onChange={(e) => { setEventName(e.currentTarget.value) }} ></input>
+                        <input type="text" placeholder='Small description' onChange={(e) => { setEventDescription(e.currentTarget.value) }}></input>
+                        <input type="number" placeholder='Maximum capacity' onChange={(e) => { setEventCapacity(e.currentTarget.value) }}></input>
                         <input type="datetime-local" placeholder='date' value={dateNow} onChange={(e) => {
-
-
-
-                            console.log(dateNow);
                             setFormattedDate(e.currentTarget.value.replace('T', ' '));
                         }} />
-
-                        <select>
+                        <select onChange={(e) => setEventCategory(e.currentTarget.value)}>
                             {categoryNames.map(category =>
                             (<option key={category.id} value={category.id}>
                                 {category.name}
@@ -197,9 +218,9 @@ const Host = () => {
                     </div>
                 </div>
                 <div className='btn-reserve-container'>
-                    <button type='button' className='btn-reserve'>Add your event</button>
+                    <button type='button' className='btn-reserve' onClick={addEvent}>Add your event</button>
                 </div>
-
+                <ToastContainer />
             </motion.div >
 
         )
