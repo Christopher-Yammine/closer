@@ -8,7 +8,7 @@ const Profile = () => {
     const removeProfile = useUserStore((state) => state.removeProfile);
     const removeToken = useUserStore((state) => state.removeToken);
     const removeUsertype = useUserStore((state) => state.removeUsertype);
-
+    const user_id = useUserStore((state) => state.user_id)
     function logout() {
         removeUserId();
         removeProfile();
@@ -35,7 +35,8 @@ const Profile = () => {
                 </div>
             </div >
             <div>
-                <button type='button' className='button-logout' onClick={logout}>Log out</button>
+
+                {user_id && <button type='button' className='button-logout' onClick={logout}>Log out</button>}
             </div>
         </div>
 

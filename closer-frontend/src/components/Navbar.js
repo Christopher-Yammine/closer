@@ -2,7 +2,6 @@ import React from 'react'
 import Logo from './Logo'
 import { NavLink } from 'react-router-dom';
 import Profile from './Profile';
-
 const Navbar = ({ usertype }) => {
 
 
