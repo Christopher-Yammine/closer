@@ -355,6 +355,21 @@ video {
 
 }
 
+.signup-input>select {
+
+  height: 68.25px;
+  width: 104%;
+
+  margin: 10px 20px 20px 0;
+  color: white;
+  font-family: 'Orbitron';
+  background: rgba(18, 14, 19, 0.3);
+  border: 1px solid #4E4651;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+}
+
 .left-signup {
   width: 50%;
 }
@@ -800,6 +815,15 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 .upload-photo {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-profile {
+  margin: 15px 0 0 20px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
