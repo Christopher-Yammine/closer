@@ -808,6 +808,20 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   text-align: center;
 }
 
+.profile-photo-desc {
+  border: solid white;
+
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 12pt;
+  font-family: "orbitron";
+  width: 76%;
+  text-align: center;
+}
+
 .event-info-container {
   display: flex;
   justify-content: space-between;
@@ -844,6 +858,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   height: 300px;
   border-radius: 15px;
 }
+
 
 #fileId,
 #fileId2 {

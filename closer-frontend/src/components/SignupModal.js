@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Modal } from '@mui/material'
 import Box from '@mui/material/Box';
 const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
+    const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
+
+    function profimageUploaded(files) {
+        var file = files[0];
+        var reader = new FileReader();
+
+
+        reader.onload = function () {
+            setProfilePic(reader.result);
+
+        }
+
+        reader.readAsDataURL(file);
+    }
+
     return (
         <Modal
             open={signupIsOpen}
@@ -31,13 +46,13 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                     <div className='right-signup'>
                         <div className='upload-profile'>
                             <input type="file" name="photo" id="fileId2"
-                                onChange={(e) => { }} />
+                                onChange={(e) => { profimageUploaded(e.target.files) }} />
                             <div className="upload">
                                 <div className='cover-photo-host'>
-                                    <img src={''} alt='' />
+                                    <img src={profilePic} alt='' />
                                 </div>
                             </div>
-                            <label className='cover-photo-desc' htmlFor="fileId2">click here to upload your event card photo </label>
+                            <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
                         </div>
                     </div>
                 </div>
