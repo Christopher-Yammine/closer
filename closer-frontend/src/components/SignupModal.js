@@ -9,10 +9,17 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <Box className='login-modal'>
-                <h1>
-                    chris
-                </h1>
+            <Box className='signup-modal'>
+                <div className='signup-modal-container'>
+                    <div className='left-signup'>
+                        <div className='signup-heading'>
+                            Set up your <span className='purple'>Closer</span> account
+                        </div>
+                    </div>
+                    <div className='right-signup'>
+                        <button type="button" className='signup-btn'></button>
+                    </div>
+                </div>
             </Box>
         </Modal>
     )
