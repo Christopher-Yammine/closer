@@ -16,6 +16,7 @@ const Host = () => {
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
     const [formattedDate, setFormattedDate] = useState('');
+    const [dateNow, setdateNow] = useState(new Date().toISOString().split('.')[0])
     const [categoryNames, setCategoryNames] = useState([]);
     const usertype = useUserStore((state) => state.usertype);
 
@@ -132,7 +133,11 @@ const Host = () => {
 
                         <input type="text" placeholder='Event title'  ></input>
                         <input type="number" placeholder='Maximum capacity'></input>
-                        <input type="datetime-local" placeholder='date' onChange={(e) => {
+                        <input type="datetime-local" placeholder='date' value={dateNow} onChange={(e) => {
+
+
+
+                            console.log(dateNow);
                             setFormattedDate(e.currentTarget.value.replace('T', ' '));
                         }} />
 
