@@ -48,10 +48,16 @@ const Host = () => {
             data.append("cover_photo", cardbase64String);
             data.append("banner_photo", base64String);
             data.append("capacity", eventCapacity);
-            data.append("status","")
+
             axios({
-                method:"post",
-                url:
+                method: "post",
+                url: "http://127.0.0.1:8000/api/event",
+                headers: headers,
+                data: data
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (err) {
+                console.log(err);
             })
 
         }
