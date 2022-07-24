@@ -1,14 +1,11 @@
 import React from 'react'
 import Logo from './Logo'
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
 import { useState } from 'react';
-
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useUserStore } from '../store/UserStore';
-
 import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 const Header = () => {
 
     const [loginIsOpen, setloginOpen] = useState(false);
@@ -29,18 +26,7 @@ const Header = () => {
 
         <div>
             <LoginModal loginIsOpen={loginIsOpen} handleLoginOpen={handleLoginOpen} />
-            <Modal
-                open={signupIsOpen}
-                onClose={handleSignupOpen}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box className='login-modal'>
-                    <h1>
-                        chris
-                    </h1>
-                </Box>
-            </Modal>
+            <SignupModal signupIsOpen={signupIsOpen} handleSignupOpen={handleSignupOpen} />
             <div className='main-container'>
 
 

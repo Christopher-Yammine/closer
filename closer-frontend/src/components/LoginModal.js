@@ -27,14 +27,11 @@ const LoginModal = ({ loginIsOpen, handleLoginOpen }) => {
             }).then(function (response) {
 
                 if (response.data.status === "success") {
-
                     saveUserId(response.data.user.id);
                     saveToken(response.data.authorisation.token);
                     saveProfile(response.data.user.profile_picture);
                     saveType(response.data.user.type);
                     navigate("/landingpage");
-
-
                 }
 
             }).catch(function (err) {
