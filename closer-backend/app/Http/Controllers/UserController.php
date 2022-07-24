@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Category;
 
 class UserController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register', 'makeHost', 'topHosts']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'makeHost', 'topHosts', 'createCategory']]);
     }
 
     public function login(Request $request)
@@ -146,5 +147,20 @@ class UserController extends Controller
             "status" => "success",
             "data" => compact("top_host")
         ]);
+    }
+    public function createCategory(Request $request)
+    {
+        $cat = new Category();
+        $data = $this->validate($request, [
+            'name' => 'required',
+            'cover_photo' => 'required',
+        ]);
+
+        $category = $cat->create($data);
+
+        return response()->json([
+            "status" => "success",
+            "data" => compact('category')
+        ], 200);
     }
 }

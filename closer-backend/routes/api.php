@@ -23,15 +23,22 @@ Route::post('logout', [UserController::class, 'logout']);
 Route::post('host', [UserController::class, 'makeHost']);
 Route::get('topHosts', [UserController::class, 'topHosts']);
 
-Route::get('event/{id}', [EventController::class, 'getEventById']);
-Route::get('events/{id}', [EventController::class, 'getEventsByCat']);
-Route::get('events', [EventController::class, 'getEvents']);
-Route::post('event', [EventController::class, 'create']);
-Route::get('trendingEvents', [EventController::class, 'trendingEvents']);
-Route::post('file', [EventController::class, 'videoTransfer']);
 
-Route::post('createCategory', [EventController::class, 'createCategory']);
+Route::get('trendingEvents', [EventController::class, 'trendingEvents']);
+Route::get('event/{id}', [EventController::class, 'getEventById']);
+Route::get('events/{id_cat}', [EventController::class, 'getEventsByCat']);
+Route::get('events', [EventController::class, 'getEvents']);
 Route::get('getAllCategories', [EventController::class, 'getAllCategories']);
 
-Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);
 Route::get('attendeesByEvent/{event_id}', [AttendeeController::class, 'attendeesByEvent']);
+
+Route::group(['prefix' => 'host'], function () {
+    Route::group(['middleware' => 'host.role'], function () {
+        Route::post('event', [EventController::class, 'create']);
+        Route::post('file', [EventController::class, 'videoTransfer']);
+    });
+});
+
+Route::post('createCategory', [UserController::class, 'createCategory']);
+
+Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);

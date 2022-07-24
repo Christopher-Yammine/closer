@@ -51,7 +51,7 @@ const Host = () => {
 
             axios({
                 method: "post",
-                url: "http://127.0.0.1:8000/api/event",
+                url: "http://127.0.0.1:8000/api/host/event",
                 headers: headers,
                 data: data
             }).then(function (response) {
@@ -124,12 +124,13 @@ const Host = () => {
         console.log(acceptedFiles)
         let data = new FormData();
         let headers = {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data',
+            'Authorization': 'Bearer ' + user_token
         }
         data.append('video', acceptedFiles[0]);
         axios({
             method: 'post',
-            url: "http://127.0.0.1:8000/api/file",
+            url: "http://127.0.0.1:8000/api/host/file",
             data: data,
             headers: headers
 

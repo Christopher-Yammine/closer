@@ -52,23 +52,7 @@ class EventController extends Controller
         ], 200);
     }
 
-    public function createCategory(Request $request)
-    {
-        $cat = new Category();
-        $data = $this->validate($request, [
-            'name' => 'required',
-            'cover_photo' => 'required',
-
-        ]);
-
-        $category = $cat->create($data);
-
-        return response()->json([
-            "status" => "success",
-            "data" => compact('category')
-        ], 200);
-    }
-
+  
     public function getAllCategories()
     {
         $category = Category::all();
@@ -78,9 +62,9 @@ class EventController extends Controller
         ], 200);
     }
 
-    public function getEventsByCat($id)
+    public function getEventsByCat($id_cat)
     {
-        $events = Event::where('category_id', $id)->get();
+        $events = Event::where('category_id', $id_cat)->get();
         return response()->json([
             "status" => "success",
             "data" => compact('events')
