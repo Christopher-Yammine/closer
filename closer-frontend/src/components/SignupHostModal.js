@@ -30,6 +30,7 @@ const SignupHostModal = ({ signupHostIsOpen, handleSignupHostOpen }) => {
             }).then(function (response) {
                 toast("Signed up successfully!");
                 setTimeout(() => {
+
                     window.location.reload();
                 }, 2000);
 
@@ -67,7 +68,9 @@ const SignupHostModal = ({ signupHostIsOpen, handleSignupHostOpen }) => {
                             <input type="text" placeholder='Enter your last name' onChange={(e) => setLastName(e.currentTarget.value)}></input>
                             <input type="text" placeholder='Enter your username' onChange={(e) => setUsername(e.currentTarget.value)}></input>
                             <input type="password" placeholder='Enter your password' onChange={(e) => { setPassword(e.currentTarget.value) }}></input>
-                            <select onChange={(e) => { setGender(e.currentTarget.target) }}>
+                            <select onChange={(e) => {
+                                setGender(e.currentTarget.value)
+                            }}>
                                 <option value="0">Female</option>
                                 <option value="1">Male</option>
                                 <option value="2">Other</option>
