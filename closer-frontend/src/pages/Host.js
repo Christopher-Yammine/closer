@@ -55,7 +55,10 @@ const Host = () => {
                 headers: headers,
                 data: data
             }).then(function (response) {
-                console.log(response);
+                toast('Added successfully!')
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             }).catch(function (err) {
                 console.log(err);
             })
@@ -182,7 +185,7 @@ const Host = () => {
                         <input type="datetime-local" value={dateNow} onChange={(e) => {
                             setDateNow('');
                             setFormattedDate(e.currentTarget.value.replace('T', ' '))
-                            console.log(formattedDate);
+
                         }} />
                         <select onChange={(e) => setEventCategory(e.currentTarget.value)}>
                             {categoryNames.map(category =>
