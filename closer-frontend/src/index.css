@@ -243,6 +243,23 @@ video {
 
 }
 
+.signuphost-modal {
+  padding: 0 30px 0 30px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 2px solid #000;
+  box-shadow: 24;
+  z-index: 4;
+  border-radius: 15px;
+  box-shadow: 0px 0px 18.36px #710075;
+
+}
+
 .signup-modal-container {
   display: flex;
   justify-content: space-between;

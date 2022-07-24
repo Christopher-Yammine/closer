@@ -8,9 +8,10 @@ const Hero = () => {
         navigate("/landingpage");
     }
     return (
-        <div> <div className='main-header'>
-            <h1>Closer</h1>
-        </div>
+        <div>
+            <div className='main-header'>
+                <h1>Closer</h1>
+            </div>
             <div className='main-header-description'>
                 <h2>
                     It’s everywhere you<br />

@@ -11,6 +11,7 @@ const Header = () => {
     const [loginIsOpen, setloginOpen] = useState(false);
     const [signupIsOpen, setSignupOpen] = useState(false);
 
+
     const loggedin = useUserStore((state) => state.user_id);
 
 
@@ -22,11 +23,13 @@ const Header = () => {
     };
 
 
+
     return (
 
         <div>
             <LoginModal loginIsOpen={loginIsOpen} handleLoginOpen={handleLoginOpen} />
             <SignupModal signupIsOpen={signupIsOpen} handleSignupOpen={handleSignupOpen} />
+
             <div className='main-container'>
 
 
