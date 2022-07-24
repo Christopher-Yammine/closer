@@ -110,8 +110,9 @@ const Header = () => {
 
                     <Logo />
                     <div className='login'>
-                        <button type='button' className='button-login' onClick={handleLoginOpen}>Log in</button>
-                        <button type='button' className='button-signup' onClick={handleSignupOpen}>Sign up</button>
+                        {!loggedin && <button type='button' className='button-login' onClick={handleLoginOpen}>Log in</button>}
+                        {!loggedin && <button type='button' className='button-signup' onClick={handleSignupOpen}>Sign up</button>}
+
                     </div>
 
                 </div>
