@@ -564,12 +564,14 @@ h1 {
   height: 300px;
   border-radius: 30px;
   margin: 40px 30px 40px 30px;
+
 }
 
 .eventcard>img {
   width: 250px;
   height: 300px;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .eventname {
