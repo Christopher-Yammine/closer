@@ -39,6 +39,10 @@ Route::group(['prefix' => 'host'], function () {
     });
 });
 
-Route::post('createCategory', [UserController::class, 'createCategory']);
+Route::group(['middleware' => 'admin.role'], function () {
+    Route::post('createCategory', [UserController::class, 'createCategory']);
+});
 
-Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);
+Route::group(['middleware' => 'user.role'], function () {
+    Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);
+});
