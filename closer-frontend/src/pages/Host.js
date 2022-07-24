@@ -61,6 +61,8 @@ const Host = () => {
                 }, 2000);
             }).catch(function (err) {
                 console.log(err);
+                toast('Session timedout, please log in again and retry');
+                
             })
 
         }

@@ -47,7 +47,7 @@ const Event = () => {
             showAttendees();
         }).catch(function (err) {
             console.log(err);
-            toast("Oops, seems like something went wrong refresh the page and try again")
+            toast("Make sure you are logged in order to reserve a spot")
         })
 
     }
