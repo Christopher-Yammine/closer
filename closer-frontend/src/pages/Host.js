@@ -38,8 +38,22 @@ const Host = () => {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + user_token
             }
+            data.append("name", eventName);
+            data.append("description", eventDescription);
+            data.append("date", formattedDate);
+            data.append("video_url", videoLink);
+            data.append("city", location);
+            data.append("category_id", eventCategory);
+            data.append("video_url", videoLink);
+            data.append("cover_photo", cardbase64String);
+            data.append("banner_photo", base64String);
+            data.append("capacity", eventCapacity);
+            data.append("status","")
+            axios({
+                method:"post",
+                url:
+            })
 
-            data.append("video_url", videoLink)
         }
 
     }

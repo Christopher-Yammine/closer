@@ -21,6 +21,7 @@ class Event extends Model
         'capacity',
         'user_id',
         'status',
+        'total_attendees'
     ];
 
     public function attendees()

@@ -27,7 +27,7 @@ class EventController extends Controller
             'cover_photo' => 'required',
             'banner_photo' => 'required',
             'capacity' => 'required',
-            'status' => 'required',
+
         ]);
         $data['user_id'] = Auth::id();
 

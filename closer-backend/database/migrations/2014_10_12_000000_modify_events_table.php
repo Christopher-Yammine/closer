@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::table('events', function (Blueprint $table) {
 
-            $table->integer('total_attendees');
+            $table->integer('total_attendees')->default(0);
         });
     }
 
