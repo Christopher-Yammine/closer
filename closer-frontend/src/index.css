@@ -280,8 +280,8 @@ video {
   font-family: 'Orbitron';
   text-align: center;
   color: white;
-  font-size: 20pt;
-  margin: 20px 0 0 0;
+  font-size: 16pt;
+  margin: 20px 0 10px 0;
   font-weight: bold;
 }
 
@@ -318,7 +318,8 @@ video {
 
 }
 
-.login-input>input::placeholder {
+.login-input>input::placeholder,
+.signup-input>input::placeholder {
   font-family: 'Orbitron';
   color: #4E4651;
 }
@@ -329,6 +330,37 @@ video {
   justify-content: center;
   align-content: center;
   width: 40%;
+}
+
+.signup-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+.signup-input>input {
+
+  height: 68.25px;
+  width: 100%;
+  padding-left: 10px;
+  margin: 10px 20px 10px 0;
+  color: white;
+  font-family: 'Orbitron';
+  background: rgba(18, 14, 19, 0.3);
+  border: 1px solid #4E4651;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+}
+
+.left-signup {
+  width: 50%;
+}
+
+.right-signup {
+  width: 50%;
 }
 
 .login-btn {

@@ -15,6 +15,11 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                         <div className='signup-heading'>
                             Set up your <span className='purple'>Closer</span> account
                         </div>
+                        <div className='signup-input'>
+                            <input type="text" placeholder='Enter your username'></input>
+                            <input type="password" placeholder='Enter your password'></input>
+                        </div>
+
                     </div>
                     <div className='right-signup'>
                         <button type="button" className='signup-btn'></button>
