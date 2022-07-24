@@ -1,10 +1,42 @@
 import React, { useState } from 'react'
 import { Modal } from '@mui/material'
 import Box from '@mui/material/Box';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
-
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [gender, setGender] = useState(0);
     function signup() {
+        if (profilePic === require('../assets/blankprofile.png' || firstName === '' || lastName === ''
+            || username === '' || password === '')) {
+            toast('All fields are required');
+        } else {
+            let data = new FormData();
+            data.append("username", username);
+            data.append("password", password);
+            data.append("first_name", firstName);
+            data.append("last_name", lastName);
+            data.append("gender", gender);
+            data.append("profile_picture", profilePic);
+
+            axios({
+                method: "post",
+                url: "http://127.0.0.1:8000/api/register",
+                data: data
+            }).then(function (response) {
+                toast("Signed up successfully!");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+
+            }).catch(function (err) {
+                toast(err.response.data.message)
+            })
+        }
 
     }
 
@@ -35,11 +67,11 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                             Set up your <span className='purple'>Closer</span> account
                         </div>
                         <div className='signup-input'>
-                            <input type="text" placeholder='Enter your first name'></input>
-                            <input type="text" placeholder='Enter your last name'></input>
-                            <input type="text" placeholder='Enter your username'></input>
-                            <input type="password" placeholder='Enter your password'></input>
-                            <select>
+                            <input type="text" placeholder='Enter your first name' onChange={(e) => setFirstName(e.currentTarget.value)}></input>
+                            <input type="text" placeholder='Enter your last name' onChange={(e) => setLastName(e.currentTarget.value)}></input>
+                            <input type="text" placeholder='Enter your username' onChange={(e) => setUsername(e.currentTarget.value)}></input>
+                            <input type="password" placeholder='Enter your password' onChange={(e) => { setPassword(e.currentTarget.value) }}></input>
+                            <select onChange={(e) => { setGender(e.currentTarget.target) }}>
                                 <option value="0">Female</option>
                                 <option value="1">Male</option>
                                 <option value="2">Other</option>
