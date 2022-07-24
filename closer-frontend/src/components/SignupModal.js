@@ -4,6 +4,10 @@ import Box from '@mui/material/Box';
 const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
 
+    function signup() {
+
+    }
+
     function profimageUploaded(files) {
         var file = files[0];
         var reader = new FileReader();
@@ -54,7 +58,7 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                             </div>
                             <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
                         </div>
-                        <button type='button' className='signup-button'>Sign up</button>
+                        <button type='button' className='signup-button' onClick={signup}>Sign up</button>
                     </div>
                 </div>
             </Box>

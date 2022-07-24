@@ -1165,6 +1165,15 @@ a:hover {
 }
 
 @media (max-width:1050px) {
+  .signup-modal {
+    width: 70%;
+    transition: all 1s ease;
+  }
+
+
+
+
+
   .login-input {
     width: 100%;
   }
