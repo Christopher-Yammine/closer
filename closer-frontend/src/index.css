@@ -1274,6 +1274,109 @@ a:hover {
 
   }
 
+  @media (max-width:667px) {
+
+    .login {
+
+
+      flex-direction: column;
+      transform: scale(0.8);
+      margin: 10px 0 0 0;
+    }
+
+    .splash-host-artboard {
+
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .splash-host-artboard img {
+      margin: 20px 0 0 0;
+      transform: scale(0.7);
+    }
+
+    .splash-host-text {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .heading1 {
+      margin: 0;
+      padding: 0;
+      transform: scale(0.7);
+      text-align: center;
+    }
+
+    .host-button-container {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 20px 0;
+    }
+
+    .login-logo {
+      display: none;
+    }
+
+    .logo {
+      z-index: 0;
+    }
+
+    .login-btn {
+      margin: 10px 0 20px 0;
+      height: 50px;
+      width: 100%;
+    }
+
+    .login-subheading {
+      font-size: 12pt;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .login-input input {
+      width: 100%;
+      padding: 0;
+    }
+
+    .login-input input::placeholder {
+
+      padding: 0 0 0 10px;
+    }
+
+    .login-heading {
+      font-size: 14pt;
+    }
+
+    .cover-photo-host img {
+      height: 100px;
+
+    }
+
+    .cover-photo-host {
+      height: fit-content;
+    }
+
+    .upload-profile {
+      height: 25%;
+    }
+
+    .profile-photo-desc {
+      transform: scale(0.7);
+    }
+
+  }
+
+
 
   @media (max-width:550px) {
 

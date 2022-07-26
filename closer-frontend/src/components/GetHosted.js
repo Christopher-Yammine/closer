@@ -26,7 +26,10 @@ const GetHosted = () => {
               Closer offers a hosting service where you can invite your community members with ease
             </p>
           </div>
-          <button type="button" className='host-button' onClick={handleSignupHostOpen}>Host your event</button>
+          <div className='host-button-container'>
+            <button type="button" className='host-button' onClick={handleSignupHostOpen}>Host your event</button>
+          </div>
+
         </div>
 
 
