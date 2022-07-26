@@ -323,8 +323,7 @@ video {
 .login-input>input {
 
   height: 50px;
-  width: 100%;
-  padding-left: 10px;
+  width: 98%;
   margin: 10px 20px 10px 0;
   color: white;
   font-family: 'Orbitron';
@@ -339,6 +338,7 @@ video {
 .signup-input>input::placeholder {
   font-family: 'Orbitron';
   color: #4E4651;
+  padding: 0 0 0 10px;
 }
 
 .login-input {
@@ -361,7 +361,6 @@ video {
 
   height: 50px;
   width: 100%;
-  padding-left: 10px;
   margin: 10px 20px 10px 0;
   color: white;
   font-family: 'Orbitron';
@@ -405,8 +404,8 @@ video {
   border-radius: 15px;
   color: white;
   font-family: "Orbitron";
-  height: 69px;
-  width: 107%;
+  height: 50px;
+  width: 100%;
   cursor: pointer;
   margin: 10px 20px 10px 0;
 }
@@ -1193,9 +1192,9 @@ a:hover {
 
   .login-btn {
 
-    margin: 0;
+
     width: 100%;
-    margin: 0 0 30px 0
+    margin: 10px 0 30px 0
   }
 
   .navbar-pages {
@@ -1219,6 +1218,16 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+
+
+  .login-logo {
+    display: none;
+  }
+
+  .login-form {
+    height: fit-content;
   }
 
   .event-container {
@@ -1397,6 +1406,15 @@ a:hover {
       width: 110%;
 
     }
+
+    .splash-host-description {
+      text-align: center;
+      width: 90%;
+      justify-self: center;
+      align-self: center;
+
+    }
+
 
 
   }
