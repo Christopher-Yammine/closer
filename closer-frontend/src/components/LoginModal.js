@@ -63,7 +63,7 @@ const LoginModal = ({ loginIsOpen, handleLoginOpen }) => {
                 </div>
                 <div className='login-form'>
                     <div className='login-logo'>
-                        <img src={require("../assets/regular-logo.png")} width={300} alt=" " />
+                        <img src={require("../assets/Group.png")} width={300} alt=" " />
                     </div>
                     <div className='login-input'>
                         <input type="text" placeholder='Enter your username' onChange={(e) => { setuserNameValue(e.currentTarget.value) }} ></input>

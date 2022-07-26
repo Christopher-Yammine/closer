@@ -87,16 +87,16 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                             <input type="file" name="photo" id="fileId2"
                                 onChange={(e) => { profimageUploaded(e.target.files) }} />
                             <div className="upload">
-                                <div className='cover-photo'>
+                                <div className='uploaded-photo'>
                                     <img src={profilePic} alt='' />
                                 </div>
                             </div>
 
                             <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
 
-                            <div>
-                                <button type='button' className='signup-button' onClick={signup}>Sign up</button>
-                            </div>
+
+                            <button type='button' className='signup-button' onClick={signup}>Sign up</button>
+
 
                         </div>
 
