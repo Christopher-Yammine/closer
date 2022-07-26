@@ -73,7 +73,7 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                             <input type="password" placeholder='Enter your password' onChange={(e) => { setPassword(e.currentTarget.value) }}></input>
                             <select onChange={(e) => {
                                 setGender(e.currentTarget.value)
-                              
+
                             }}>
                                 <option value="0">Female</option>
                                 <option value="1">Male</option>
@@ -87,13 +87,19 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                             <input type="file" name="photo" id="fileId2"
                                 onChange={(e) => { profimageUploaded(e.target.files) }} />
                             <div className="upload">
-                                <div className='cover-photo-host'>
+                                <div className='cover-photo'>
                                     <img src={profilePic} alt='' />
                                 </div>
                             </div>
+
                             <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
+
+                            <div>
+                                <button type='button' className='signup-button' onClick={signup}>Sign up</button>
+                            </div>
+
                         </div>
-                        <button type='button' className='signup-button' onClick={signup}>Sign up</button>
+
                     </div>
                 </div>
             </Box>

@@ -1367,12 +1367,37 @@ a:hover {
     }
 
     .upload-profile {
-      height: 25%;
+      height: 0;
+    }
+
+    .upload {
+      margin: 0;
     }
 
     .profile-photo-desc {
       transform: scale(0.7);
     }
+
+    .signup-button {
+      height: 50px;
+      margin: 0;
+      width: 75px;
+    }
+
+    .signup-input {
+      margin: 0 20px 20px 0;
+
+
+      flex-wrap: wrap;
+
+    }
+
+
+    select {
+      width: 110%;
+
+    }
+
 
   }
 

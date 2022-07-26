@@ -89,7 +89,10 @@ const SignupHostModal = ({ signupHostIsOpen, handleSignupHostOpen }) => {
                             </div>
                             <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
                         </div>
-                        <button type='button' className='signup-button' onClick={signupHost}>Start hosting</button>
+                        <div>
+                            <button type='button' className='signup-button' onClick={signupHost}>Start hosting</button>
+                        </div>
+
                     </div>
                 </div>
             </Box>

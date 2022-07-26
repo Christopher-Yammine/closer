@@ -7,7 +7,6 @@ import { useState } from 'react';
 const GetHosted = () => {
   const [signupHostIsOpen, setSignupHostOpen] = useState(false);
   const handleSignupHostOpen = () => {
-
     setSignupHostOpen(!signupHostIsOpen)
   };
 
