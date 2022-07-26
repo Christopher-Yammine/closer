@@ -322,7 +322,7 @@ video {
 
 .login-input>input {
 
-  height: 68.25px;
+  height: 50px;
   width: 100%;
   padding-left: 10px;
   margin: 10px 20px 10px 0;
@@ -359,7 +359,7 @@ video {
 
 .signup-input>input {
 
-  height: 68.25px;
+  height: 50px;
   width: 100%;
   padding-left: 10px;
   margin: 10px 20px 10px 0;
@@ -374,7 +374,7 @@ video {
 
 .signup-input>select {
 
-  height: 68.25px;
+  height: 50px;
   width: 104%;
 
   margin: 10px 20px 20px 0;
