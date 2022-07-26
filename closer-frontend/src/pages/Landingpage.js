@@ -16,7 +16,7 @@ const Landingpage = () => {
         if (locationstring === "") {
             getTrendingEvents();
         }
-        setTrendingEvents(trendingEvents.filter(event => event.city.includes(locationstring)));
+        setTrendingEvents(trendingEvents.filter(event => event.city.includes(locationstring.charAt(0).toUpperCase() + locationstring.slice(1))));
 
     }
     function getTrendingEvents() {

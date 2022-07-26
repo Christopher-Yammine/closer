@@ -1186,7 +1186,14 @@ a:hover {
 }
 
 @media (max-width:1050px) {
+  .cover-photo {
+    
+    position: relative;
+  }
 
+  .cover-photo:hover {
+    opacity: 1
+  }
 
   .event-cat-title,
   .datetime-location-container {
@@ -1326,6 +1333,7 @@ a:hover {
   .event-info-input {
     margin: 0;
   }
+
   .video-container video {
     width: 70%
   }

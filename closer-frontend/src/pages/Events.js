@@ -13,7 +13,8 @@ const Events = () => {
         if (locationstring === "") {
             getEvents();
         }
-        setEvents(events.filter(event => event.city.includes(locationstring)));
+
+        setEvents(events.filter(event => event.city.includes(locationstring.charAt(0).toUpperCase() + locationstring.slice(1))));
 
     }
     function getEvents() {
