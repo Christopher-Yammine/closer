@@ -1181,6 +1181,10 @@ a:hover {
 }
 
 @media (max-width:1050px) {
+  .navbar {
+    column-gap: 0;
+  }
+
   .signup-modal {
     width: 70%;
     transition: all 1s ease;
