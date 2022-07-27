@@ -89,7 +89,6 @@ const Host = () => {
             const data = await res.json();
 
             setLocation("" + data.city + ", " + data.locality);
-
         } catch (err) {
             console.log(err);
         }
