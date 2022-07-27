@@ -1242,13 +1242,28 @@ a:hover {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-  padding: 20px 0 0 10px;
+  margin: 0 0 0 30px;
 }
+
+.cat-container-left input {
+  height: 50px;
+  width: 100%;
+  margin: 0 0 10px 0;
+  color: white;
+  font-family: 'Orbitron';
+  background: rgba(18, 14, 19, 0.3);
+  border: 1px solid #4E4651;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+
 
 .cat-container-left .profile-photo-desc {
   width: 100%;
+  margin: 0;
 }
 
 .upload-category {
@@ -1384,7 +1399,6 @@ a:hover {
 
   .login-input>input::placeholder,
   .signup-input>input::placeholder,
-
   .signup-input select {
     font-size: 8pt;
   }
