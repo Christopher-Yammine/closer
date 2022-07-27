@@ -459,6 +459,7 @@ video {
   font-family: "Orbitron";
   font-size: 8pt;
   z-index: 9999;
+  transition: all 1s;
 }
 
 
@@ -1214,11 +1215,22 @@ a:hover {
 
   }
 
+  .navbar-pages-shown {
+    opacity: 1;
+    top: 100;
+    transition: all 1s;
+  }
+
   .navbar-pages {
+    position: absolute;
 
     flex-wrap: wrap;
     margin: 0 0 0 20px;
-    gap: 10px
+    gap: 10px;
+    top: -200px;
+    opacity: 0;
+    transition: all 1s;
+
   }
 
   .vl {
@@ -1226,7 +1238,7 @@ a:hover {
   }
 
   .navbar-dynamic {
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100px;
     position: relative;
     gap: 15px
@@ -1389,6 +1401,7 @@ a:hover {
 
 
   }
+
 
   .video-container video {
     width: 100%
