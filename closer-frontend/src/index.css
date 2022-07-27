@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 body {
+
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  overflow-x: hidden;
+
   background-color: black;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -427,7 +434,7 @@ video {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  column-gap: 30%;
+  column-gap: 25%;
 
 
 }
@@ -444,7 +451,7 @@ video {
 }
 
 .navbar-pages {
-  width: 100%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -970,7 +977,8 @@ select {
 }
 
 .button-logout {
-
+  right: -250px;
+  top: 23px;
   opacity: 0;
   transition: all 1s;
   font-family: 'orbitron';
@@ -982,11 +990,17 @@ select {
   box-shadow: 0px 0px 5.36px white;
   border-radius: 15px;
   border-color: transparent;
-  margin: 15px 0 0 5px;
+
   position: absolute;
+
 }
 
+
+
 .button-logout-shown {
+
+  right: 120px;
+  top: 23px;
   cursor: pointer;
   opacity: 1;
   font-family: 'orbitron';
@@ -1002,6 +1016,7 @@ select {
   transition: all 1s;
   position: absolute;
   z-index: 100;
+
 
 }
 
@@ -1171,6 +1186,12 @@ a:hover {
 
 }
 
+.navbar-dynamic {
+  width: 66%;
+  display: flex;
+  justify-content: space-between;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -1186,8 +1207,34 @@ a:hover {
 }
 
 @media (max-width:1050px) {
+  .navbar {
+
+    column-gap: 70%;
+
+
+  }
+
+  .navbar-pages {
+
+    flex-wrap: wrap;
+    margin: 0 0 0 20px;
+    gap: 10px
+  }
+
+  .vl {
+    display: none;
+  }
+
+  .navbar-dynamic {
+    flex-direction: column-reverse;
+    width: 100px;
+    position: relative;
+    gap: 15px
+  }
+
+
   .cover-photo {
-    
+
     position: relative;
   }
 
@@ -1247,9 +1294,7 @@ a:hover {
     height: fit-content;
   }
 
-  .navbar {
-    column-gap: 0;
-  }
+
 
   .signup-modal {
     width: 70%;
@@ -1267,11 +1312,8 @@ a:hover {
     margin: 10px 0 30px 0
   }
 
-  .navbar-pages {
 
-    flex-direction: column;
 
-  }
 
   .vl {
     transform: rotate(90deg);
@@ -1341,6 +1383,12 @@ a:hover {
 }
 
 @media (max-width:810px) {
+  .navbar {
+
+    column-gap: 60%;
+
+
+  }
 
   .video-container video {
     width: 100%

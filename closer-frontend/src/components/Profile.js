@@ -34,6 +34,7 @@ const Profile = () => {
                     <div className="bar3"></div>
                 </div>
             </div >
+            
             <div>
 
                 {user_id && <button type='button' className='button-logout' onClick={logout}>Log out</button>}
