@@ -3,21 +3,43 @@ import PageNotFound from './PageNotFound'
 import { useUserStore } from '../store/UserStore'
 import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
+import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios'
 const AdminPanel = () => {
     const usertype = useUserStore((state) => state.usertype)
     const token = useUserStore((state) => state.token)
     const [catImage, setCatImage] = useState(require('../assets/blankprofile.png'));
     const [catName, setCatName] = useState('');
-    const [usertypeCount, setUsertypeCount] = useState();
+    const [usertypeCount, setUsertypeCount] = useState('');
 
+    let headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    }
+    function addCategory() {
+        if (catName === '' || catImage === require('../assets/blankprofile.png')) {
+            toast("Some fields are missing")
+        } else {
+            let data = new FormData();
+            data.append('name', catName);
+            data.append('cover_photo', catImage);
 
+            axios({
+                method: 'post',
+                url: 'http://127.0.0.1:8000/api/admin/createCategory',
+                data: data,
+                headers: headers
+            }).then(function (response) {
+                console.log(response);
+                toast("Added successfully")
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+    }
 
     function getUsersCount() {
-        let headers = {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token
-        }
+
         axios({
             method: "get",
             url: "http://127.0.0.1:8000/api/admin/usersCount",
@@ -96,6 +118,7 @@ const AdminPanel = () => {
 
                     </div>
                 </div>
+                <ToastContainer />
             </>
         )
     }
