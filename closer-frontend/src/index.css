@@ -1244,7 +1244,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 0 0 30px;
+  margin: 15px 0 0 30px;
 }
 
 .cat-container-left input {
@@ -1262,8 +1262,15 @@ a:hover {
 
 
 .cat-container-left .profile-photo-desc {
-  width: 100%;
-  margin: 0;
+  width: 94%;
+  margin: 0 0 10px 0;
+
+}
+
+.cat-container-left .login-btn {
+  width: 103%;
+  margin: 0 0 10px 0;
+
 }
 
 .upload-category {

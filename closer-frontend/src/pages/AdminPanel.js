@@ -50,6 +50,7 @@ const AdminPanel = () => {
                         <div className='cat-container-left'>
                             <input type="text" placeholder='Enter category name'></input>
                             <label className='profile-photo-desc' htmlFor="fileId2">upload picture</label>
+                            <button className='login-btn'>Add category</button>
                         </div>
                         <div className='upload-category'>
                             <input type="file" name="photo" id="fileId2"
