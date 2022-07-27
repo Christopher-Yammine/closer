@@ -7,6 +7,7 @@ import Attendee from '../components/Attendee'
 import axios from 'axios'
 import { useLocation } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import PageHeading from '../components/PageHeading'
 
 const Event = () => {
     const usertype = useUserStore((state) => state.usertype);
@@ -92,6 +93,7 @@ const Event = () => {
             animate={{ width: "100%" }}
             exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
             <Navbar usertype={usertype} />
+            <PageHeading text="Event info" />
             {eventInfo.map(eventinfo => (
                 <div key={eventinfo.id}><div className='video-container'>
                     <video src={eventinfo.video_url} controls />
