@@ -1310,8 +1310,9 @@ a:hover {
 }
 
 .new-cat-container .upload img {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  height: 200px;
+  margin: 0 0 0 40px
 }
 
 @keyframes gradient {
@@ -1331,7 +1332,9 @@ a:hover {
 
 @media (max-width:1050px) {
 
-
+  .new-cat-container .upload img {
+    margin: 0;
+  }
 
 
   .navbar {
