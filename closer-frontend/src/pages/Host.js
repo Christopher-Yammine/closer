@@ -88,8 +88,9 @@ const Host = () => {
             );
             const data = await res.json();
 
-            setLocation(data.city + ", " + data.locality);
-        
+            setLocation(data.principalSubdivision + ", " + data.locality);
+
+
         } catch (err) {
             console.log(err);
         }
@@ -121,7 +122,6 @@ const Host = () => {
     }
     function handlefiles(acceptedFiles) {
 
-        console.log(acceptedFiles)
         let data = new FormData();
         let headers = {
             'Content-Type': 'multipart/form-data',
@@ -188,7 +188,6 @@ const Host = () => {
                         <input type="number" placeholder='Maximum capacity' onChange={(e) => { setEventCapacity(e.currentTarget.value) }}></input>
                         <input type="datetime-local" onChange={(e) => {
 
-                            console.log(e.currentTarget.value.replace('T', ' '))
 
                             setFormattedDate(e.currentTarget.value.replace('T', ' '))
 
