@@ -206,7 +206,7 @@ const Host = () => {
                         <input type="file" name="photo" id="fileId2"
                             onChange={(e) => { cardimageUploaded(e.target.files) }} />
                         <div className="upload">
-                            <div className='cover-photo-host'>
+                            <div className='cover-photo-host-event'>
                                 <img src={cardbase64String} alt='' />
                             </div>
                         </div>

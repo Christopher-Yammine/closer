@@ -900,11 +900,18 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 
 
-.upload img {
+.cover-photo-host img {
   width: 100%;
   height: 300px;
   border-radius: 15px;
   margin: 0 0 0 10px;
+}
+
+.cover-photo-host-event img {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+
 }
 
 
