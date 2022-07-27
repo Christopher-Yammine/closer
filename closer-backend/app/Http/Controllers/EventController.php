@@ -52,7 +52,7 @@ class EventController extends Controller
         ], 200);
     }
 
-  
+
     public function getAllCategories()
     {
         $category = Category::all();
@@ -110,5 +110,8 @@ class EventController extends Controller
             "data" => compact("vid"),
             "link" => compact("fileLink")
         ], 200);
+    }
+    public function getExpiredEvents()
+    {
     }
 }
