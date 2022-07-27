@@ -18,7 +18,6 @@ const Host = () => {
     const [selectedPosition, setSelectedPosition] = useState([33.89, 35.501])
     const [location, setLocation] = useState('');
     const [formattedDate, setFormattedDate] = useState('');
-    const [dateNow, setDateNow] = useState(new Date().toISOString().split('.')[0])
     const [categoryNames, setCategoryNames] = useState([]);
     const [videoLink, setVideoLink] = useState('');
     const [eventName, setEventName] = useState('');
@@ -187,8 +186,10 @@ const Host = () => {
                         <input type="text" placeholder='Event title' onChange={(e) => { setEventName(e.currentTarget.value) }} ></input>
                         <input type="text" placeholder='Small description' onChange={(e) => { setEventDescription(e.currentTarget.value) }}></input>
                         <input type="number" placeholder='Maximum capacity' onChange={(e) => { setEventCapacity(e.currentTarget.value) }}></input>
-                        <input type="datetime-local" value={dateNow} onChange={(e) => {
-                            setDateNow('');
+                        <input type="datetime-local" onChange={(e) => {
+
+                            console.log(e.currentTarget.value.replace('T', ' '))
+
                             setFormattedDate(e.currentTarget.value.replace('T', ' '))
 
                         }} />
