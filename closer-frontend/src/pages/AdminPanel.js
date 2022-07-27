@@ -20,6 +20,7 @@ const AdminPanel = () => {
         if (catName === '' || catImage === require('../assets/blankprofile.png')) {
             toast("Some fields are missing")
         } else {
+
             let data = new FormData();
             data.append('name', catName);
             data.append('cover_photo', catImage);
@@ -30,10 +31,17 @@ const AdminPanel = () => {
                 data: data,
                 headers: headers
             }).then(function (response) {
-                console.log(response);
-                toast("Added successfully")
+                
+                toast("Added successfully");
+                let cat_input = "";
+                cat_input = document.getElementById("cat-input-field");
+                cat_input.value = "";
+
+
+
             }).catch(function (err) {
                 console.log(err);
+                toast("looks like something went wrong :(")
             })
         }
     }
@@ -97,7 +105,7 @@ const AdminPanel = () => {
                     </div>
                     <div className='new-cat-container'>
                         <div className='cat-container-left'>
-                            <input type="text" placeholder='Enter category name' onChange={(e) => {
+                            <input type="text" placeholder='Enter category name' id='cat-input-field' onChange={(e) => {
                                 setCatName(e.currentTarget.value)
                             }}></input>
                             <label className='profile-photo-desc' htmlFor="fileId2">upload picture</label>
