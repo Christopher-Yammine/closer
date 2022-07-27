@@ -163,4 +163,13 @@ class UserController extends Controller
             "data" => compact('category')
         ], 200);
     }
+    public function getUsertypesCount()
+    {
+        $user_count = User::where("type", "user")->where("type", "host")->get();
+
+        return response()->json([
+            "status" => "success",
+            "user_count" => compact("user_count")
+        ]);
+    }
 }

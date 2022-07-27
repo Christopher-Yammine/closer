@@ -24,6 +24,7 @@ Route::post('host', [UserController::class, 'makeHost']);
 Route::get('topHosts', [UserController::class, 'topHosts']);
 
 
+
 Route::get('trendingEvents', [EventController::class, 'trendingEvents']);
 Route::get('event/{id}', [EventController::class, 'getEventById']);
 Route::get('events/{id_cat}', [EventController::class, 'getEventsByCat']);
@@ -39,8 +40,12 @@ Route::group(['prefix' => 'host'], function () {
     });
 });
 
-Route::group(['middleware' => 'admin.role'], function () {
-    Route::post('createCategory', [UserController::class, 'createCategory']);
+Route:
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['middleware' => 'admin.role'], function () {
+        Route::post('createCategory', [UserController::class, 'createCategory']);
+        Route::get('usersCount', [UserController::class, 'usersCount']);
+    });
 });
 
 Route::group(['middleware' => 'user.role'], function () {
