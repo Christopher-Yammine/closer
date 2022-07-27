@@ -612,7 +612,10 @@ a {
 }
 
 h1 {
-  color: white
+  color: white;
+  font-family: "orbitron";
+  margin: 20px 0 0 30px;
+  font-size: 28pt;
 }
 
 .eventcard {
@@ -1191,6 +1194,12 @@ a:hover {
   width: 66%;
   display: flex;
   justify-content: space-between;
+}
+
+.users-stats-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 
