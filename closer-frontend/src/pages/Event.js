@@ -159,7 +159,7 @@ const Event = () => {
             <div className='attendees'>
                 {attendees.map(attendee => (
 
-                    <Attendee srcdata={attendee.profile_picture} username={attendee.username} />
+                    <Attendee key={attendee.id} srcdata={attendee.profile_picture} username={attendee.username} />
                 ))}
             </div>
 
