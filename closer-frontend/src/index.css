@@ -1241,6 +1241,9 @@ a:hover {
 .cat-container-left {
   width: 50%;
 }
+.cat-container-left .profile-photo-desc{
+  width: 100%;
+}
 
 .upload-category {
   width: 40%;
@@ -1255,16 +1258,19 @@ a:hover {
 }
 
 .new-cat-container .upload {
+  display: flex;
+  justify-items: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .new-cat-container .upload img {
   width: 70%;
   height: 100%;
-  margin: 10px 10px 0 0;
 }
 
 @keyframes gradient {
