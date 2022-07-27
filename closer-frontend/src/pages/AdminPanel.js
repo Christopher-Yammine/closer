@@ -3,12 +3,29 @@ import PageNotFound from './PageNotFound'
 import { useUserStore } from '../store/UserStore'
 import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
+import axios from 'axios'
+import { display } from '@mui/system'
 const AdminPanel = () => {
     const usertype = useUserStore((state) => state.usertype)
-    const [catImage, setCatImage] = useState(require('../assets/blankprofile.png'))
+    const token = useUserStore((state) => state.token)
+    const [catImage, setCatImage] = useState(require('../assets/blankprofile.png'));
+    const [usertypeCount, setUsertypeCount] = useState();
+
+
 
     function getUsersCount() {
+        let headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        }
+        axios({
+            method: "get",
+            url: "http://127.0.0.1:8000/api/admin/usersCount",
+            headers: headers
 
+        }).then(function (response) {
+            setUsertypeCount(response.data)
+        })
     }
     function catImageUploaded(files) {
         var file = files[0];
@@ -41,7 +58,7 @@ const AdminPanel = () => {
                                 Users count
                             </div>
                             <div>
-                                200 users
+                                {usertypeCount.user_count} users
                             </div>
 
                         </div>
@@ -50,7 +67,7 @@ const AdminPanel = () => {
                                 Hosts count
                             </div>
                             <div>
-                                50 hosts
+                                {usertypeCount.host_count} hosts
                             </div>
                         </div>
                     </div>
@@ -58,7 +75,7 @@ const AdminPanel = () => {
                         <div className='cat-container-left'>
                             <input type="text" placeholder='Enter category name'></input>
                             <label className='profile-photo-desc' htmlFor="fileId2">upload picture</label>
-                            <button className='login-btn'>Add category</button>
+                            <button className='login-btn' onClick={display}>Add category</button>
                         </div>
                         <div className='upload-category'>
                             <input type="file" name="photo" id="fileId2"
