@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PageNotFound from './PageNotFound'
 import { useUserStore } from '../store/UserStore'
 import Navbar from '../components/Navbar'
@@ -7,6 +7,9 @@ const AdminPanel = () => {
     const usertype = useUserStore((state) => state.usertype)
     const [catImage, setCatImage] = useState(require('../assets/blankprofile.png'))
 
+    function getUsersCount() {
+
+    }
     function catImageUploaded(files) {
         var file = files[0];
         var reader = new FileReader();
@@ -19,6 +22,11 @@ const AdminPanel = () => {
 
         reader.readAsDataURL(file);
     }
+
+    useEffect(() => {
+        getUsersCount();
+    }, [])
+
     if (usertype === 'admin') {
         return (
             <>
