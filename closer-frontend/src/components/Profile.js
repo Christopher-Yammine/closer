@@ -24,14 +24,13 @@ const Profile = () => {
         x.classList.toggle("change");
         btn_logout = document.getElementsByClassName('button-logout')[0];
         menu = document.getElementsByClassName('navbar-pages')[0];
-        console.log(menu)
         btn_logout.classList.toggle("button-logout-shown")
         menu.classList.toggle("navbar-pages-shown")
-        
+
     }
     return (
         <div className='profile-logout'>
-            <div className='profile'>
+            {user_id && <> <div className='profile'>
                 <img src={profile_pic} alt=""></img>
                 <div className="container" onClick={(e) => { change(e.currentTarget) }}>
                     <div className="bar1"></div>
@@ -42,8 +41,8 @@ const Profile = () => {
 
             <div>
 
-                {user_id && <button type='button' className='button-logout' onClick={logout}>Log out</button>}
-            </div>
+                 <button type='button' className='button-logout' onClick={logout}>Log out</button>
+            </div></>}
         </div>
 
     )
