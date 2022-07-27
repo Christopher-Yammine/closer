@@ -1316,6 +1316,10 @@ a:hover {
 
 }
 
+.new-cat-container .uploaded-photo {
+  margin: 0 20px 0 0;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -1334,6 +1338,20 @@ a:hover {
 @media (max-width:1050px) {
 
   .new-cat-container .upload img {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  .new-cat-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-cat-container .cat-container-left {
+    margin: 20px 0 0 0;
+  }
+
+  .new-cat-container .uploaded-photo {
     margin: 0;
   }
 

@@ -8,7 +8,7 @@ import axios from 'axios'
 const AdminPanel = () => {
     const usertype = useUserStore((state) => state.usertype)
     const token = useUserStore((state) => state.token)
-    const [catImage, setCatImage] = useState(require('../assets/blankprofile.png'));
+    const [catImage, setCatImage] = useState(require('../assets/white.jpg'));
     const [catName, setCatName] = useState('');
     const [usertypeCount, setUsertypeCount] = useState('');
 
@@ -31,7 +31,7 @@ const AdminPanel = () => {
                 data: data,
                 headers: headers
             }).then(function (response) {
-                
+
                 toast("Added successfully");
                 let cat_input = "";
                 cat_input = document.getElementById("cat-input-field");
