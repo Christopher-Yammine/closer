@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register', 'makeHost', 'topHosts', 'createCategory']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'makeHost', 'topHosts', 'createCategory', 'getUsertypesCount']]);
     }
 
     public function login(Request $request)
@@ -165,11 +165,13 @@ class UserController extends Controller
     }
     public function getUsertypesCount()
     {
-        $user_count = User::where("type", "user")->where("type", "host")->get();
+        $user_count = User::where("type", "user")->count();
+        $host_count = User::where("type", "host")->count();
 
         return response()->json([
             "status" => "success",
-            "user_count" => compact("user_count")
+            "user_count" => $user_count,
+            "host_count" => $host_count
         ]);
     }
 }

@@ -44,7 +44,7 @@ Route:
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'admin.role'], function () {
         Route::post('createCategory', [UserController::class, 'createCategory']);
-        Route::get('usersCount', [UserController::class, 'usersCount']);
+        Route::get('usersCount', [UserController::class, 'getUsertypesCount']);
     });
 });
 
