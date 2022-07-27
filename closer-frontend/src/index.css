@@ -1240,8 +1240,14 @@ a:hover {
 
 .cat-container-left {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 20px 0 0 10px;
 }
-.cat-container-left .profile-photo-desc{
+
+.cat-container-left .profile-photo-desc {
   width: 100%;
 }
 

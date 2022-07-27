@@ -48,8 +48,8 @@ const AdminPanel = () => {
                     </div>
                     <div className='new-cat-container'>
                         <div className='cat-container-left'>
-                            <h1>chros</h1>
-                            <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
+                            <input type="text" placeholder='Enter category name'></input>
+                            <label className='profile-photo-desc' htmlFor="fileId2">upload picture</label>
                         </div>
                         <div className='upload-category'>
                             <input type="file" name="photo" id="fileId2"
