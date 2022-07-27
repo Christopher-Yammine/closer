@@ -614,7 +614,7 @@ a {
 h1 {
   color: white;
   font-family: "orbitron";
-  margin: 20px 0 0 30px;
+  margin: 40px 0 0 30px;
   font-size: 28pt;
 }
 
@@ -1199,9 +1199,26 @@ a:hover {
 .users-stats-container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 100px 0 0 0;
 }
 
+.users-count,
+.hosts-count {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px white;
+  width: 30%;
+  height: 100px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  font-family: "orbitron";
+  font-size: 18pt;
+
+}
 
 
 @keyframes gradient {

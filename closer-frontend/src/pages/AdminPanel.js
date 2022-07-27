@@ -10,9 +10,25 @@ const AdminPanel = () => {
         return (
             <>
                 <Navbar usertype={usertype} />
-                <PageHeading text="Admin Panel"/>
+                <PageHeading text="Admin Panel" />
                 <div className='users-stats-container'>
-                    
+                    <div className='users-count'>
+                        <div className='users-count-title'>
+                            Users count
+                        </div>
+                        <div>
+                            200 users
+                        </div>
+
+                    </div>
+                    <div className='users-count'>
+                        <div className='users-count-title'>
+                            Users count
+                        </div>
+                        <div>
+                            200 users
+                        </div>
+                    </div>
                 </div>
             </>
         )
