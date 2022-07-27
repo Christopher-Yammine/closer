@@ -12,22 +12,29 @@ const AdminPanel = () => {
                 <Navbar usertype={usertype} />
                 <PageHeading text="Admin Panel" />
                 <div className='users-stats-container'>
-                    <div className='users-count'>
-                        <div className='users-count-title'>
-                            Users count
-                        </div>
-                        <div>
-                            200 users
-                        </div>
+                    <div className='left-stats'>
 
+
+                        <div className='users-count'>
+                            <div className='users-count-title'>
+                                Users count
+                            </div>
+                            <div>
+                                200 users
+                            </div>
+
+                        </div>
+                        <div className='hosts-count'>
+                            <div className='hosts-count-title'>
+                                Hosts count
+                            </div>
+                            <div>
+                                50 hosts
+                            </div>
+                        </div>
                     </div>
-                    <div className='users-count'>
-                        <div className='users-count-title'>
-                            Users count
-                        </div>
-                        <div>
-                            200 users
-                        </div>
+                    <div className='new-cat-container'>
+                        <h1>something</h1>
                     </div>
                 </div>
             </>

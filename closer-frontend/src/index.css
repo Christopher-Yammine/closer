@@ -613,9 +613,13 @@ a {
 
 h1 {
   color: white;
+}
+
+.big-header {
+  color: white;
   font-family: "orbitron";
   margin: 40px 0 0 30px;
-  font-size: 28pt;
+  font-size: 16pt;
 }
 
 .eventcard {
@@ -623,7 +627,6 @@ h1 {
   height: 300px;
   border-radius: 30px;
   margin: 40px 30px 40px 30px;
-
 }
 
 .eventcard>img {
@@ -1210,16 +1213,35 @@ a:hover {
   justify-content: center;
   align-items: center;
   border: solid 1px white;
-  width: 30%;
+  width: 400px;
   height: 100px;
   border-radius: 15px;
   text-align: center;
   color: white;
   font-family: "orbitron";
   font-size: 18pt;
+  gap: 10px;
+  margin: 20px 0 0 0;
 
 }
 
+.left-stats {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.users-count-title,
+.hosts-count-title {
+  font-weight: bold;
+}
+
+.new-cat-container {
+  width: 50%;
+  border: 1px white solid;
+}
 
 @keyframes gradient {
   0% {
