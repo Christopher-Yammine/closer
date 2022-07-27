@@ -9,6 +9,7 @@ import { useUserStore } from '../store/UserStore'
 import PageNotFound from './PageNotFound'
 import { useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
+import PageHeading from '../components/PageHeading'
 const Host = () => {
 
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
@@ -154,6 +155,7 @@ const Host = () => {
                 animate={{ width: "100%" }}
                 exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}>
                 <Navbar usertype={usertype} />
+                <PageHeading text="Add your event" />
                 <div className='dropzone'>
                     <Dropzone multiple={false} onDrop={(acceptedFiles) => {
                         handlefiles(acceptedFiles);
