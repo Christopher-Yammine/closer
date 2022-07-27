@@ -8,6 +8,7 @@ import TopHosts from '../pages/TopHosts';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Event from '../pages/Event';
+import AdminPanel from '../pages/AdminPanel';
 const AnimatedRoutes = () => {
     const location = useLocation();
     return (
@@ -20,6 +21,7 @@ const AnimatedRoutes = () => {
                 <Route path='/top-hosts' element={<TopHosts />}></Route>
                 <Route path='/your-event' element={<Host />}></Route>
                 <Route path='/event' element={<Event />}></Route>
+                <Route path='/admin' element={<AdminPanel />}></Route>
             </Routes >
         </AnimatePresence>
     )

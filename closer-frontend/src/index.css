@@ -1226,7 +1226,6 @@ a:hover {
     flex-wrap: wrap;
     margin: 0 0 0 20px;
     gap: 10px;
-    transition: all 1s;
     opacity: 0;
     top: 100px;
     pointer-events: none;
@@ -1295,8 +1294,8 @@ a:hover {
 
   .signup-button {
     height: 50px;
-    margin: 10px 0 0 20px;
-    width: 150px;
+    margin: 10px 0 20px 20px;
+    width: 80%;
   }
 
   .login-input>input::placeholder,
