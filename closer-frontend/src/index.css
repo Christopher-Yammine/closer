@@ -1193,6 +1193,8 @@ a:hover {
   justify-content: space-between;
 }
 
+
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -1207,31 +1209,40 @@ a:hover {
   }
 }
 
+
 @media (max-width:1050px) {
+
+
+
+
   .navbar {
-
     column-gap: 70%;
+  }
 
+
+
+  .navbar-pages {
+    position: absolute;
+    flex-wrap: wrap;
+    margin: 0 0 0 20px;
+    gap: 10px;
+    transition: all 1s;
+    opacity: 0;
+    top: 100px;
+    pointer-events: none;
 
   }
 
   .navbar-pages-shown {
     opacity: 1;
-    top: 100;
-    transition: all 1s;
-  }
-
-  .navbar-pages {
     position: absolute;
+    top: 100px;
+    transition: all 1.5s;
+    pointer-events: all;
 
-    flex-wrap: wrap;
-    margin: 0 0 0 20px;
-    gap: 10px;
-    top: -200px;
-    opacity: 0;
-    transition: all 1s;
 
   }
+
 
   .vl {
     display: none;

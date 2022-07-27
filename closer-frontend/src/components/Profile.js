@@ -20,9 +20,14 @@ const Profile = () => {
 
     function change(x) {
         let btn_logout = '';
+        let menu = '';
         x.classList.toggle("change");
         btn_logout = document.getElementsByClassName('button-logout')[0];
+        menu = document.getElementsByClassName('navbar-pages')[0];
+        console.log(menu)
         btn_logout.classList.toggle("button-logout-shown")
+        menu.classList.toggle("navbar-pages-shown")
+        
     }
     return (
         <div className='profile-logout'>
@@ -34,7 +39,7 @@ const Profile = () => {
                     <div className="bar3"></div>
                 </div>
             </div >
-            
+
             <div>
 
                 {user_id && <button type='button' className='button-logout' onClick={logout}>Log out</button>}
