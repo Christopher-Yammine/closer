@@ -4,11 +4,11 @@ import { useUserStore } from '../store/UserStore'
 import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
 import axios from 'axios'
-import { display } from '@mui/system'
 const AdminPanel = () => {
     const usertype = useUserStore((state) => state.usertype)
     const token = useUserStore((state) => state.token)
     const [catImage, setCatImage] = useState(require('../assets/blankprofile.png'));
+    const [catName, setCatName] = useState('');
     const [usertypeCount, setUsertypeCount] = useState();
 
 
@@ -25,6 +25,8 @@ const AdminPanel = () => {
 
         }).then(function (response) {
             setUsertypeCount(response.data)
+        }).catch(function (err) {
+            console.log(err);
         })
     }
     function catImageUploaded(files) {
@@ -73,9 +75,11 @@ const AdminPanel = () => {
                     </div>
                     <div className='new-cat-container'>
                         <div className='cat-container-left'>
-                            <input type="text" placeholder='Enter category name'></input>
+                            <input type="text" placeholder='Enter category name' onChange={(e) => {
+                                setCatName(e.currentTarget.value)
+                            }}></input>
                             <label className='profile-photo-desc' htmlFor="fileId2">upload picture</label>
-                            <button className='login-btn' onClick={display}>Add category</button>
+                            <button className='login-btn' onClick={addCategory}>Add category</button>
                         </div>
                         <div className='upload-category'>
                             <input type="file" name="photo" id="fileId2"
