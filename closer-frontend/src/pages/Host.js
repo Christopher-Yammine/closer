@@ -60,7 +60,7 @@ const Host = () => {
                     window.location.reload();
                 }, 2000);
             }).catch(function (err) {
-                console.log(err);
+            
                 toast('Oops, looks like something went wrong on our end');
 
             })
@@ -89,10 +89,8 @@ const Host = () => {
             const data = await res.json();
 
             setLocation(data.principalSubdivision + ", " + data.locality);
-
-            console.log(location)
         } catch (err) {
-            console.log(err);
+
         }
     };
     function imageUploaded(files) {
@@ -139,7 +137,7 @@ const Host = () => {
             setTextDesc(acceptedFiles[0].name);
             setVideoLink(response.data.link.fileLink);
         }).catch(function (err) {
-            console.log(err);
+            toast('Error, file too big');
             setTextDesc("Error, file too big");
         })
     }
