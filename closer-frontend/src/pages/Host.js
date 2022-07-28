@@ -90,7 +90,7 @@ const Host = () => {
 
             setLocation(data.principalSubdivision + ", " + data.locality);
 
-
+            console.log(location)
         } catch (err) {
             console.log(err);
         }
