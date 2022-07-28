@@ -11,6 +11,7 @@ const AdminPanel = () => {
     const [catImage, setCatImage] = useState(require('../assets/white.jpg'));
     const [catName, setCatName] = useState('');
     const [usertypeCount, setUsertypeCount] = useState('');
+    const [expiredEvents, setExpiredEvents] = useState([]);
 
     let headers = {
         'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ const AdminPanel = () => {
             url: "http://127.0.0.1:8000/api/admin/getExpiredEvents",
             headers: headers
         }).then(function (response) {
-            console.log(response)
+            setExpiredEvents(response.data.data)
         })
     }
 
@@ -142,8 +143,11 @@ const AdminPanel = () => {
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Age</th>
-                                    <th>Gender</th>
+                                    <th>Description</th>
+                                    <th>City</th>
+                                    <th>Date</th>
+                                    <th>Capacity</th>
+                                    <th>Total Attendees</th>
                                 </tr>
                             </thead>
                             <tbody>
