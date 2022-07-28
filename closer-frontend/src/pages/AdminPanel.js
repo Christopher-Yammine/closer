@@ -53,8 +53,8 @@ const AdminPanel = () => {
                 let cat_input = "";
                 cat_input = document.getElementById("cat-input-field");
                 cat_input.value = "";
-                
-                
+                setCatImage(require('../assets/blankprofile.png'))
+
 
             }).catch(function (err) {
                 toast("looks like something went wrong :(")
