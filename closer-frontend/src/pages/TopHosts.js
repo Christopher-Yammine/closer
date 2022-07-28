@@ -13,7 +13,7 @@ const TopHosts = () => {
         }).then(function (response) {
             setTopHosts(response.data.data.top_host);
         }).catch(function (err) {
-            console.log(err);
+
         })
     }
 
