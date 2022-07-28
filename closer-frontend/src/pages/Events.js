@@ -43,13 +43,14 @@ const Events = () => {
                 }
 
             }).catch(function (err) {
-           
+
             })
         }
     }
 
     useEffect(() => {
         getEvents();
+        // eslint-disable-next-line
     }, []);
     return (
         <motion.div

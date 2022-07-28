@@ -96,8 +96,10 @@ const AdminPanel = () => {
     }
 
     useEffect(() => {
+
         getUsersCount();
         getExpired();
+        // eslint-disable-next-line
     }, [])
 
     if (usertype === 'admin') {
