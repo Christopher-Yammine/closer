@@ -20,6 +20,18 @@ const AdminPanel = () => {
 
     function deleteEvent(id) {
         let data = new FormData();
+        data.append("event", id)
+        axios({
+            method: "post",
+            url: "http://127.0.0.1:8000/api/admin/deleteExpired",
+            data: data,
+            headers: headers
+        }).then(function (response) {
+            console.log(response)
+            getExpired();
+        }).catch(function (err) {
+            console.log(err)
+        })
 
     }
     function addCategory() {
