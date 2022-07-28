@@ -71,14 +71,19 @@ const AdminPanel = () => {
 
         reader.readAsDataURL(file);
     }
-    function getExpired(){
+    function getExpired() {
         axios({
-            method:"get",
+            method: "get",
+            url: "http://127.0.0.1:8000/api/admin/getExpiredEvents",
+            headers: headers
+        }).then(function (response) {
+            console.log(response)
         })
     }
 
     useEffect(() => {
         getUsersCount();
+        getExpired();
     }, [])
 
     if (usertype === 'admin') {
