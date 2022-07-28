@@ -114,7 +114,10 @@ class EventController extends Controller
     public function getExpiredEvents()
     {
 
-        $expired_event = Event::where("date", ">", now());
-        return reponse()-
+        $expired_event = Event::where("date", "<", now())->get();
+        return response()->json([
+            "status" => "success",
+            "data" => $expired_event
+        ]);
     }
 }
