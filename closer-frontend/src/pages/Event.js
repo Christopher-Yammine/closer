@@ -29,7 +29,7 @@ const Event = () => {
             setAttendees(response.data.data.all_attendees)
             setAttendeesCount(response.data.count.attendees_count)
         }).catch(function (err) {
-            console.log(err);
+            
         })
     }
 
@@ -47,7 +47,7 @@ const Event = () => {
             toast(response.data.data);
             showAttendees();
         }).catch(function (err) {
-            console.log(err);
+        
             toast("Make sure you are logged in order to reserve a spot")
         })
 
@@ -74,7 +74,7 @@ const Event = () => {
 
 
         }).catch(function (err) {
-            console.log(err);
+            toast("This event doesn't exist anymore")
         })
 
 
