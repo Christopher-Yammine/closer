@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
 import axios from 'axios'
+import { toast, ToastContainer } from 'react-toastify'
 const Events = () => {
     const usertype = useUserStore((state) => state.usertype);
     const currentlocation = useLocation();
@@ -29,7 +30,7 @@ const Events = () => {
                 setEvents(response.data.data.events);
 
             }).catch(function (err) {
-                console.log(err)
+
             })
         } else {
             axios({
@@ -37,9 +38,12 @@ const Events = () => {
                 url: "http://127.0.0.1:8000/api/events/" + id_category
             }).then(function (response) {
                 setEvents(response.data.data.events);
+                if (response.data.data.events.length === 0) {
+                    toast('No events in this category yet')
+                }
 
             }).catch(function (err) {
-                console.log(err)
+           
             })
         }
     }
@@ -93,7 +97,7 @@ const Events = () => {
 
 
             </div>
-
+            <ToastContainer />
 
         </motion.div>
     )
