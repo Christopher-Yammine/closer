@@ -71,6 +71,11 @@ const AdminPanel = () => {
 
         reader.readAsDataURL(file);
     }
+    function getExpired(){
+        axios({
+            method:"get",
+        })
+    }
 
     useEffect(() => {
         getUsersCount();
