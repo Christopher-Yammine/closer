@@ -34,6 +34,7 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
                 }, 2000);
 
             }).catch(function (err) {
+
                 toast(err.response.data.message)
             })
         }

@@ -53,6 +53,8 @@ const AdminPanel = () => {
                 let cat_input = "";
                 cat_input = document.getElementById("cat-input-field");
                 cat_input.value = "";
+                
+                
 
             }).catch(function (err) {
                 toast("looks like something went wrong :(")
