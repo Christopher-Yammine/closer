@@ -30,6 +30,7 @@ Route::get('event/{id}', [EventController::class, 'getEventById']);
 Route::get('events/{id_cat}', [EventController::class, 'getEventsByCat']);
 Route::get('events', [EventController::class, 'getEvents']);
 Route::get('getAllCategories', [EventController::class, 'getAllCategories']);
+Route::get('getExpiredEvents', [EventController::class, 'getExpiredEvents']);
 
 Route::get('attendeesByEvent/{event_id}', [AttendeeController::class, 'attendeesByEvent']);
 
