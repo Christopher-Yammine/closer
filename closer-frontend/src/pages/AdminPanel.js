@@ -157,7 +157,7 @@ const AdminPanel = () => {
                                         <td>{expEvent.date}</td>
                                         <td>{expEvent.capacity}</td>
                                         <td>{expEvent.total_attendees}</td>
-                                        <td><button id={expEvent.id} onClick={(e) => { console.log(e.currentTarget.id) }}>XD</button></td>
+                                        <td><button id={expEvent.id} className="delete-btn" onClick={(e) => { console.log(e.currentTarget.id) }}>X</button></td>
                                     </tr>))}
                             </tbody>
                         </table>

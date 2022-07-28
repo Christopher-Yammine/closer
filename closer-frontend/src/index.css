@@ -1336,7 +1336,6 @@ a:hover {
 
 .expired-table {
   margin: 100px 0;
-  border: white solid 1px;
   width: fit-content;
   border-radius: 5px;
 }
@@ -1351,6 +1350,12 @@ th {
   text-align: center;
 }
 
+.delete-btn {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+}
 
 @keyframes gradient {
   0% {
@@ -1368,10 +1373,7 @@ th {
 
 
 @media (max-width:1050px) {
-    {
-    display: block;
-    width: 100%;
-  }
+
 
   .table-wrapper:before {
     content: "Scroll horizontally >";
