@@ -17,6 +17,11 @@ const AdminPanel = () => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
     }
+
+    function deleteEvent(id) {
+        let data = new FormData();
+
+    }
     function addCategory() {
         if (catName === '' || catImage === require('../assets/blankprofile.png')) {
             toast("Some fields are missing")
@@ -157,7 +162,7 @@ const AdminPanel = () => {
                                         <td>{expEvent.date}</td>
                                         <td>{expEvent.capacity}</td>
                                         <td>{expEvent.total_attendees}</td>
-                                        <td><button id={expEvent.id} className="delete-btn" onClick={(e) => { console.log(e.currentTarget.id) }}>X</button></td>
+                                        <td><button id={expEvent.id} className="delete-btn" onClick={(e) => { deleteEvent(e.currentTarget.id) }}>X</button></td>
                                     </tr>))}
                             </tbody>
                         </table>
