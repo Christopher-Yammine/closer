@@ -1328,6 +1328,21 @@ a:hover {
   margin: 0 20px 0 0;
 }
 
+.expired-table {
+  border: white solid 1px;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+tbody td,
+th {
+  border: white solid 1px;
+  color: white;
+  font-family: "orbitron";
+  border-radius: 5px;
+}
+
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
