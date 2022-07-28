@@ -1335,7 +1335,7 @@ a:hover {
 }
 
 .expired-table {
-  margin: 100px 0 0 0;
+  margin: 100px 0;
   border: white solid 1px;
   width: fit-content;
   border-radius: 5px;
@@ -1349,7 +1349,6 @@ th {
   border-radius: 5px;
   padding: 10px;
   text-align: center;
-  font-size: 16pt;
 }
 
 
@@ -1369,6 +1368,77 @@ th {
 
 
 @media (max-width:1050px) {
+    {
+    display: block;
+    width: 100%;
+  }
+
+  .table-wrapper:before {
+    content: "Scroll horizontally >";
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: white;
+    padding: 0 0 10px;
+  }
+
+  thead,
+  tbody,
+  thead th {
+    display: block;
+  }
+
+  thead th:last-child {
+    border-bottom: none;
+  }
+
+  thead {
+    float: left;
+  }
+
+  tbody {
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+  }
+
+  td,
+  th {
+    padding: 20px .625em .625em .625em;
+    height: 70px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 120px;
+    font-size: 13px;
+  }
+
+  thead th {
+    text-align: left;
+    border-bottom: 1px solid #f7f7f9;
+  }
+
+  tbody tr {
+    display: table-cell;
+  }
+
+  tbody tr:nth-child(odd) {
+    background: none;
+  }
+
+  tr:nth-child(even) {
+    background: transparent;
+  }
+
+
+
+  tbody td {
+    display: block;
+    text-align: center;
+  }
+
+
 
   .new-cat-container .upload img {
     margin: 0 0 20px 0;
