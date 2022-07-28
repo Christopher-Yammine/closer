@@ -1328,18 +1328,28 @@ a:hover {
   margin: 0 20px 0 0;
 }
 
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .expired-table {
+  margin: 100px 0 0 0;
   border: white solid 1px;
   width: fit-content;
   border-radius: 5px;
 }
 
-tbody td,
+td,
 th {
   border: white solid 1px;
   color: white;
   font-family: "orbitron";
   border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16pt;
 }
 
 
