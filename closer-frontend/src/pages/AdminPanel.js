@@ -27,7 +27,7 @@ const AdminPanel = () => {
             data: data,
             headers: headers
         }).then(function (response) {
-            console.log(response)
+           
             getExpired();
         }).catch(function (err) {
             console.log(err)
