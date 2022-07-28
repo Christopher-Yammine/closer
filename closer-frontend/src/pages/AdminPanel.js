@@ -143,7 +143,6 @@ const AdminPanel = () => {
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Description</th>
                                     <th>City</th>
                                     <th>Date</th>
                                     <th>Capacity</th>
@@ -151,21 +150,15 @@ const AdminPanel = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Anom</td>
-                                    <td>19</td>
-                                    <td>Male</td>
-                                </tr>
-                                <tr>
-                                    <td>Megha</td>
-                                    <td>19</td>
-                                    <td>Female</td>
-                                </tr>
-                                <tr>
-                                    <td>Subham</td>
-                                    <td>25</td>
-                                    <td>Male</td>
-                                </tr>
+                                {expiredEvents.map(expEvent => (
+                                    <tr key={expEvent.id}>
+                                        <td>{expEvent.name}</td>
+                                        <td>{expEvent.city}</td>
+                                        <td>{expEvent.date}</td>
+                                        <td>{expEvent.capacity}</td>
+                                        <td>{expEvent.total_attendees}</td>
+                                        <td><button id={expEvent.id} onClick={(e) => { console.log(e.currentTarget.id) }}>XD</button></td>
+                                    </tr>))}
                             </tbody>
                         </table>
                     </div>
