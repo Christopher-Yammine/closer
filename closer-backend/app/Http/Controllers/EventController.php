@@ -113,8 +113,8 @@ class EventController extends Controller
     }
     public function getExpiredEvents()
     {
-        $kTsp = now();
-        echo $kTsp;
-        // $expired_event=Event::where("date",">",)
+
+        $expired_event = Event::where("date", ">", now());
+        return reponse()-
     }
 }
