@@ -30,8 +30,7 @@ Route::get('event/{id}', [EventController::class, 'getEventById']);
 Route::get('events/{id_cat}', [EventController::class, 'getEventsByCat']);
 Route::get('events', [EventController::class, 'getEvents']);
 Route::get('getAllCategories', [EventController::class, 'getAllCategories']);
-Route::get('getExpiredEvents', [EventController::class, 'getExpiredEvents']);
-Route::post('deleteExpired', [EventController::class, 'deleteExpired']);
+
 
 Route::get('attendeesByEvent/{event_id}', [AttendeeController::class, 'attendeesByEvent']);
 
@@ -47,6 +46,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'admin.role'], function () {
         Route::post('createCategory', [UserController::class, 'createCategory']);
         Route::get('usersCount', [UserController::class, 'getUsertypesCount']);
+        Route::get('getExpiredEvents', [EventController::class, 'getExpiredEvents']);
+        Route::post('deleteExpired', [EventController::class, 'deleteExpired']);
     });
 });
 
