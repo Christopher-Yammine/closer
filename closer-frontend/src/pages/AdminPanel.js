@@ -27,10 +27,9 @@ const AdminPanel = () => {
             data: data,
             headers: headers
         }).then(function (response) {
-           
             getExpired();
         }).catch(function (err) {
-            console.log(err)
+            toast("looks like something went wrong :(")
         })
 
     }
@@ -55,10 +54,7 @@ const AdminPanel = () => {
                 cat_input = document.getElementById("cat-input-field");
                 cat_input.value = "";
 
-
-
             }).catch(function (err) {
-                console.log(err);
                 toast("looks like something went wrong :(")
             })
         }
