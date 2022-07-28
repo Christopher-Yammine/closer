@@ -123,13 +123,12 @@ class EventController extends Controller
 
     public function deleteExpired(Request $request)
     {
-        $deleted_event = Event::where('id', $request->event)->get();
+        $deleted_event = Event::where('id', $request->event)->delete();
 
 
         return response()->json([
             "status" => "success",
-            "data" => $deleted_event,
-            "id" => $request
+            "data" => $deleted_event
         ]);
     }
 }
