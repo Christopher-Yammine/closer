@@ -34,7 +34,7 @@ const AdminPanel = () => {
 
     }
     function addCategory() {
-        if (catName === '' || catImage === require('../assets/blankprofile.png')) {
+        if (catName === '' || catImage === require('../assets/white.jpg')) {
             toast("Some fields are missing")
         } else {
 
@@ -53,7 +53,7 @@ const AdminPanel = () => {
                 let cat_input = "";
                 cat_input = document.getElementById("cat-input-field");
                 cat_input.value = "";
-                setCatImage(require('../assets/blankprofile.png'))
+                setCatImage(require('../assets/white.jpg'))
 
 
             }).catch(function (err) {
