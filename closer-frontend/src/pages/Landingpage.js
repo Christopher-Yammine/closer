@@ -9,6 +9,8 @@ import EventCard from '../components/EventCard';
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 const Landingpage = () => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype);
     const [trendingEvents, setTrendingEvents] = useState([]);
 
@@ -22,7 +24,7 @@ const Landingpage = () => {
     function getTrendingEvents() {
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/trendingEvents",
+            url: REACT_APP_BASE_URL + "trendingEvents",
         }).then(function (response) {
             setTrendingEvents(response.data.data.trending);
 
