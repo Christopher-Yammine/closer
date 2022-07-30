@@ -12,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import PageHeading from '../components/PageHeading'
 const Host = () => {
 
+    const { REACT_APP_BASE_URL } = process.env;
     const [textDesc, setTextDesc] = useState("Drag 'n' drop your video here, or click to select file");
     const [base64String, setbase64String] = useState(require('../assets/white.jpg'));
     const [cardbase64String, setcardbase64String] = useState(require('../assets/white.jpg'));
@@ -51,7 +52,7 @@ const Host = () => {
 
             axios({
                 method: "post",
-                url: "http://127.0.0.1:8000/api/host/event",
+                url: REACT_APP_BASE_URL + "host/event",
                 headers: headers,
                 data: data
             }).then(function (response) {
@@ -60,7 +61,7 @@ const Host = () => {
                     window.location.reload();
                 }, 2000);
             }).catch(function (err) {
-            
+
                 toast('Oops, looks like something went wrong on our end');
 
             })
@@ -72,7 +73,7 @@ const Host = () => {
     function getCategoryNames() {
         axios({
             method: 'get',
-            url: 'http://127.0.0.1:8000/api/getAllCategories'
+            url: REACT_APP_BASE_URL + 'getAllCategories'
         }).then(function (response) {
             setCategoryNames(response.data.data.category)
         })
@@ -128,7 +129,7 @@ const Host = () => {
         data.append('video', acceptedFiles[0]);
         axios({
             method: 'post',
-            url: "http://127.0.0.1:8000/api/host/file",
+            url: REACT_APP_BASE_URL + "host/file",
             data: data,
             headers: headers
 
