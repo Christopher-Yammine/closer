@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 const SignupHostModal = ({ signupHostIsOpen, handleSignupHostOpen }) => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -25,7 +27,7 @@ const SignupHostModal = ({ signupHostIsOpen, handleSignupHostOpen }) => {
 
             axios({
                 method: "post",
-                url: "http://127.0.0.1:8000/api/host",
+                url: REACT_APP_BASE_URL + "host",
                 data: data
             }).then(function (response) {
                 toast("Signed up successfully!");
@@ -88,9 +90,9 @@ const SignupHostModal = ({ signupHostIsOpen, handleSignupHostOpen }) => {
                                 </div>
                             </div>
                             <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
-                    
-                                <button type='button' className='signup-button' onClick={signupHost}>Start hosting</button>
-                          
+
+                            <button type='button' className='signup-button' onClick={signupHost}>Start hosting</button>
+
                         </div>
 
 
