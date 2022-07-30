@@ -7,6 +7,8 @@ import { useUserStore } from '../store/UserStore';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 const LoginModal = ({ loginIsOpen, handleLoginOpen }) => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const [userNameValue, setuserNameValue] = useState('');
     const [passwordValue, setpasswordValue] = useState('');
     const saveUserId = useUserStore((state) => state.setUser);
@@ -22,7 +24,7 @@ const LoginModal = ({ loginIsOpen, handleLoginOpen }) => {
             data.append('password', passwordValue);
             axios({
                 method: "post",
-                url: "http://127.0.0.1:8000/api/login",
+                url: REACT_APP_BASE_URL + "login",
                 data: data
             }).then(function (response) {
 
