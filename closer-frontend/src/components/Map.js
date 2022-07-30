@@ -50,7 +50,7 @@ const Map = ({ selectedPosition, setSelectedPosition, getName }) => {
         const map = useMapEvents({
             click(e) {
                 setSelectedPosition([e.latlng.lat, e.latlng.lng]);
-                console.log(selectedPosition);
+
                 getName();
             },
         });
@@ -84,7 +84,6 @@ const Map = ({ selectedPosition, setSelectedPosition, getName }) => {
             <MapContainer center={selectedPosition} zoom="12">
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
                 <Markers />
             </MapContainer>
