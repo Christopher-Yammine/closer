@@ -10,6 +10,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import PageHeading from '../components/PageHeading'
 
 const Event = () => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype);
     const user_token = useUserStore((state) => state.token);
     const currentlocation = useLocation();
@@ -19,12 +21,13 @@ const Event = () => {
     const [attendees, setAttendees] = useState([]);
     const [attendeesCount, setAttendeesCount] = useState('');
 
+
     let id_event = '';
     id_event = currentlocation.search.split("id=")[1];
     function showAttendees() {
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/attendeesByEvent/" + id_event
+            url: REACT_APP_BASE_URL + "attendeesByEvent/" + id_event
         }).then(function (response) {
             setAttendees(response.data.data.all_attendees)
             setAttendeesCount(response.data.count.attendees_count)
@@ -41,7 +44,7 @@ const Event = () => {
         }
         axios({
             method: "post",
-            url: "http://127.0.0.1:8000/api/addAttendee/" + id_event,
+            url: REACT_APP_BASE_URL + "addAttendee/" + id_event,
             headers: headers
         }).then(function (response) {
             toast(response.data.data);
@@ -67,7 +70,7 @@ const Event = () => {
 
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/event/" + id_event
+            url: REACT_APP_BASE_URL + "event/" + id_event
         }).then(function (response) {
             setEventInfo(response.data.data.event);
             setdate(response.data.data.event[0].date);
