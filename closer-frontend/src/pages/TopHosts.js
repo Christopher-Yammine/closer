@@ -4,12 +4,14 @@ import { motion } from 'framer-motion'
 import { useUserStore } from '../store/UserStore'
 import axios from 'axios'
 const TopHosts = () => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const [topHosts, setTopHosts] = useState([]);
     const usertype = useUserStore((state) => state.usertype);
     function getTopHosts() {
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/topHosts"
+            url: REACT_APP_BASE_URL + "topHosts"
         }).then(function (response) {
             setTopHosts(response.data.data.top_host);
         }).catch(function (err) {
