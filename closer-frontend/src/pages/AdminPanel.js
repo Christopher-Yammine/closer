@@ -6,6 +6,8 @@ import PageHeading from '../components/PageHeading'
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios'
 const AdminPanel = () => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype)
     const token = useUserStore((state) => state.token)
     const [catImage, setCatImage] = useState(require('../assets/white.jpg'));
@@ -23,7 +25,7 @@ const AdminPanel = () => {
         data.append("event", id)
         axios({
             method: "post",
-            url: "http://127.0.0.1:8000/api/admin/deleteExpired",
+            url: REACT_APP_BASE_URL + "admin/deleteExpired",
             data: data,
             headers: headers
         }).then(function (response) {
@@ -44,7 +46,7 @@ const AdminPanel = () => {
 
             axios({
                 method: 'post',
-                url: 'http://127.0.0.1:8000/api/admin/createCategory',
+                url: REACT_APP_BASE_URL + 'admin/createCategory',
                 data: data,
                 headers: headers
             }).then(function (response) {
@@ -66,7 +68,7 @@ const AdminPanel = () => {
 
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/admin/usersCount",
+            url: REACT_APP_BASE_URL + "admin/usersCount",
             headers: headers
 
         }).then(function (response) {
@@ -90,7 +92,7 @@ const AdminPanel = () => {
     function getExpired() {
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/admin/getExpiredEvents",
+            url: REACT_APP_BASE_URL + "admin/getExpiredEvents",
             headers: headers
         }).then(function (response) {
             setExpiredEvents(response.data.data)
