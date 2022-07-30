@@ -37,7 +37,7 @@ const Events = () => {
         } else {
             axios({
                 method: "get",
-                url: "events/" + id_category
+                url: REACT_APP_BASE_URL + "events/" + id_category
             }).then(function (response) {
                 setEvents(response.data.data.events);
                 if (response.data.data.events.length === 0) {
