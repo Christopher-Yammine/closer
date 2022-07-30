@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
+
+    const { REACT_APP_BASE_URL } = process.env;
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -25,7 +27,7 @@ const SignupModal = ({ signupIsOpen, handleSignupOpen }) => {
 
             axios({
                 method: "post",
-                url: "http://127.0.0.1:8000/api/register",
+                url: REACT_APP_BASE_URL + "register",
                 data: data
             }).then(function (response) {
                 toast("Signed up successfully!");
