@@ -7,6 +7,7 @@ import { useUserStore } from '../store/UserStore'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify'
 const Events = () => {
+    const { REACT_APP_BASE_URL } = process.env
     const usertype = useUserStore((state) => state.usertype);
     const currentlocation = useLocation();
     const [events, setEvents] = useState([]);
@@ -19,13 +20,14 @@ const Events = () => {
 
     }
     function getEvents() {
+
         let id_category = "";
         id_category = currentlocation.search.split("id=")[1];
 
         if (id_category === undefined) {
             axios({
                 method: "get",
-                url: "http://127.0.0.1:8000/api/events"
+                url: REACT_APP_BASE_URL + "events"
             }).then(function (response) {
                 setEvents(response.data.data.events);
 
@@ -35,7 +37,7 @@ const Events = () => {
         } else {
             axios({
                 method: "get",
-                url: "http://127.0.0.1:8000/api/events/" + id_category
+                url: "events/" + id_category
             }).then(function (response) {
                 setEvents(response.data.data.events);
                 if (response.data.data.events.length === 0) {
