@@ -6,11 +6,12 @@ import { useState, useEffect } from 'react';
 import CategoryCard from './CategoryCard';
 
 const HorizontalCategory = () => {
+    const { REACT_APP_BASE_URL } = process.env;
     const [categories, setCategories] = useState([]);
     function getCategories() {
         axios({
             method: "get",
-            url: "http://127.0.0.1:8000/api/getAllCategories",
+            url: REACT_APP_BASE_URL + "getAllCategories",
         }).then(function (response) {
             setCategories(response.data.data.category);
 
