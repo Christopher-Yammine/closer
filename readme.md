@@ -88,3 +88,23 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 | Reserve  | Hamburger menu/ Picture in picture  |
 | -----------------| -----|
 | ![Reserve](./readme/GIFs/reserve.gif) | ![Hamburger menu/ Picture in picture](./readme/GIFs/burger-pip.gif) |
+
+
+<br><br>
+<img src="./readme/title6.svg"/>
+
+
+> These are the instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is a list of things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+* Apache, PHP, MySQL using this [link](https://downloadsapachefriends.global.ssl.fastly.net/8.1.6/xampp-windows-x64-8.1.6-0-VS16-installer.exe?from_af=true)
+
+
+### Installation
