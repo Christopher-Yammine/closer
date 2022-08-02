@@ -112,7 +112,7 @@ This is a list of things you need to use the software and how to install them.
 
 1. Open your XAMPP control panel and start Apache and MySQL
 2. Clone the repo 
- ```sh
+   ```sh
    git clone https://github.com/Christopher-Yammine/closer
    ```
   
@@ -134,3 +134,21 @@ This is a list of things you need to use the software and how to install them.
    ```sh
    composer install
    ```
+8. Launch the server
+   ```sh
+   php artisan serve
+   ```
+9. Now to get the front-end up and running go into the front-end folder in a new terminal
+   ```sh
+   cd closer-frontend
+   ```
+10. Install the dependencies 
+   ```sh
+   npm install
+   ```
+11. Rename .env.example to .env
+12. Start the application
+   ```sh
+   npm start
+   ```
+  
