@@ -80,3 +80,10 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 | -----------------| -----|
 | ![Event](./readme/GIFs/event.gif) | ![Add event](./readme/GIFs/addevent.gif) |
 
+| Admin  | Toasts  |
+| -----------------| -----|
+| ![Admin](./readme/GIFs/admin.gif) | ![Toasts](./readme/GIFs/toasts.gif) |
+
+| Reserve  | Hamburger menu/ Picture in picture  |
+| -----------------| -----|
+| ![Reserve](./readme/GIFs/reserve.gif) | ![Hamburger menu/ Picture in picture](./readme/GIFs/burger-pip.gif) |
