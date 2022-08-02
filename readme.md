@@ -114,44 +114,44 @@ This is a list of things you need to use the software and how to install them.
 
 1. Open your XAMPP control panel and start Apache and MySQL
 2. Clone the repo 
-   ```sh
+```sh
    git clone https://github.com/Christopher-Yammine/closer
-   ```
+```
   
 3. Go into the back-end folder
-   ```sh
+```sh
    cd closer-backend
-   ```
+```
 4. Rename the .env.example file to .env and specify your database name
 
 5. Migrate the database schema
-   ```sh
+```sh
    php artisan migrate
-   ```
+```
 6. Generate a secret key to handle token encryption 
-   ```sh
+```sh
    php artisan jwt:secret
-   ```
+```
 7. Install the dependencies 
-   ```sh
+```sh
    composer install
-   ```
+```
 8. Launch the server
-   ```sh
+```sh
    php artisan serve
-   ```
+```
 9. Now to get the front-end up and running go into the front-end folder in a new terminal
-   ```sh
+```sh
    cd closer-frontend
-   ```
+```
 10. Install the dependencies
-     ```sh
+   ```sh
    npm install
    ```
 11. Rename .env.example to .env.local
 
 12. Start the application
-     ```sh
+   ```sh
    npm start
    ```
   
