@@ -53,7 +53,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 <br><br>
 
 <img src="./readme/title4.svg"/>
-<a id="tech-stack">
+<a id="tech-stack"></a>
 Here's a brief high-level overview of the tech stack the Closer app uses:
 - This project uses the [Laravel framework](https://laravel.com/). Laravel is a web application framework with expressive, elegant syntax.
 - As database, MySQL was used.
@@ -65,9 +65,9 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 
 <br><br>
 <img src="./readme/title5.svg"/>
-
+<a id="implementation"></a>
 > Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots from the real app
-<a id="implementation">
+
 | Splash/Signin/up/host  | Landing/Search  |
 | -----------------| -----|
 | ![Splash/Signin/up/host](./readme/GIFs/splash-signin-up-host.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
