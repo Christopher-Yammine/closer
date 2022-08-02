@@ -12,7 +12,7 @@
 
 
 <img src="./readme/title2.svg"/>
-<a id="project-philosophy">
+<a id="project-philosophy"></a>
 
 > Closer web app is a platform aiming to promote in-person meetings for communities sharing the same interest(s). Closer is here to help you communicate with your fellow community members and establish a common bond.
 > 
@@ -108,6 +108,7 @@ This is a list of things you need to use the software and how to install them.
 * Apache, PHP, MySQL using this [link](https://downloadsapachefriends.global.ssl.fastly.net/8.1.6/xampp-windows-x64-8.1.6-0-VS16-installer.exe?from_af=true)
 * Download composer [here](https://getcomposer.org/Composer-Setup.exe)
 
+<a id="how-to-run"></a>
 
 ### Installation
 
