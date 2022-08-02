@@ -30,7 +30,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 <a id="wireframes"></a>
 
-| Splash  | Home/Search  |
+| Splash  | Landing/Search  |
 | -----------------| -----|
 | ![Splash](./readme/PNGs/splash.png) | ![Landing/Search](./readme/PNGs/landingpage.png) |
 
@@ -68,3 +68,6 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 
 > Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots from the real app
 
+| Splash/Signin/up/host  | Landing/Search  |
+| -----------------| -----|
+| ![Splash/Signin/up/host](./readme/GIFs/splash-signin-up-host.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
