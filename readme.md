@@ -96,7 +96,7 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 
 
 > These are the instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -144,11 +144,12 @@ This is a list of things you need to use the software and how to install them.
    ```sh
    cd closer-frontend
    ```
-10. Install the dependencies 
+10. Install the dependencies
    ```sh
    npm install
    ```
 11. Rename .env.example to .env.local
+
 12. Start the application
    ```sh
    npm start
