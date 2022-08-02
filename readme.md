@@ -4,7 +4,7 @@
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
 
-**[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#tech-stack) • [IMPLEMENTATION](#impplementation) • [HOW TO RUN?](#how-to-run)**
+**[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#tech-stack) • [IMPLEMENTATION](#implementation) • [HOW TO RUN?](#how-to-run)**
 
 </div>
 
@@ -53,7 +53,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 <br><br>
 
 <img src="./readme/title4.svg"/>
-
+<a id="tech-stack">
 Here's a brief high-level overview of the tech stack the Closer app uses:
 - This project uses the [Laravel framework](https://laravel.com/). Laravel is a web application framework with expressive, elegant syntax.
 - As database, MySQL was used.
@@ -67,7 +67,7 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 <img src="./readme/title5.svg"/>
 
 > Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots from the real app
-
+<a id="implementation">
 | Splash/Signin/up/host  | Landing/Search  |
 | -----------------| -----|
 | ![Splash/Signin/up/host](./readme/GIFs/splash-signin-up-host.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
