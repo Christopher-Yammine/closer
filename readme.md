@@ -38,6 +38,10 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | -----------------| -----|
 | ![Sign in](./readme/signin.png) | ![Sign up](./readme/Signup.png) |
 
-| Sign up host  | Events page  |
+| Sign up host  | Events page/Search  |
 | -----------------| -----|
-| ![Sign up host](./readme/signuphost.png) | ![Events page](./readme/eventspage.png) |
+| ![Sign up host](./readme/signuphost.png) | ![Events page/Search](./readme/eventspage.png) |
+
+| Event page  | Host page  |
+| -----------------| -----|
+| ![Event page](./readme/Event.png) | ![Host page](./readme/hostpage.png) |
