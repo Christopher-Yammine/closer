@@ -146,7 +146,7 @@ This is a list of things you need to use the software and how to install them.
    ```sh
    npm install
    ```
-11. Rename .env.example to .env
+11. Rename .env.example to .env.local
 12. Start the application
    ```sh
    npm start
