@@ -145,13 +145,13 @@ This is a list of things you need to use the software and how to install them.
    cd closer-frontend
    ```
 10. Install the dependencies
-   ```sh
+     ```sh
    npm install
    ```
 11. Rename .env.example to .env.local
 
 12. Start the application
-   ```sh
+     ```sh
    npm start
    ```
   
