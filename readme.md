@@ -32,23 +32,23 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Splash  | Home/Search  |
 | -----------------| -----|
-| ![Splash](./readme/splash.png) | ![Landing/Search](./readme/landingpage.png) |
+| ![Splash](./readme/PNGs/splash.png) | ![Landing/Search](./readme/PNGs/landingpage.png) |
 
 | Sign in  | Sign up  |
 | -----------------| -----|
-| ![Sign in](./readme/signin.png) | ![Sign up](./readme/Signup.png) |
+| ![Sign in](./readme/PNGs/signin.png) | ![Sign up](./readme/PNGs/Signup.png) |
 
 | Sign up host  | Events page/Search  |
 | -----------------| -----|
-| ![Sign up host](./readme/signuphost.png) | ![Events page/Search](./readme/eventspage.png) |
+| ![Sign up host](./readme/PNGs/signuphost.png) | ![Events page/Search](./readme/PNGs/eventspage.png) |
 
 | Event page  | Host page  |
 | -----------------| -----|
-| ![Event page](./readme/Event.png) | ![Host page](./readme/hostpage.png) |
+| ![Event page](./readme/PNGs/Event.png) | ![Host page](./readme/PNGs/hostpage.png) |
 
 | Top hosts page  | Admin page  |
 | -----------------| -----|
-| ![Top hosts page](./readme/tophosts.png) | ![Admin page](./readme/admin.png) |
+| ![Top hosts page](./readme/PNGs/tophosts.png) | ![Admin page](./readme/PNGs/admin.png) |
 
 <br><br>
 
@@ -61,3 +61,10 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 - For the use of the map [Leaflet](https://leafletjs.com/) was implemented. Leaflet is the leading open-source JavaScript library.
 - The project uses [react-dropzone](https://www.npmjs.com/package/react-dropzone) in order to add the drag and drop functionality.
 - This project also uses [Framer-motion](https://www.framer.com/motion/) in order to animate components and add fun transitions between pages.
+- For state management the project used [Zustand](https://github.com/pmndrs/zustand).
+
+<br><br>
+<img src="./readme/title5.svg"/>
+
+> Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots from the real app
+
