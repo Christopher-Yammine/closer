@@ -45,3 +45,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | Event page  | Host page  |
 | -----------------| -----|
 | ![Event page](./readme/Event.png) | ![Host page](./readme/hostpage.png) |
+
+| Top hosts page  | Admin page  |
+| -----------------| -----|
+| ![Top hosts page](./readme/tophosts.png) | ![Admin page](./readme/admin.png) |
