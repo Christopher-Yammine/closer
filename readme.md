@@ -67,7 +67,7 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 <a id="implementation"></a>
 <img src="./readme/title5.svg"/>
 
-> Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots from the real app
+> Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are GIFs recorded from the real app
 
 | Splash/Signin/up/host  | Landing/Search  |
 | -----------------| -----|
