@@ -4,7 +4,7 @@
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
 
-**[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](https://github.com/Christopher-Yammine/readme-demo#-tech-stack) • [IMPLEMENTATION](https://github.com/Christopher-Yammine/readme-demo#-impplementation) • [HOW TO RUN?](https://github.com/Christopher-Yammine/readme-demo#-how-to-run)**
+**[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#tech-stack) • [IMPLEMENTATION](#impplementation) • [HOW TO RUN?](#how-to-run)**
 
 </div>
 
@@ -28,7 +28,7 @@
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
-
+<a id="wireframes"></a>
 
 | Splash  | Home/Search  |
 | -----------------| -----|
@@ -49,3 +49,15 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | Top hosts page  | Admin page  |
 | -----------------| -----|
 | ![Top hosts page](./readme/tophosts.png) | ![Admin page](./readme/admin.png) |
+
+<br><br>
+
+<img src="./readme/title4.svg"/>
+
+Here's a brief high-level overview of the tech stack the Closer app uses:
+- This project uses the [Laravel framework](https://laravel.com/). Laravel is a web application framework with expressive, elegant syntax.
+- As database, MySQL was used.
+- Closer uses the [React](https://reactjs.org/) library for the frontend. React makes it painless to create interactive UIs, is component-based and is reusable.
+- For the use of the map [Leaflet](https://leafletjs.com/) was implemented. Leaflet is the leading open-source JavaScript library.
+- The project uses [react-dropzone](https://www.npmjs.com/package/react-dropzone) in order to add the drag and drop functionality.
+- This project also uses [Framer-motion](https://www.framer.com/motion/) in order to animate components and add fun transitions between pages.
