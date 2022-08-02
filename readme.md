@@ -105,6 +105,32 @@ This is a list of things you need to use the software and how to install them.
   npm install npm@latest -g
   ```
 * Apache, PHP, MySQL using this [link](https://downloadsapachefriends.global.ssl.fastly.net/8.1.6/xampp-windows-x64-8.1.6-0-VS16-installer.exe?from_af=true)
+* Download composer [here](https://getcomposer.org/Composer-Setup.exe)
 
 
 ### Installation
+
+1. Open your XAMPP control panel and start Apache and MySQL
+2. Clone the repo 
+ ```sh
+   git clone https://github.com/Christopher-Yammine/closer
+   ```
+  
+3. Go into the back-end folder
+   ```sh
+   cd closer-backend
+   ```
+4. Rename the .env.example file to .env and specify your database name
+
+5. Migrate the database schema
+   ```sh
+   php artisan migrate
+   ```
+6. Generate a secret key to handle token encryption 
+   ```sh
+   php artisan jwt:secret
+   ```
+7. Install the dependencies 
+   ```sh
+   composer install
+   ```
