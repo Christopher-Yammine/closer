@@ -13,6 +13,7 @@
 
 <img src="./readme/title2.svg"/>
 <a id="project-philosophy">
+
 > Closer web app is a platform aiming to promote in-person meetings for communities sharing the same interest(s). Closer is here to help you communicate with your fellow community members and establish a common bond.
 > 
 > It is pretty straight forward. You go in, look up the category you want, access the event you like and book your spot just like that.
