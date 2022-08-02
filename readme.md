@@ -33,3 +33,11 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | Splash  | Home/Search  |
 | -----------------| -----|
 | ![Splash](./readme/splash.png) | ![Landing/Search](./readme/landingpage.png) |
+
+| Sign in  | Sign up  |
+| -----------------| -----|
+| ![Sign in](./readme/signin.png) | ![Sign up](./readme/Signup.png) |
+
+| Sign up host  | Events page  |
+| -----------------| -----|
+| ![Sign up host](./readme/signuphost.png) | ![Events page](./readme/eventspage.png) |
