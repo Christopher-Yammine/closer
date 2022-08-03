@@ -1458,8 +1458,10 @@ th {
 
 
 @media (max-width:1050px) {
+
   .edit-profile-form-container {
     flex-direction: column;
+    margin: 20px 0 0 0;
   }
 
   .edit-profile-form-container .left-signup {
