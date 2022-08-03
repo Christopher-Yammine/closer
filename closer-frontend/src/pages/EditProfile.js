@@ -4,9 +4,11 @@ import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
 import { useUserStore } from '../store/UserStore'
 import { ToastContainer, toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 const EditProfile = () => {
     const { REACT_APP_BASE_URL } = process.env;
+    const navigate = useNavigate();
     const usertype = useUserStore((state) => state.usertype);
     const user_token = useUserStore((state) => state.token);
     const saveProfile = useUserStore((state) => state.setProfile);
@@ -51,6 +53,9 @@ const EditProfile = () => {
             getUserInfo();
             saveProfile(response.data.updated_user.profile_picture);
             toast("Updated successfully!");
+            setTimeout(() => {
+                navigate("/landingpage")
+            }, 2000);
         }).catch(function (err) {
             toast('Something went wrong please try again later');
         })
