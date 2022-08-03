@@ -9,6 +9,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Event from '../pages/Event';
 import AdminPanel from '../pages/AdminPanel';
+import EditProfile from '../pages/EditProfile';
 const AnimatedRoutes = () => {
     const location = useLocation();
     return (
@@ -22,6 +23,7 @@ const AnimatedRoutes = () => {
                 <Route path='/your-event' element={<Host />}></Route>
                 <Route path='/event' element={<Event />}></Route>
                 <Route path='/admin' element={<AdminPanel />}></Route>
+                <Route path='/edit-profile' element={<EditProfile />}></Route>
             </Routes >
         </AnimatePresence>
     )
