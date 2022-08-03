@@ -43,7 +43,14 @@ const EditProfile = () => {
         data.append("first_name", firstName);
         data.append("last_name", lastName);
         data.append("profile_picture", profilePic);
-        
+        axios({
+            method: "post",
+            url: REACT_APP_BASE_URL + "updateUserInfo",
+            headers: headers
+
+        }).then(function (response) {
+            console.log(firstName, response);
+        })
     }
 
     useEffect(() => {
