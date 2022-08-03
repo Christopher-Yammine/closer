@@ -1398,6 +1398,16 @@ th {
 .edit-profile-form-container {
   display: flex;
   justify-content: space-between;
+  border: 1px white solid;
+  width: 80%;
+}
+
+.right-edit {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .uploaded-photo-edit {
@@ -1406,11 +1416,9 @@ th {
 }
 
 .uploaded-photo-edit img {
-
-
   width: 50%;
   height: 50%;
-  margin: 0 0 0 10px;
+  border-radius: 15px;
 
 }
 

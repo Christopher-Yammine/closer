@@ -34,7 +34,7 @@ const EditProfile = () => {
                     </div>
 
                 </div>
-                <div className='right-signup'>
+                <div className='right-edit'>
                     <div className='upload-profile'>
                         <input type="file" name="photo" id="fileId2"
                             onChange={(e) => { '' }} />
