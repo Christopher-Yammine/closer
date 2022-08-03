@@ -3,14 +3,14 @@ import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
 import { useUserStore } from '../store/UserStore'
 const EditProfile = () => {
-
     const usertype = useUserStore((state) => state.usertype);
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [gender, setGender] = useState(0);
+
+    function getUserInfo(){
+        
+    }
 
 
     return (
