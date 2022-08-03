@@ -74,7 +74,7 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 
 | Splash/Sign in/Sign up/Sign up host  | Landing/Search  |
 | -----------------| -----|
-| ![Splash/Sign in/Sign up/Sign up host](./readme/GIFs/splash-signin-up-host.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
+| ![Splash page with changing background](./readme/GIFs/splash-bgchange.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
 
 | Events/Search  | Tophosts  |
 | -----------------| -----|
