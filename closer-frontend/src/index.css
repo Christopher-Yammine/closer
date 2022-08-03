@@ -1371,6 +1371,11 @@ th {
 
 }
 
+@keyframes spin {
+  to{
+    transform: rotate(1turn);
+  }
+}
 
 @keyframes gradient {
   0% {
