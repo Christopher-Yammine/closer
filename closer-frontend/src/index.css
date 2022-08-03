@@ -1462,6 +1462,7 @@ th {
   .edit-profile-form-container {
     flex-direction: column;
     margin: 20px 0 0 0;
+    padding: 30px;
   }
 
   .edit-profile-form-container .left-signup {
