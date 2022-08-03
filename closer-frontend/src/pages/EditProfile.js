@@ -75,9 +75,7 @@ const EditProfile = () => {
                                     <img src={profilePic} alt='' />
                                 </div>
                             </div>
-
                             <label className='profile-photo-desc' htmlFor="fileId2">Upload new profile picture</label>
-
                         </div>
 
                     </div>

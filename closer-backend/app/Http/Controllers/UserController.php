@@ -96,7 +96,7 @@ class UserController extends Controller
             ]
         ], 200);
     }
-    public function getUserById()
+    public function getUser()
     {
         $user = Auth::user();
         return response()->json([
