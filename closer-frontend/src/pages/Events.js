@@ -82,6 +82,7 @@ const Events = () => {
                     </div>
                 </div>
             </div>
+            <div className='spinner'></div>
             <div className='events-display'>
 
 
