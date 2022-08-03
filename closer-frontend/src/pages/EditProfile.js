@@ -4,12 +4,16 @@ import PageHeading from '../components/PageHeading'
 import { useUserStore } from '../store/UserStore'
 const EditProfile = () => {
     const usertype = useUserStore((state) => state.usertype);
+    const user_token = useUserStore((state) => state.token);
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    let headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + user_token
+    }
+    function getUserInfo() {
 
-    function getUserInfo(){
-        
     }
 
 
