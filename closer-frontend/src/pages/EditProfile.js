@@ -49,10 +49,11 @@ const EditProfile = () => {
             url: REACT_APP_BASE_URL + "updateUserInfo",
             data: data,
             headers: headers
-
         }).then(function (response) {
             getUserInfo();
             saveProfile(response.data.updated_user.profile_picture);
+        }).then(function(err){
+            
         })
     }
 
