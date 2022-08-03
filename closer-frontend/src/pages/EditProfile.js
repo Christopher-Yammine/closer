@@ -7,6 +7,7 @@ const EditProfile = () => {
     const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype);
     const user_token = useUserStore((state) => state.token);
+    const saveProfile = useUserStore((state) => state.setProfile);
     const [profilePic, setProfilePic] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -51,6 +52,7 @@ const EditProfile = () => {
 
         }).then(function (response) {
             getUserInfo();
+            saveProfile(response.data.updated_user.profile_picture);
         })
     }
 
