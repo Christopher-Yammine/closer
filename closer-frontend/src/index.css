@@ -1458,7 +1458,30 @@ th {
 
 
 @media (max-width:1050px) {
+  .edit-profile-form-container {
+    flex-direction: column;
+  }
 
+  .edit-profile-form-container .left-signup {
+    width: 100%;
+  }
+
+  .edit-profile-form-container .signup-button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .edit-profile-form-container .upload-profile {
+    margin: 0
+  }
+
+  .edit-profile-form-container .profile-photo-desc {
+    margin: 0;
+  }
+
+  .right-edit {
+    width: 100%;
+  }
 
   .table-wrapper:before {
     content: "Scroll horizontally >";
