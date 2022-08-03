@@ -171,6 +171,8 @@ video {
   height: 100vh;
 }
 
+
+
 @keyframes cubic {
   0% {
     background-position: 0% 50%;
@@ -1391,6 +1393,20 @@ th {
 
 .edit-profile-picture:hover {
   transform: scale(1.3, 1.3);
+}
+
+.edit-profile-form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploaded-photo-edit img {
+
+
+  width: 50%;
+  height: 50%;
+  margin: 0 0 0 10px;
+
 }
 
 @keyframes spin {

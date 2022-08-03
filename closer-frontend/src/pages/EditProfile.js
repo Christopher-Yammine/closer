@@ -17,20 +17,20 @@ const EditProfile = () => {
         <>
             <Navbar usertype={usertype} />
             <PageHeading text="Edit Profile" />
-            <div className='signup-modal-container'>
+            <div className='edit-profile-form-container'>
                 <div className='left-signup'>
                     <div className='signup-heading'>
                         Edit your <span className='purple'>Closer</span> account
                     </div>
                     <div className='signup-input'>
-                        <input type="text" placeholder='Enter your first name' onChange=
+                        <input type="text" value={firstName} placeholder='Enter your first name' onChange=
                             {
                                 (e) => setFirstName(e.currentTarget.value)
                             }>
 
                         </input>
-                        <input type="text" placeholder='Enter your last name' onChange={(e) => setLastName(e.currentTarget.value)}></input>
-                        <button type='button' className='signup-button' onClick={''}>Sign up</button>
+                        <input type="text" placeholder='Enter your last name' value={lastName} onChange={(e) => setLastName(e.currentTarget.value)}></input>
+                        <button type='button' className='signup-button' onClick={''}>Save</button>
                     </div>
 
                 </div>
@@ -39,7 +39,7 @@ const EditProfile = () => {
                         <input type="file" name="photo" id="fileId2"
                             onChange={(e) => { '' }} />
                         <div className="upload">
-                            <div className='uploaded-photo'>
+                            <div className='uploaded-photo-edit'>
                                 <img src={profilePic} alt='' />
                             </div>
                         </div>
