@@ -1400,6 +1400,11 @@ th {
   justify-content: space-between;
 }
 
+.uploaded-photo-edit {
+  display: flex;
+  justify-content: center;
+}
+
 .uploaded-photo-edit img {
 
 
