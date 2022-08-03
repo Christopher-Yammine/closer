@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'register', 'makeHost', 'topHosts', 'createCategory', 'getUsertypesCount']]);
+        $this->middleware('auth:api', ['except' => ['login', 'getUserById', 'register', 'makeHost', 'topHosts', 'createCategory', 'getUsertypesCount']]);
     }
 
     public function login(Request $request)
@@ -95,6 +95,10 @@ class UserController extends Controller
                 'type' => 'bearer',
             ]
         ], 200);
+    }
+    public function getUserById(Request $request)
+    {
+        $user = User::findOrFail($request->id);
     }
 
     public function makeHost(Request $request)
