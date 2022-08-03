@@ -1400,6 +1400,20 @@ th {
   justify-content: space-between;
   border: 1px white solid;
   width: 80%;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.upload-edit {
+  margin: 10px 0 20px 0;
+  width: 80%;
+  height: 80%;
+  border-radius: 15px;
+}
+
+.edit-profile-main-container {
+  display: flex;
+  justify-content: center;
 }
 
 .right-edit {
