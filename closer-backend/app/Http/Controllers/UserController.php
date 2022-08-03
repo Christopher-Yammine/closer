@@ -96,9 +96,13 @@ class UserController extends Controller
             ]
         ], 200);
     }
-    public function getUserById(Request $request)
+    public function getUserById()
     {
         $user = Auth::user();
+        return response()->json([
+            'status' => 'success',
+            'user' => $user
+        ], 200);
     }
 
     public function makeHost(Request $request)
