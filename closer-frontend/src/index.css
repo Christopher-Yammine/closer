@@ -1362,6 +1362,9 @@ th {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-content: center;
+  height: 300px;
+  padding: 50px 0 0 0;
 }
 
 .spinner {
