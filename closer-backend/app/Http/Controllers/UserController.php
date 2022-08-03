@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login', 'getUserById', 'register', 'makeHost', 'topHosts', 'createCategory', 'getUsertypesCount']]);
+        $this->middleware('auth:api', ['except' => ['login', 'getUserById', 'updateUser', 'register', 'makeHost', 'topHosts', 'createCategory', 'getUsertypesCount']]);
     }
 
     public function login(Request $request)
@@ -102,6 +102,14 @@ class UserController extends Controller
         return response()->json([
             'status' => 'success',
             'user' => $user
+        ], 200);
+    }
+    public function updateUser(Request $request)
+    {
+        $user_id = Auth::id();
+        return response()->json([
+            "status" => "success",
+            "id" => $user_id
         ], 200);
     }
 
