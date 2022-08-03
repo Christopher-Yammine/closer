@@ -62,14 +62,14 @@ const EditProfile = () => {
 
                             </input>
                             <input type="text" placeholder='Enter your last name' value={lastName} onChange={(e) => setLastName(e.currentTarget.value)}></input>
-                            <button type='button' className='signup-button' onClick={(e) => { profimageUploaded(e.target.files) }}>Save</button>
+                            <button type='button' className='signup-button' onClick={''}>Save</button>
                         </div>
 
                     </div>
                     <div className='right-edit'>
                         <div className='upload-profile'>
                             <input type="file" name="photo" id="fileId2"
-                                onChange={(e) => { '' }} />
+                                onChange={(e) => { profimageUploaded(e.target.files) }} />
                             <div className="upload-edit">
                                 <div className='uploaded-photo-edit'>
                                     <img src={profilePic} alt='' />
