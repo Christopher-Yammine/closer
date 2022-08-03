@@ -1383,6 +1383,16 @@ th {
 
 }
 
+.edit-profile-picture {
+  cursor: pointer;
+  transition: all 1s;
+
+}
+
+.edit-profile-picture:hover {
+  transform: scale(1.5, 1.5);
+}
+
 @keyframes spin {
   to {
     transform: rotate(1turn);

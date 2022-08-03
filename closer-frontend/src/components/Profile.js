@@ -34,7 +34,7 @@ const Profile = () => {
     return (
         <div className='profile-logout'>
             {user_id && <> <div className='profile'>
-                <img src={profile_pic} alt="" onClick={editProfile} className="cursor-pointer"></img>
+                <img src={profile_pic} alt="" onClick={editProfile} className="edit-profile-picture"></img>
                 <div className="container" onClick={(e) => { change(e.currentTarget) }}>
                     <div className="bar1"></div>
                     <div className="bar2"></div>
