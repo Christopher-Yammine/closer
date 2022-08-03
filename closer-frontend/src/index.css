@@ -1357,7 +1357,9 @@ th {
   padding: 5px 10px 5px 10px;
   cursor: pointer;
 }
-
+.spinner {
+  
+}
 
 @keyframes gradient {
   0% {
