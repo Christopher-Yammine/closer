@@ -30,8 +30,11 @@ const Events = () => {
                 method: "get",
                 url: REACT_APP_BASE_URL + "events"
             }).then(function (response) {
+                setTimeout(() => {
+                    setEvents(response.data.data.events);
+                    setIsLoading(false);
+                }, 1000);
 
-                setEvents(response.data.data.events);
 
             }).catch(function (err) {
 
@@ -41,7 +44,11 @@ const Events = () => {
                 method: "get",
                 url: REACT_APP_BASE_URL + "events/" + id_category
             }).then(function (response) {
-                setEvents(response.data.data.events);
+                setTimeout(() => {
+                    setEvents(response.data.data.events);
+                    setIsLoading(false);
+                }, 1000);
+
                 if (response.data.data.events.length === 0) {
                     toast('No events in this category yet')
                 }
