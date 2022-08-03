@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
 import { useUserStore } from '../store/UserStore'
+import { ToastContainer, toast } from 'react-toastify'
+
 const EditProfile = () => {
     const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype);
@@ -19,13 +21,9 @@ const EditProfile = () => {
     function profimageUploaded(files) {
         var file = files[0];
         var reader = new FileReader();
-
-
         reader.onload = function () {
             setProfilePic(reader.result);
-
         }
-
         reader.readAsDataURL(file);
     }
     function getUserInfo() {
@@ -52,8 +50,9 @@ const EditProfile = () => {
         }).then(function (response) {
             getUserInfo();
             saveProfile(response.data.updated_user.profile_picture);
-        }).then(function(err){
-            
+            toast("Updated successfully!");
+        }).catch(function (err) {
+            toast('Something went wrong please try again later');
         })
     }
 
@@ -99,6 +98,7 @@ const EditProfile = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </>
     )
 }
