@@ -9,6 +9,9 @@ const Profile = () => {
     const removeToken = useUserStore((state) => state.removeToken);
     const removeUsertype = useUserStore((state) => state.removeUsertype);
     const user_id = useUserStore((state) => state.user_id)
+    function editProfile() {
+        navigate('/edit-profile');
+    }
     function logout() {
         removeUserId();
         removeProfile();
@@ -31,7 +34,7 @@ const Profile = () => {
     return (
         <div className='profile-logout'>
             {user_id && <> <div className='profile'>
-                <img src={profile_pic} alt=""></img>
+                <img src={profile_pic} alt="" onClick={editProfile} className="cursor-pointer"></img>
                 <div className="container" onClick={(e) => { change(e.currentTarget) }}>
                     <div className="bar1"></div>
                     <div className="bar2"></div>
@@ -39,10 +42,10 @@ const Profile = () => {
                 </div>
             </div >
 
-            <div>
+                <div>
 
-                 <button type='button' className='button-logout' onClick={logout}>Log out</button>
-            </div></>}
+                    <button type='button' className='button-logout' onClick={logout}>Log out</button>
+                </div></>}
         </div>
 
     )
