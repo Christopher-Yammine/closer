@@ -72,9 +72,9 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 
 > Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below. These are GIFs recorded from the real app.
 
-| Splash/Sign in/Sing up/Sign up host  | Landing/Search  |
+| Splash/Sign in/Sign up/Sign up host  | Landing/Search  |
 | -----------------| -----|
-| ![Splash/Sign in/Sing up/Sign up host](./readme/GIFs/splash-signin-up-host.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
+| ![Splash/Sign in/Sign up/Sign up host](./readme/GIFs/splash-signin-up-host.gif) | ![Landing/Search](./readme/GIFs/landing-search.gif) |
 
 | Events/Search  | Tophosts  |
 | -----------------| -----|
