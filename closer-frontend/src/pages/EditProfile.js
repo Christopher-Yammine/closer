@@ -50,7 +50,8 @@ const EditProfile = () => {
             headers: headers
 
         }).then(function (response) {
-            console.log(firstName, response);
+            console.log(firstName, lastName);
+            getUserInfo();
         })
     }
 

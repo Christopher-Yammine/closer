@@ -111,6 +111,7 @@ class UserController extends Controller
         $user_updated->first_name = $request->first_name;
         $user_updated->last_name = $request->last_name;
         $user_updated->profile_picture = $request->profile_picture;
+        $user_updated->save();
         return response()->json([
             "status" => "success",
             "updated_user" => $user_updated
