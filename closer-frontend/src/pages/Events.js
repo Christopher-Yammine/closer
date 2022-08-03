@@ -11,6 +11,7 @@ const Events = () => {
     const usertype = useUserStore((state) => state.usertype);
     const currentlocation = useLocation();
     const [events, setEvents] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     function filterEvents(locationstring) {
         if (locationstring === "") {
             getEvents();
@@ -29,6 +30,7 @@ const Events = () => {
                 method: "get",
                 url: REACT_APP_BASE_URL + "events"
             }).then(function (response) {
+
                 setEvents(response.data.data.events);
 
             }).catch(function (err) {
@@ -82,7 +84,7 @@ const Events = () => {
                     </div>
                 </div>
             </div>
-            {
+            {isLoading &&
                 <div className='spinner-container'>
                     <div className='spinner'></div>
                 </div>
