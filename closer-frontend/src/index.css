@@ -1388,6 +1388,7 @@ th {
 .edit-profile-picture {
   cursor: pointer;
   transition: all .5s;
+  z-index: 10;
 
 }
 
