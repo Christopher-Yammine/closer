@@ -55,4 +55,5 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['middleware' => 'user.role'], function () {
     Route::post('addAttendee/{event_id}', [AttendeeController::class, 'addAttendee']);
     Route::get('userInfo', [UserController::class, 'getUser']);
+    Route::post('updateUserInfo', [UserController::class, 'updateUser']);
 });

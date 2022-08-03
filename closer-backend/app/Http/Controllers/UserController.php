@@ -107,9 +107,13 @@ class UserController extends Controller
     public function updateUser(Request $request)
     {
         $user_id = Auth::id();
+        $user_updated = User::find($user_id);
+        $user_updated->first_name = $request->first_name;
+        $user_updated->last_name = $request->last_name;
+        $user_updated->profile_picture = $request->profile_picture;
         return response()->json([
             "status" => "success",
-            "id" => $user_id
+            "updated_user" => $user_updated
         ], 200);
     }
 
