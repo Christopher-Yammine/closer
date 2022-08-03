@@ -46,6 +46,7 @@ const EditProfile = () => {
         axios({
             method: "post",
             url: REACT_APP_BASE_URL + "updateUserInfo",
+            data: data,
             headers: headers
 
         }).then(function (response) {
