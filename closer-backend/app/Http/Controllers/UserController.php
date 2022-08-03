@@ -98,7 +98,7 @@ class UserController extends Controller
     }
     public function getUserById(Request $request)
     {
-        $user = User::findOrFail($request->id);
+        $user = Auth::user();
     }
 
     public function makeHost(Request $request)

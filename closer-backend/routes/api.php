@@ -25,6 +25,7 @@ Route::get('topHosts', [UserController::class, 'topHosts']);
 
 
 
+
 Route::get('trendingEvents', [EventController::class, 'trendingEvents']);
 Route::get('event/{id}', [EventController::class, 'getEventById']);
 Route::get('events/{id_cat}', [EventController::class, 'getEventsByCat']);
