@@ -76,11 +76,7 @@ const EditProfile = () => {
                                 </div>
                             </div>
 
-                            <label className='profile-photo-desc' htmlFor="fileId2">click here to upload profile picture</label>
-
-
-
-
+                            <label className='profile-photo-desc' htmlFor="fileId2">Upload new profile picture</label>
 
                         </div>
 
