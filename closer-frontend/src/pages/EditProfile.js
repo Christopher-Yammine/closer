@@ -7,13 +7,25 @@ const EditProfile = () => {
     const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype);
     const user_token = useUserStore((state) => state.token);
-    const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
+    const [profilePic, setProfilePic] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + user_token
 
+    }
+    function profimageUploaded(files) {
+        var file = files[0];
+        var reader = new FileReader();
+
+
+        reader.onload = function () {
+            setProfilePic(reader.result);
+
+        }
+
+        reader.readAsDataURL(file);
     }
     function getUserInfo() {
         axios({
@@ -50,7 +62,7 @@ const EditProfile = () => {
 
                             </input>
                             <input type="text" placeholder='Enter your last name' value={lastName} onChange={(e) => setLastName(e.currentTarget.value)}></input>
-                            <button type='button' className='signup-button' onClick={''}>Save</button>
+                            <button type='button' className='signup-button' onClick={(e) => { profimageUploaded(e.target.files) }}>Save</button>
                         </div>
 
                     </div>
