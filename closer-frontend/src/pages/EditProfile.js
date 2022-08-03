@@ -38,6 +38,13 @@ const EditProfile = () => {
             setProfilePic(response.data.user.profile_picture);
         })
     }
+    function updateUser() {
+        let data = new FormData();
+        data.append("first_name", firstName);
+        data.append("last_name", lastName);
+        data.append("profile_picture", profilePic);
+
+    }
 
     useEffect(() => {
         getUserInfo();
@@ -62,7 +69,7 @@ const EditProfile = () => {
 
                             </input>
                             <input type="text" placeholder='Enter your last name' value={lastName} onChange={(e) => setLastName(e.currentTarget.value)}></input>
-                            <button type='button' className='signup-button' onClick={''}>Save</button>
+                            <button type='button' className='signup-button' onClick={updateUser}>Save</button>
                         </div>
 
                     </div>
