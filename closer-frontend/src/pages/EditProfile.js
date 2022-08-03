@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import PageHeading from '../components/PageHeading'
 import { useUserStore } from '../store/UserStore'
 const EditProfile = () => {
+    const { REACT_APP_BASE_URL } = process.env;
     const usertype = useUserStore((state) => state.usertype);
     const user_token = useUserStore((state) => state.token);
     const [profilePic, setProfilePic] = useState(require('../assets/blankprofile.png'))
@@ -11,10 +13,23 @@ const EditProfile = () => {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + user_token
-    }
-    function getUserInfo() {
 
     }
+    function getUserInfo() {
+        axios({
+            method: "get",
+            url: REACT_APP_BASE_URL + "userInfo",
+            headers: headers
+        }).then(function (response) {
+            setFirstName(response.data.user.first_name);
+            setLastName(response.data.user.last_name);
+            setProfilePic(response.data.user.profile_picture);
+        })
+    }
+
+    useEffect(() => {
+        getUserInfo();
+    }, [])
 
 
     return (
