@@ -96,6 +96,11 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 | -----------------| -----|
 | ![Logo animation/ Page transitions ](./readme/GIFs/logoanimation-transitions.gif) | ![Sign in/Sign up/Sign up host](./readme/GIFs/splash-signin-up-host.gif) |
 
+| Edit profile  | Sign in/Sign up/Sign up host  |
+| -----------------| -----|
+| ![Edit profile ](./readme/GIFs/editprofile.gif) | ![Sign in/Sign up/Sign up host](./readme/GIFs/splash-signin-up-host.gif) |
+
+
 
 <br><br>
 <img src="./readme/title6.svg"/>
