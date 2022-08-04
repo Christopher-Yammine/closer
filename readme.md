@@ -80,9 +80,9 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 | -----------------| -----|
 | ![Events/Search](./readme/GIFs/events-search.gif) | ![Tophosts](./readme/GIFs/tophosts.gif) |
 
-| Event  | Add event  |
+| Event  | Host page |
 | -----------------| -----|
-| ![Event](./readme/GIFs/event.gif) | ![Add event](./readme/GIFs/addevent.gif) |
+| ![Event](./readme/GIFs/event.gif) | ![Host page](./readme/GIFs/addevent.gif) |
 
 | Admin  | Toasts  |
 | -----------------| -----|
