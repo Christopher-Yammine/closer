@@ -104,6 +104,12 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 | -----------------| -----|
 | ![Conditional components  ](./readme/GIFs/conditional-components.gif) | ![Different validations](./readme/GIFs/validations.gif) |
 
+| Add event | Different validations |
+| -----------------| -----|
+| ![Add event](./readme/GIFs/Add-event.gif) | ![Different validations](./readme/GIFs/validations.gif) |
+
+
+
 
 
 
