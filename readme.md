@@ -100,9 +100,10 @@ Here's a brief high-level overview of the tech stack the Closer app uses:
 | -----------------| -----|
 | ![Edit profile ](./readme/GIFs/editprofile.gif) | ![Responsiveness throughout the app](./readme/GIFs/responsiveness.gif) |
 
-| Conditional components | Responsiveness throughout the app  |
+| Conditional components | Different validations |
 | -----------------| -----|
-| ![Conditional components  ](./readme/GIFs/conditional-components.gif) | ![Responsiveness throughout the app](./readme/GIFs/responsiveness.gif) |
+| ![Conditional components  ](./readme/GIFs/conditional-components.gif) | ![Different validations](./readme/GIFs/validations.gif) |
+
 
 
 
