@@ -23,7 +23,7 @@
 - As a user, I want to see events based on their location to take into account the trip's gas consumption.
 - As a user, I want to see who is making events the most and their popularity.
 - As a host, I want to showcase my event and attract people that thinks the same way as me
-- As an admin , I need to see my app's traffic
+- As an admin , I need to see my app's traffic and be able to manage expired events
 
 <br><br>
 
