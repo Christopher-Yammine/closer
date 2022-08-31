@@ -22,6 +22,7 @@
 - As a user, I want to go somewhere that only plays R&B music. I want to discover such places so that I can avoid confusion on my outing destination.
 - As a user, I want to see events based on their location to take into account the trip's gas consumption.
 - As a user, I want to see who is making events the most and their popularity.
+- As a user, I want to see a website that has a modern design
 
 ### Host Stories
 - As a host, I want to showcase my event and attract people that thinks the same way as me
